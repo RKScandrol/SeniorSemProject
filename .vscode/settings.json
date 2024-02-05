@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CS4900.sln"
+    "dotnet.defaultSolution": "cs4900_2024_team1.sln"
 }
