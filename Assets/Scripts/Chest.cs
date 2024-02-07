@@ -25,13 +25,15 @@ public class Chest : MonoBehaviour
     public bool isChestOpen() {
         return isOpen;
     }
+
    
     // Start is called before the first frame update
     void Start()
     {
         this.item1 = lootTable.pickItem();
-        this.item2 = lootTable.pickItem();
-        this.item3 = lootTable.pickItem();
+        this.item2 = lootTable.pickItem();      //NOTE: add function to check for duplicates
+        this.item3 = lootTable.pickItem();      //NOTE: add function to check for duplicates
+        
         this.isOpen = false;
     }
 
