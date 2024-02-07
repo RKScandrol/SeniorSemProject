@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,10 @@ using UnityEngine;
 public class LootTable : MonoBehaviour
 {
 
-    public List<Item> items;
-    private int totalWeight;
+    public List<Item> items = new List<Item>();
+    private int totalWeight = 0;
 
 
-    public LootTable() {
-        this.items = new List<Item>();
-        this.totalWeight = 0;
-        this.createTable();
-    }
 
     private void createTable() {
         if (items != null && items.Count > 0) {
@@ -54,8 +50,10 @@ public class LootTable : MonoBehaviour
 
     public Item pickItem() {
 
+        System.Random rnd = new System.Random();
+
         //Returns an int >= 0 and < totalWeight of all items in table
-        int randInt = Random.Range(0, totalWeight);
+        int randInt = rnd.Next(0, totalWeight);
 
         foreach (Item i in items) {
 
@@ -70,15 +68,26 @@ public class LootTable : MonoBehaviour
     }
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.createTable();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+
+
+    //For Testing Purposes
+    public List<Item> getItems() {
+        return items;
+    }
+    public int getTotalWeight() {
+        return totalWeight;
     }
 }
