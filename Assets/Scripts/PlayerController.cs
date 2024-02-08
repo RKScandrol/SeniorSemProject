@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     float horizontal;
     float vertical;
-    public float moveSpeed = 100.0f;
+    public float moveSpeed = 20.0f;
     float moveLimiter = 0.7f;
 
     //Trying to (mostly) handle animations in code, let's see how it goes!
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             vertical *= moveLimiter;
         }
 
-        rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 10, vertical * moveSpeed * Time.fixedDeltaTime * 10);
+        rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 5, vertical * moveSpeed * Time.fixedDeltaTime * 5);
         
         //Plays walk animation based on direction
         if (rb.velocity.y > 0)
