@@ -3,11 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LootTable : MonoBehaviour
-{
+public class LootTable {
+    
+    public List<Item> items;
+    private int totalWeight;
 
-    public List<Item> items = new List<Item>();
-    private int totalWeight = 0;
+
+    public LootTable () {
+        this.items = new List<Item>();
+        this.totalWeight = 0;
+    }
+    public LootTable (List<Item> items) {
+        this.items = items;
+        this.totalWeight = 0;
+    }
 
 
 
@@ -67,27 +76,4 @@ public class LootTable : MonoBehaviour
 
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.createTable();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
-    //For Testing Purposes
-    public List<Item> getItems() {
-        return items;
-    }
-    public int getTotalWeight() {
-        return totalWeight;
-    }
 }

@@ -9,8 +9,9 @@ public class Chest : MonoBehaviour
     private Item item1;
     private Item item2;
     private Item item3;
-    public LootTable lootTable;
+    private LootTable lootTable;
     private bool isOpen;
+    public GameObject contr;
 
 
     public Item getItem1() {
@@ -30,6 +31,10 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        GameController gc = contr.GetComponent<GameController>();
+        lootTable = gc.getLootTable();
+
         this.item1 = lootTable.pickItem();
         this.item2 = lootTable.pickItem();      //NOTE: add function to check for duplicates
         this.item3 = lootTable.pickItem();      //NOTE: add function to check for duplicates

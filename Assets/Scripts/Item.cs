@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
-{
-
-    public new String name;
-    public int weight;
+public class Item {
+    
+    protected String name;
+    protected int weight;
     protected int minWeight;
     protected int maxWeight;
 
@@ -20,6 +19,7 @@ public class Item : MonoBehaviour
         this.minWeight = 0;
         this.maxWeight = 0;
     }
+
 
 
     public String getName() {
@@ -54,15 +54,4 @@ public class Item : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
