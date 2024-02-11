@@ -32,12 +32,20 @@ public class Chest : MonoBehaviour
     void Start()
     {
 
-        GameController gc = contr.GetComponent<GameController>();
-        lootTable = gc.getLootTable();
+        /*
+            Unnecessary?
+            Doesn't work, Unsure as to why, 
+                NullReferenceException on lines for Item assignments below
+                Code runs before GameController Script?
 
-        this.item1 = lootTable.pickItem();
-        this.item2 = lootTable.pickItem();      //NOTE: add function to check for duplicates
-        this.item3 = lootTable.pickItem();      //NOTE: add function to check for duplicates
+        */
+
+        // GameController gc = contr.GetComponent<GameController>();
+        // lootTable = gc.getLootTable();
+
+        // this.item1 = lootTable.pickItem();
+        // this.item2 = lootTable.pickItem();      //NOTE: add function to check for duplicates
+        // this.item3 = lootTable.pickItem();      //NOTE: add function to check for duplicates
         
         this.isOpen = false;
     }

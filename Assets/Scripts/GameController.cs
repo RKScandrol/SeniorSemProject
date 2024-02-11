@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
         this.createItems();
 
         lt = new LootTable(items);
+
+        
     }
 
     // Update is called once per frame

@@ -1235,7 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c393646f8678d4e896c62761db1a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chest: {fileID: 1093300261}
+  chest: {fileID: 0}
   isOpen: 0
 --- !u!1 &1152497599
 GameObject:
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 761174193}
-  c: {fileID: 1093300261}
+  c: {fileID: 0}
   txtItem1: {fileID: 508950247}
   txtItem2: {fileID: 1787468954}
   txtItem3: {fileID: 922838651}
@@ -2284,7 +2284,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 906704580}
-  - {fileID: 1093300263}
   - {fileID: 761174194}
   - {fileID: 1687930837}
   - {fileID: 1429835200}
+  - {fileID: 1093300263}
