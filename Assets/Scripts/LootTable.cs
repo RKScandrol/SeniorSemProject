@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LootTable {
@@ -59,21 +60,32 @@ public class LootTable {
 
     public Item pickItem() {
 
-        System.Random rnd = new System.Random();
+        if (items != null && items.Count > 0) {
 
-        //Returns an int >= 0 and < totalWeight of all items in table
-        int randInt = rnd.Next(0, totalWeight);
+            System.Random rnd = new System.Random();
 
-        foreach (Item i in items) {
+            //Returns an int >= 0 and < totalWeight of all items in table
+            int randInt = rnd.Next(0, totalWeight);
+            randInt = 4;
 
-            if (randInt >= i.getMinWeight() && randInt < i.getMaxWeight() ) {
-                return i;
+            foreach (Item i in items) {
+
+                if (randInt >= i.getMinWeight() && randInt < i.getMaxWeight() ) {
+                    return i;
+                }
+
             }
 
+            return items[0];
+        }
+        else {
+            return null;
         }
 
-        return items[0];
+    }
 
+    public List<Item> getList() {
+        return items;
     }
 
 }

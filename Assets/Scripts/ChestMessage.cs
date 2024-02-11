@@ -31,22 +31,17 @@ public class ChestMessage : MonoBehaviour
 			RawImage rawImage = ui.gameObject.GetComponentInChildren<RawImage>();
 			rawImage.color = Color.white;
 
+			GameObject g = GameObject.Find("GameController");
+			GameController gc = g.GetComponent<GameController>();
+			LootTable lt = gc.getLootTable();
+			List<Item> items = lt.getList();
+			Item i = lt.pickItem();
+															// Original Code
+			txtItem1.text = "" + lt.pickItem().getName(); // + c.getItem1().getName();
+			txtItem2.text = "" + lt.pickItem().getName(); // + c.getItem2().getName();
+			txtItem3.text = "" + lt.pickItem().getName(); // + c.getItem3().getName();
 
-			txtItem1.text = "" + c.getItem1().getName();
-			txtItem2.text = "" + c.getItem2().getName();
-			txtItem3.text = "" + c.getItem3().getName();
-
-            //For testing Purposes:
-
-            // GameObject go = GameObject.Find("LootTable");
-            // LootTable lt = go.GetComponent<LootTable>();
-            // List<Item> items = lt.getItems();
-            // String msg = "";
-            // foreach (Item i in items) {
-            //     msg += i.getName() + ", ";
-            // }
-            // txtItem1.text = msg;
-            // txtItem2.text = "" + lt.getTotalWeight();
+            
 
 
 			Time.timeScale = 0f;
