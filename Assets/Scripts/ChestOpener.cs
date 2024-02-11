@@ -8,6 +8,7 @@ public class ChestOpener : MonoBehaviour
     public bool isOpen;
     ChestMessage popupMessage;
     GameObject gameController;
+    public Animator animator;
     
 
     // Start is called before the first frame update
@@ -31,6 +32,9 @@ public class ChestOpener : MonoBehaviour
 
     void OnMouseUp() {
         if (!isOpen){
+
+            animator.Play("ChestOpenAnimation");
+
             popupMessage.Open();
             this.isOpen = true;
         }
