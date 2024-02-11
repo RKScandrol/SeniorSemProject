@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SC_MainMenu : MonoBehaviour
 {
     public GameObject MainMenu;
-    public GameObject CreditsMenu;
+    public GameObject SettingsMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -19,23 +20,24 @@ public class SC_MainMenu : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("tucker_2");
     }
 
-    public void CreditsButton()
+    public void SettingsButton()
     {
-        // Show Credits Menu
+        // Show Settings Menu
         MainMenu.SetActive(false);
-        CreditsMenu.SetActive(true);
+        SettingsMenu.SetActive(true);
     }
 
     public void MainMenuButton()
     {
         // Show Main Menu
         MainMenu.SetActive(true);
-        CreditsMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
     }
 
     public void QuitButton()
     {
         // Quit Game
         Application.Quit();
+        Debug.Log("Game Closed");
     }
 }

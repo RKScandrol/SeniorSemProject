@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - MainMenu: {instanceID: 0}
-  - CreditsMenu: {instanceID: 0}
+  - MainMenu: {fileID: 7082105686906969622, guid: c308fbb5e8961ca42804aa51e53844c4, type: 3}
+  - SettingsMenu: {fileID: 7082105686906969622, guid: c308fbb5e8961ca42804aa51e53844c4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
