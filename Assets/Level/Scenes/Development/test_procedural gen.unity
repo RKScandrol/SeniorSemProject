@@ -240,6 +240,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1645133895917618483, guid: bf5ea4ed985882249bebdd46cce2c608, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 3621001695914945694, guid: bf5ea4ed985882249bebdd46cce2c608, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29
