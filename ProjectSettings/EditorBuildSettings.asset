@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Development/tucker_1.unity
     guid: 63598aac98bc57649acdd41dfbe6b68c
+  - enabled: 1
+    path: Assets/Level/Scenes/Development/test_procedural gen.unity
+    guid: 0122ac38033ac5a498e63aac0f794a18
   m_configObjects: {}
