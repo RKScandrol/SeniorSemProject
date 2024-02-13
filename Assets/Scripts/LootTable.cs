@@ -17,6 +17,8 @@ public class LootTable {
     public LootTable (List<Item> items) {
         this.items = items;
         this.totalWeight = 0;
+
+        this.createTable();
     }
 
 
@@ -66,7 +68,6 @@ public class LootTable {
 
             //Returns an int >= 0 and < totalWeight of all items in table
             int randInt = rnd.Next(0, totalWeight);
-            randInt = 4;
 
             foreach (Item i in items) {
 
@@ -86,6 +87,9 @@ public class LootTable {
 
     public List<Item> getList() {
         return items;
+    }
+    public int getTotalWeight() {
+        return totalWeight;
     }
 
 }
