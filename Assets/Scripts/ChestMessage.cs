@@ -34,8 +34,8 @@ public class ChestMessage : MonoBehaviour
 			GameObject g = GameObject.Find("GameController");
 			GameController gc = g.GetComponent<GameController>();
 			LootTable lt = gc.getLootTable();
-			List<Item> items = lt.getList();
-			Item i = lt.pickItem();
+			
+	
 															// Original Code
 			txtItem1.text = "" + lt.pickItem().getName(); // + c.getItem1().getName();
 			txtItem2.text = "" + lt.pickItem().getName(); // + c.getItem2().getName();

@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
         Item i6 = new Item("Speed Potion", 6);
         Item i7 = new Item("Water", 6);
         Item i8 = new Item("Taco", 6);
+        Item i9 = new Item("Purple Lizard", 6);
 
         items.Add(i1);
         items.Add(i2);
@@ -50,6 +51,7 @@ public class GameController : MonoBehaviour
         items.Add(i6);
         items.Add(i7);
         items.Add(i8);
+        items.Add(i9);
     }
 
     
