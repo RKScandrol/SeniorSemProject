@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Item {
     
+    protected int itemID;
     protected String name;
     protected int weight;
     protected int minWeight;
@@ -12,7 +13,8 @@ public class Item {
 
 
 
-    public Item(String name, int weight) {
+    public Item(int itemID, String name, int weight) {
+        this.itemID = itemID;
         this.name = name;
         this.weight = weight;
 
@@ -21,7 +23,9 @@ public class Item {
     }
 
 
-
+    public int getItemID() {
+        return itemID;
+    }
     public String getName() {
         return name;
     }
@@ -51,6 +55,19 @@ public class Item {
         }
         else {
             this.maxWeight = newMaxWeight;
+        }
+    }
+
+    /* 
+        Returns true if the itemID of the given item equals that of the current Item,
+        Returns false otherwise
+    */
+    public bool compareItems(Item i) {
+        if (itemID == i.getItemID()) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 

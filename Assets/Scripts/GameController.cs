@@ -33,15 +33,15 @@ public class GameController : MonoBehaviour
 
 
     private void createItems() {
-        Item i1 = new Item("Fireball", 6);
-        Item i2 = new Item("Health Potion", 6);
-        Item i3 = new Item("Shock", 6);
-        Item i4 = new Item("Water Balloon", 6);
-        Item i5 = new Item("Attack Potion", 6);
-        Item i6 = new Item("Speed Potion", 6);
-        Item i7 = new Item("Water", 6);
-        Item i8 = new Item("Taco", 6);
-        Item i9 = new Item("Purple Lizard", 6);
+        Item i1 = new Item(1, "Fireball", 6);
+        Item i2 = new Item(2, "Health Potion", 6);
+        Item i3 = new Item(3, "Shock", 6);
+        Item i4 = new Item(4, "Water Balloon", 6);
+        Item i5 = new Item(5, "Attack Potion", 6);
+        Item i6 = new Item(6, "Speed Potion", 6);
+        Item i7 = new Item(7, "Water", 6);
+        Item i8 = new Item(8, "Taco", 6);
+        Item i9 = new Item(9, "Purple Lizard", 6);
 
         items.Add(i1);
         items.Add(i2);

@@ -12,6 +12,9 @@ public class ChestMessage : MonoBehaviour
 	public TMP_Text txtItem1;
     public TMP_Text txtItem2;
     public TMP_Text txtItem3;
+	private Item item1;
+	private Item item2;
+	private Item item3;
 
 	// Use this for initialization
 	void Start () {
@@ -35,11 +38,22 @@ public class ChestMessage : MonoBehaviour
 			GameController gc = g.GetComponent<GameController>();
 			LootTable lt = gc.getLootTable();
 			
+
+			item1 = lt.pickItem();	//Get 1st random Item from LootTable
+
+			do {
+				item2 = lt.pickItem();		//Get 2nd random Item from LootTable
+			} while (item2.compareItems(item1));	//If item2 has the same ID as item1, loop back to pick new Item
+
+			do {
+				item3 = lt.pickItem();		//Get 3rd random Item from LootTable
+			} while (item3.compareItems(item1) || item3.compareItems(item2));	//If item3 has the same ID as either item1 or 2, loop back to pick new Item
+			
 	
-															// Original Code
-			txtItem1.text = "" + lt.pickItem().getName(); // + c.getItem1().getName();
-			txtItem2.text = "" + lt.pickItem().getName(); // + c.getItem2().getName();
-			txtItem3.text = "" + lt.pickItem().getName(); // + c.getItem3().getName();
+													// Original Code
+			txtItem1.text = "" + item1.getName(); // + c.getItem1().getName();
+			txtItem2.text = "" + item2.getName(); // + c.getItem2().getName();
+			txtItem3.text = "" + item3.getName(); // + c.getItem3().getName();
 
             
 
@@ -47,6 +61,37 @@ public class ChestMessage : MonoBehaviour
 			Time.timeScale = 0f;
 		} 
 	}
+
+
+	public void chooseItem1() {
+		
+		/*
+			This should take item1 from above and give/apply to the player
+			Need more work on Player first
+		*/
+
+		this.Close();
+	}
+	public void chooseItem2() {
+		
+		/*
+			This should take item2 from above and give/apply to the player
+			Need more work on Player first
+		*/
+
+		this.Close();
+	}
+	public void chooseItem3() {
+		
+		/*
+			This should take item3 from above and give/apply to the player
+			Need more work on Player first
+		*/
+
+		this.Close();
+	}
+
+
 	public void Close(){
 		ui.SetActive (!ui.activeSelf);
 		if (!ui.activeSelf) {
