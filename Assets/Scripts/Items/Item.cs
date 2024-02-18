@@ -3,19 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum ItemType {
+    Buff,
+    Passive,
+    Consumable
+}
+
+
 public class Item {
     
     protected int itemID;
-    protected String name;
+    protected string name;
+    protected string description;
     protected int weight;
     protected int minWeight;
     protected int maxWeight;
+    protected ItemType itemType;
 
 
-
-    public Item(int itemID, String name, int weight) {
+    public Item(int itemID, string name, string description, int weight, int minWeight, int maxWeight) {
         this.itemID = itemID;
         this.name = name;
+        this.description = description;
+        this.weight = weight;
+
+        this.minWeight = minWeight;
+        this.maxWeight = maxWeight;
+    }
+
+    public Item(int itemID, string name, string description, int weight) {
+        this.itemID = itemID;
+        this.name = name;
+        this.description = description;
         this.weight = weight;
 
         this.minWeight = 0;
@@ -26,8 +46,11 @@ public class Item {
     public int getItemID() {
         return itemID;
     }
-    public String getName() {
+    public string getName() {
         return name;
+    }
+    public string getDescription() {
+        return description;
     }
 
     public int getWeight() {

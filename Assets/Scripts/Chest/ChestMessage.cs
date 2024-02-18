@@ -9,9 +9,12 @@ public class ChestMessage : MonoBehaviour
 {
     public GameObject ui;
 	public Chest c;
-	public TMP_Text txtItem1;
-    public TMP_Text txtItem2;
-    public TMP_Text txtItem3;
+	public TMP_Text txtItem1Name;
+	public TMP_Text txtItem1Des;
+    public TMP_Text txtItem2Name;
+	public TMP_Text txtItem2Des;
+    public TMP_Text txtItem3Name;
+	public TMP_Text txtItem3Des;
 	private Item item1;
 	private Item item2;
 	private Item item3;
@@ -51,9 +54,12 @@ public class ChestMessage : MonoBehaviour
 			
 	
 													// Original Code
-			txtItem1.text = "" + item1.getName(); // + c.getItem1().getName();
-			txtItem2.text = "" + item2.getName(); // + c.getItem2().getName();
-			txtItem3.text = "" + item3.getName(); // + c.getItem3().getName();
+			txtItem1Name.text = "" + item1.getName(); // + c.getItem1().getName();
+			txtItem1Des.text = "" + item1.getDescription();
+			txtItem2Name.text = "" + item2.getName(); // + c.getItem2().getName();
+			txtItem2Des.text = "" + item2.getDescription();
+			txtItem3Name.text = "" + item3.getName(); // + c.getItem3().getName();
+			txtItem3Des.text = "" + item3.getDescription();
 
             
 
