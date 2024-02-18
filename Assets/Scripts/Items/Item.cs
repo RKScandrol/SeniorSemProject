@@ -81,6 +81,10 @@ public class Item {
         }
     }
 
+    public ItemType getItemType() {
+        return itemType;
+    }
+
     /* 
         Returns true if the itemID of the given item equals that of the current Item,
         Returns false otherwise
