@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -7,17 +10,17 @@ public class GameController : MonoBehaviour
 
 
     LootTable lt;
-    List<Item> items;
+    Item[] items = new Item[5];
 
 
     // Start is called before the first frame update
     void Start()
     {
-        items = new List<Item>();
-        this.createItems();
-
-        lt = new LootTable(items);
-
+        // this.createItems();
+        // this.writeItems();
+        // this.readItems();
+        // lt = new LootTable(items);
+        
         
     }
 
@@ -37,7 +40,7 @@ public class GameController : MonoBehaviour
         //Original Code:
 
         // Item i1 = new Item(1, "Fireball", "Throw a Fireball", 6);
-        // Item i2 = new Item(2, "Health Potion", 6);
+        // Item i2 = new Item(2, "Health Potion", "Heal Yourself", 6);
         // Item i3 = new Item(3, "Shock", "Shock your Enemies", 6);
         // Item i4 = new Item(4, "Water Balloon", "Have Fun!", 6);
         // Item i5 = new Item(5, "Attack Potion", "Just Hit them Harder", 6);
@@ -59,17 +62,69 @@ public class GameController : MonoBehaviour
 
         //Now Using:
 
-        Item hp1 = new HealthPotion(1, "Health Potion", "Increase Health by a Percentage", 10, 0.1);
-        items.Add(hp1);
-        Item ab1 = new AttackBoost(2, "Attck Boost", "Learn How to Hit Harder", 7, 0.15);
-        items.Add(ab1);
-        Item hb1 = new HealthBoost(3, "Health Boost", "Drink this for Increased Life", 5, 0.2);
-        items.Add(hb1);
-        Item db1 = new DefenseBoost(4, "Defense Boost", "Toughen Up", 8, 0.2);
-        items.Add(db1);
-        Item s1 = new Shock(5, "Shock", "Shock Your Enemies", 5);
-        items.Add(s1);
+        HealthPotion hp1 = new HealthPotion(1, "Health Potion", "Increase Health by a Percentage", 10, 0.1);
+        items[0] = hp1;
+        AttackBoost ab1 = new AttackBoost(2, "Attck Boost", "Learn How to Hit Harder", 7, 0.15);
+        items[1] = ab1;
+        HealthBoost hb1 = new HealthBoost(3, "Health Boost", "Drink this for Increased Life", 5, 0.2);
+        items[2] = hb1;
+        DefenseBoost db1 = new DefenseBoost(4, "Defense Boost", "Toughen Up", 8, 0.2);
+        items[3] = db1;
+        Shock s1 = new Shock(5, "Shock", "Shock Your Enemies", 5);
+        items[4] = s1;
+    }
+
+
+    private void writeItems() {
+
+        string filename = Application.dataPath + "/items.json";
+
+        
+        string jsonStr = JsonHelper.ToJson(items, true);
+        File.WriteAllText(filename, jsonStr);
+
+        // File.AppendAllText(filename, "[\n");
+
+        // foreach (Item i in items) {
+        //     string j = JsonUtility.ToJson(i);
+            
+        //     File.AppendAllText(filename, j);
+
+        //     if (items.IndexOf(i) != items.Count-1) {
+        //         File.AppendAllText(filename, ",\n");
+        //     }
+        // }
+
+        // File.AppendAllText(filename, "\n]");
+    }
+
+    private void readItems() {
+
+        string filename = Application.dataPath + "/items.json";
+        string[] lines = File.ReadAllLines(filename);
+        string line = "";
+        foreach (string l in lines) {
+            line += l;
+        }
+
+        items = JsonHelper.FromJson<Item>(line);
+
+
+        // foreach (string line in lines) {
+
+        //     if (line.Equals("[") || line.Equals("]")) {
+        //         continue;
+        //     }
+        //     else {
+                
+        //         Item i = JsonUtility.FromJson<Item>(line);
+        //         items.Add(i);
+        //     }
+
+        // }
     }
 
     
 }
+
+

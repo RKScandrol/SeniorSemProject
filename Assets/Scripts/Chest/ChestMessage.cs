@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.IO;
 
 public class ChestMessage : MonoBehaviour
 {
@@ -37,9 +38,18 @@ public class ChestMessage : MonoBehaviour
 			RawImage rawImage = ui.gameObject.GetComponentInChildren<RawImage>();
 			rawImage.color = Color.white;
 
-			GameObject g = GameObject.Find("GameController");
-			GameController gc = g.GetComponent<GameController>();
-			LootTable lt = gc.getLootTable();
+			/*
+				Previously GameController script created and populated LootTable
+			*/
+			// GameObject g = GameObject.Find("GameController");
+			// GameController gc = g.GetComponent<GameController>();
+			// LootTable lt = gc.getLootTable();
+
+			/*
+				LootTable is created and populated only after chest is opened
+			*/
+			string jsonStr = JsonHelper.getJsonString();
+			LootTable lt = new LootTable(JsonHelper.FromJson<Item>(jsonStr));
 			
 
 			item1 = lt.pickItem();	//Get 1st random Item from LootTable
@@ -52,7 +62,7 @@ public class ChestMessage : MonoBehaviour
 				item3 = lt.pickItem();		//Get 3rd random Item from LootTable
 			} while (item3.compareItems(item1) || item3.compareItems(item2));	//If item3 has the same ID as either item1 or 2, loop back to pick new Item
 			
-	
+			HealthPotion hp = new HealthPotion(555, "", "", 5, .5);
 													// Original Code
 			txtItem1Name.text = "" + item1.getName(); // + c.getItem1().getName();
 			txtItem1Des.text = "" + item1.getDescription();
@@ -62,11 +72,21 @@ public class ChestMessage : MonoBehaviour
 			txtItem3Des.text = "" + item3.getDescription();
 
             
-
-
 			Time.timeScale = 0f;
 		} 
 	}
+
+	private string readJsonFile() {
+		string filename = Application.dataPath + "/Scripts/JsonItems/items.json";
+        string[] lines = File.ReadAllLines(filename);
+        string line = "";
+        foreach (string l in lines) {
+            line += l;
+        }
+		return line;
+	}
+
+
 
 
 	public void chooseItem1() {

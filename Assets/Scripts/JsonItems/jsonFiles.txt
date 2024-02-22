@@ -1,0 +1,1 @@
+/Scripts/JsonItems/items.json

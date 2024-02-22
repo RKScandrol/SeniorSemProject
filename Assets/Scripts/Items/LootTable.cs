@@ -6,15 +6,14 @@ using UnityEngine;
 
 public class LootTable {
     
-    public List<Item> items;
+    public Item[] items;
     private int totalWeight;
 
 
     public LootTable () {
-        this.items = new List<Item>();
         this.totalWeight = 0;
     }
-    public LootTable (List<Item> items) {
+    public LootTable (Item[] items) {
         this.items = items;
         this.totalWeight = 0;
 
@@ -24,7 +23,8 @@ public class LootTable {
 
 
     private void createTable() {
-        if (items != null && items.Count > 0) {
+
+        if (items != null && items.Length > 0) {
 
             foreach (Item i in items) {
 
@@ -43,8 +43,8 @@ public class LootTable {
     }
 
     public void addItem(Item i) {
-        items.Add(i);
-        this.addItem(i);
+        items[items.Length] = i;
+        this.updateTable(i);
     }
 
 
@@ -62,7 +62,7 @@ public class LootTable {
 
     public Item pickItem() {
 
-        if (items != null && items.Count > 0) {
+        if (items != null && items.Length > 0) {
 
             System.Random rnd = new System.Random();
 
@@ -85,7 +85,9 @@ public class LootTable {
 
     }
 
-    public List<Item> getList() {
+
+    //For Testing
+    public Item[] getList() {
         return items;
     }
     public int getTotalWeight() {

@@ -10,16 +10,15 @@ public enum ItemType {
     Consumable
 }
 
-
-public class Item {
+[Serializable]public class Item {
     
-    protected int itemID;
-    protected string name;
-    protected string description;
-    protected int weight;
+    [SerializeField]protected int itemID;
+    [SerializeField]protected string name;
+    [SerializeField]protected string description;
+    [SerializeField]protected int weight;
     protected int minWeight;
     protected int maxWeight;
-    protected ItemType itemType;
+    // protected ItemType itemType;
 
 
     public Item(int itemID, string name, string description, int weight, int minWeight, int maxWeight) {
@@ -81,9 +80,9 @@ public class Item {
         }
     }
 
-    public ItemType getItemType() {
-        return itemType;
-    }
+    // public ItemType getItemType() {
+    //     return itemType;
+    // }
 
     /* 
         Returns true if the itemID of the given item equals that of the current Item,
