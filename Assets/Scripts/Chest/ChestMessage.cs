@@ -48,8 +48,7 @@ public class ChestMessage : MonoBehaviour
 			/*
 				LootTable is created and populated only after chest is opened
 			*/
-			string jsonStr = JsonHelper.getJsonString();
-			LootTable lt = new LootTable(JsonHelper.FromJson<Item>(jsonStr));
+			LootTable lt = new LootTable();
 			
 
 			item1 = lt.pickItem();	//Get 1st random Item from LootTable
