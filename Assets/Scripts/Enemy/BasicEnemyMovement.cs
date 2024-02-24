@@ -25,10 +25,10 @@ public class BasicEnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
-        if (distance <= threatRange)
+        if (distance <= threatRange && distance > 1)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-            animator.SetFloat("Horizontal", rb.velocity.x);
+            animator.SetFloat("Horizontal", player.transform.position.x - transform.position.x);
         }
     }
 }
