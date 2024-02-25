@@ -39,4 +39,19 @@ public class ChestOpener : MonoBehaviour
             this.isOpen = true;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Player") {
+
+            Debug.Log("Trigger");
+
+            if (!isOpen) {
+                animator.Play("ChestOpenAnimation");
+
+                popupMessage.Open();
+                this.isOpen = true;
+            }
+        }
+    }
+
 }
