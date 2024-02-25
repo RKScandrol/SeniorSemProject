@@ -10,12 +10,19 @@ public class ChestMessage : MonoBehaviour
 {
     public GameObject ui;
 	public Chest c;
+
 	public TMP_Text txtItem1Name;
 	public TMP_Text txtItem1Des;
+	public RawImage imgItem1;
+
     public TMP_Text txtItem2Name;
 	public TMP_Text txtItem2Des;
+	public RawImage imgItem2;
+
     public TMP_Text txtItem3Name;
 	public TMP_Text txtItem3Des;
+	public RawImage imgItem3;
+
 	private Item item1;
 	private Item item2;
 	private Item item3;
@@ -35,8 +42,8 @@ public class ChestMessage : MonoBehaviour
 
 		if (ui.activeSelf) {
 
-			RawImage rawImage = ui.gameObject.GetComponentInChildren<RawImage>();
-			rawImage.color = Color.white;
+			// RawImage rawImage = ui.gameObject.GetComponentInChildren<RawImage>();
+			// rawImage.color = Color.white;
 
 			/*
 				Previously GameController script created and populated LootTable
@@ -70,6 +77,11 @@ public class ChestMessage : MonoBehaviour
 			txtItem3Name.text = "" + item3.getName(); // + c.getItem3().getName();
 			txtItem3Des.text = "" + item3.getDescription();
 
+
+			
+			imgItem1.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/HealthPotionIcon.png");
+			imgItem2.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/ShockIcon.png");
+			imgItem3.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/DefenseBoostIcon.png");
             
 			Time.timeScale = 0f;
 		} 

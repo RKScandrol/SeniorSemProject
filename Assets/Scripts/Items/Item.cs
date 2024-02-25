@@ -18,6 +18,7 @@ public enum ItemType {
     [SerializeField]protected int weight;
     protected int minWeight;
     protected int maxWeight;
+    [SerializeField]protected Sprite icon;
     // protected ItemType itemType;
 
 
@@ -29,6 +30,8 @@ public enum ItemType {
 
         this.minWeight = minWeight;
         this.maxWeight = maxWeight;
+
+        
     }
 
     public Item(int itemID, string name, string description, int weight) {
