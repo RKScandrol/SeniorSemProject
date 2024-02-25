@@ -42,6 +42,9 @@ public class ChestMessage : MonoBehaviour
 
 		if (ui.activeSelf) {
 
+			/*
+				Previously the RawImages were wimply made white
+			*/
 			// RawImage rawImage = ui.gameObject.GetComponentInChildren<RawImage>();
 			// rawImage.color = Color.white;
 
@@ -83,7 +86,7 @@ public class ChestMessage : MonoBehaviour
 			imgItem2.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/ShockIcon.png");
 			imgItem3.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/DefenseBoostIcon.png");
             
-			Time.timeScale = 0f;
+			// Time.timeScale = 0f;
 		} 
 	}
 
@@ -131,8 +134,11 @@ public class ChestMessage : MonoBehaviour
 
 	public void Close(){
 		ui.SetActive (!ui.activeSelf);
-		if (!ui.activeSelf) {
-			Time.timeScale = 1f;
-		} 
+		// if (!ui.activeSelf) {
+		// 	Time.timeScale = 1f;
+		// } 
+
+		GameObject ch = GameObject.Find("chest");
+        Destroy(ch);
 	}
 }

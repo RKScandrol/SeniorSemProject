@@ -655,10 +655,13 @@ MonoBehaviour:
   c: {fileID: 1093300261}
   txtItem1Name: {fileID: 0}
   txtItem1Des: {fileID: 0}
+  imgItem1: {fileID: 0}
   txtItem2Name: {fileID: 0}
   txtItem2Des: {fileID: 0}
+  imgItem2: {fileID: 0}
   txtItem3Name: {fileID: 0}
   txtItem3Des: {fileID: 0}
+  imgItem3: {fileID: 0}
 --- !u!114 &761174196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1992,10 +1995,13 @@ MonoBehaviour:
   c: {fileID: 0}
   txtItem1Name: {fileID: 508950247}
   txtItem1Des: {fileID: 816586101}
+  imgItem1: {fileID: 1576834796}
   txtItem2Name: {fileID: 1787468954}
   txtItem2Des: {fileID: 402548654}
+  imgItem2: {fileID: 208325563}
   txtItem3Name: {fileID: 922838651}
   txtItem3Des: {fileID: 1558567044}
+  imgItem3: {fileID: 2060190273}
 --- !u!4 &1429835200
 Transform:
   m_ObjectHideFlags: 0
