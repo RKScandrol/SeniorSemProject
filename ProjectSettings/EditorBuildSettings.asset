@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Development/tucker_1.unity
     guid: 63598aac98bc57649acdd41dfbe6b68c
+  - enabled: 1
+    path: Assets/Level/Scenes/Development/MainMenu.unity
+    guid: 85014512374f59a4b9b172800859b223
   m_configObjects: {}
