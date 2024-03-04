@@ -54,4 +54,12 @@ public class ChestOpener : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.tag == "Player") {
+            if (isOpen) {
+                popupMessage.Close();
+            }
+        }
+    }
+
 }
