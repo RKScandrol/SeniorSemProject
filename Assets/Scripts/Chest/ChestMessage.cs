@@ -133,12 +133,15 @@ public class ChestMessage : MonoBehaviour
 
 
 	public void Close(){
-		ui.SetActive (!ui.activeSelf);
-		// if (!ui.activeSelf) {
-		// 	Time.timeScale = 1f;
-		// } 
 
-		GameObject ch = GameObject.Find("chest");
-        Destroy(ch);
+		if (ui.activeSelf) {
+			ui.SetActive (!ui.activeSelf);
+			// if (!ui.activeSelf) {
+			// 	Time.timeScale = 1f;
+			// } 
+
+			GameObject ch = GameObject.Find("chest");
+			Destroy(ch);
+		}
 	}
 }
