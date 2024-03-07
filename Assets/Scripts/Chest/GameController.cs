@@ -62,16 +62,16 @@ public class GameController : MonoBehaviour
 
         //Now Using:
 
-        HealthPotion hp1 = new HealthPotion(1, "Health Potion", "Increase Health by a Percentage", 10, 0.1);
-        items[0] = hp1;
-        AttackBoost ab1 = new AttackBoost(2, "Attck Boost", "Learn How to Hit Harder", 7, 0.15);
-        items[1] = ab1;
-        HealthBoost hb1 = new HealthBoost(3, "Health Boost", "Drink this for Increased Life", 5, 0.2);
-        items[2] = hb1;
-        DefenseBoost db1 = new DefenseBoost(4, "Defense Boost", "Toughen Up", 8, 0.2);
-        items[3] = db1;
-        Shock s1 = new Shock(5, "Shock", "Shock Your Enemies", 5);
-        items[4] = s1;
+        // HealthPotion hp1 = new HealthPotion(1, "Health Potion", "Increase Health by a Percentage", 10, 0.1);
+        // items[0] = hp1;
+        // AttackBoost ab1 = new AttackBoost(2, "Attck Boost", "Learn How to Hit Harder", 7, 0.15);
+        // items[1] = ab1;
+        // HealthBoost hb1 = new HealthBoost(3, "Health Boost", "Drink this for Increased Life", 5, 0.2);
+        // items[2] = hb1;
+        // DefenseBoost db1 = new DefenseBoost(4, "Defense Boost", "Toughen Up", 8, 0.2);
+        // items[3] = db1;
+        // Shock s1 = new Shock(5, "Shock", "Shock Your Enemies", 5);
+        // items[4] = s1;
     }
 
 
