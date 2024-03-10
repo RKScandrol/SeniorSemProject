@@ -32,6 +32,10 @@ using UnityEngine;
 
     }
 
+    public override string getDescription() {
+        return description + "\nAttack Power: " + damage + "\nWait Time: " + timeIncrement + " minutes";
+    }
+
     public double getTimeIncrement() {
         return timeIncrement;
     }

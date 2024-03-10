@@ -26,6 +26,9 @@ using UnityEngine;
     }
 
 
+    public override string getDescription() {
+        return description + "\nHealth Restored: " + (percentRestore*100).ToString("##.#") + "%";
+    }
 
     public double getPercentRestore() {
         return percentRestore;

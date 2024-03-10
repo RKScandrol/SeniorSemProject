@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum ItemType {
+public enum ItemType {      //Neccessary?
     Buff,
     Passive,
     Consumable
@@ -51,9 +51,7 @@ public enum ItemType {
     public string getName() {
         return name;
     }
-    public string getDescription() {
-        return description;
-    }
+    public abstract string getDescription();    //Abstract Function
 
     public int getWeight() {
         return weight;
@@ -101,9 +99,9 @@ public enum ItemType {
     }
 
 
-    public abstract void initializeItem();
-    public abstract void activateItem();
-    public abstract DateTime getActivationTime();
+    public abstract void initializeItem();          //Abstract Function
+    public abstract void activateItem();            //Abstract Function
+    public abstract DateTime getActivationTime();   //Abstract Function
 
 
 

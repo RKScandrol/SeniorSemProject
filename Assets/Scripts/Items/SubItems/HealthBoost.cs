@@ -8,7 +8,8 @@ using UnityEngine;
 
     [SerializeField]private double percentBoost;
     
-    public HealthBoost(int itemID, string name, string description, int weight, int minWeight, int maxWeight, double percentBoost) :
+    public HealthBoost(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
+    double percentBoost) :
     base(itemID, name, description, weight) {
         
         // this.itemType = ItemType.Buff;
@@ -16,7 +17,8 @@ using UnityEngine;
 
     }
 
-    public HealthBoost(int itemID, string name, string description, int weight, double percentBoost) :
+    public HealthBoost(int itemID, string name, string description, int weight, 
+    double percentBoost) :
     base(itemID, name, description, weight) {
 
         // this.itemType = ItemType.Buff;
@@ -24,6 +26,10 @@ using UnityEngine;
 
     }
 
+
+    public override string getDescription() {
+        return description + "\nHealth Boost: " + (percentBoost*100).ToString("##.#") + "%";
+    }
 
     public double getPercentBoost() {
         return percentBoost;

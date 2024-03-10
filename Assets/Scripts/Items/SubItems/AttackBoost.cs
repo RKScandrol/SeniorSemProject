@@ -26,6 +26,10 @@ using UnityEngine;
     }
 
 
+    public override string getDescription() {
+        return description + "\nAttack Boost: " + (percentBoost*100).ToString("##.#") + "%";
+    }
+
     public double getPercentBoost() {
         return percentBoost;
     }
