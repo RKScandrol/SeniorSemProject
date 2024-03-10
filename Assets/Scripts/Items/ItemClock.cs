@@ -23,7 +23,7 @@ public class ItemClock : MonoBehaviour
         items = new List<Item>();
 
         //Testing Purposes
-        // buildTestList();
+        buildTestList();
     }
 
     // Update is called once per frame

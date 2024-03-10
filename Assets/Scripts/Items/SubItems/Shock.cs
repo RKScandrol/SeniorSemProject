@@ -70,6 +70,29 @@ using UnityEngine;
     public override void activateItem() {
         incrementActivationTime();
         Debug.Log("Shock Activated");
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        Vector2 guyPos = GameObject.Find("guy").GetComponent<Transform>().position;
+
+        string closestName = enemies[0].name;
+        float distance = Vector2.Distance(guyPos, enemies[0].GetComponent<Transform>().position);
+
+        for (int i = 1 ; i < enemies.Length ; i++) {
+            float checkDist = Vector2.Distance(guyPos, enemies[i].GetComponent<Transform>().position);
+
+            if (checkDist < distance) {
+                distance = checkDist;
+                closestName = enemies[i].name;
+            }
+        }
+
+        
+        GameObject enemy = GameObject.Find(closestName);
+
+        Animator animator = enemy.GetComponent<Animator>();
+        animator.Play("shocked");
+        
+
     }
 
 
