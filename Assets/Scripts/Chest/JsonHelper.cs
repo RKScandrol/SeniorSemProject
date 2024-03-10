@@ -93,7 +93,15 @@ public class JsonHelper
                 case "DefenseBoosts.json":
                     items = FromJson<DefenseBoost>(jsonStr).Concat(items).ToArray();
                     break;
-        
+
+                case "HealthBoosts.json":
+                    items = FromJson<HealthBoost>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "Shocks.json":
+                    items = FromJson<Shock>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 default:
                     Debug.Log("No Items added for Path: " + path);
                     break;

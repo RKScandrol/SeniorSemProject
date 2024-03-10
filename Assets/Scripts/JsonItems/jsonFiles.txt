@@ -1,3 +1,5 @@
 /Scripts/JsonItems/HealthPotions.json
 /Scripts/JsonItems/AttackBoosts.json
 /Scripts/JsonItems/DefenseBoosts.json
+/Scripts/JsonItems/HealthBoosts.json
+/Scripts/JsonItems/Shocks.json

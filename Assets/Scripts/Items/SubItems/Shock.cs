@@ -8,26 +8,27 @@ using UnityEngine;
 
     double timeIncrement;  //In Minutes
     DateTime activationTime;
+    int damage;
 
 
     public Shock(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
-    double timeIncrement, DateTime activationTime) :
+    double timeIncrement, DateTime activationTime, int damage) :
     base(itemID, name, description, weight) {
         
         // this.itemType = ItemType.Passive;
         this.timeIncrement = timeIncrement;
         this.activationTime = activationTime;
+        this.damage = damage;
     
-
     }
 
     public Shock(int itemID, string name, string description, int weight, 
-    double timeIncrement) :
+    double timeIncrement, int damage) :
     base(itemID, name, description, weight) {
 
         // this.itemType = ItemType.Passive;
         this.timeIncrement = timeIncrement;
-        
+        this.damage = damage;
 
     }
 

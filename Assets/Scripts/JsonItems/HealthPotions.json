@@ -5,14 +5,14 @@
             "name": "Health Potion",
             "description": "Increase Health by a Percentage",
             "weight": 10,
-            "percentRestore": 0.50
+            "percentRestore": 0.10
         },
         {
             "itemID": 102,
             "name": "Health Potion",
             "description": "Increase Health by a Percentage",
             "weight": 8,
-            "percentRestore": 0.40
+            "percentRestore": 0.20
         },
         {
             "itemID": 103,
@@ -26,14 +26,14 @@
             "name": "Health Potion",
             "description": "Increase Health by a Percentage",
             "weight": 4,
-            "percentRestore": 0.20
+            "percentRestore": 0.40
         },
         {
             "itemID": 105,
             "name": "Health Potion",
             "description": "Increase Health by a Percentage",
             "weight": 2,
-            "percentRestore": 0.10
+            "percentRestore": 0.50
         }
     ]
 }
