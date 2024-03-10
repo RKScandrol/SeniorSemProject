@@ -35,7 +35,7 @@ using UnityEngine;
 
 
     public override void initializeItem() {
-
+        Debug.Log("Attack Boost " + itemID + " initialized");
     }
 
     public override void activateItem() {

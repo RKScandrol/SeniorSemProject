@@ -36,7 +36,7 @@ using UnityEngine;
 
 
     public override void initializeItem() {
-
+        Debug.Log("Health Potion " + itemID + " initialized");
     }
 
     public override void activateItem() {

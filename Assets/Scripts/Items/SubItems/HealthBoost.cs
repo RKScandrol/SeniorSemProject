@@ -34,7 +34,7 @@ using UnityEngine;
 
 
     public override void initializeItem() {
-
+        Debug.Log("Health Boost " + itemID + " initialized");
     }
 
     public override void activateItem() {

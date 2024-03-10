@@ -71,13 +71,13 @@ public class ChestMessage : MonoBehaviour
 				item3 = lt.pickItem();		//Get 3rd random Item from LootTable
 			} while (item3.compareItems(item1) || item3.compareItems(item2));	//If item3 has the same ID as either item1 or 2, loop back to pick new Item
 			
-			HealthPotion hp = new HealthPotion(555, "", "", 5, .5);
-													// Original Code
-			txtItem1Name.text = "" + item1.getName(); // + c.getItem1().getName();
+			item1 = new Shock(999, "Shock", "Shocking", 1, 1, 1);	//For testing purposes
+			
+			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();
-			txtItem2Name.text = "" + item2.getName(); // + c.getItem2().getName();
+			txtItem2Name.text = "" + item2.getName(); 
 			txtItem2Des.text = "" + item2.getDescription();
-			txtItem3Name.text = "" + item3.getName(); // + c.getItem3().getName();
+			txtItem3Name.text = "" + item3.getName(); 
 			txtItem3Des.text = "" + item3.getDescription();
 
 
@@ -109,6 +109,7 @@ public class ChestMessage : MonoBehaviour
 			This should take item1 from above and give/apply to the player
 			Need more work on Player first
 		*/
+		item1.initializeItem();
 
 		this.Close();
 	}
@@ -118,6 +119,7 @@ public class ChestMessage : MonoBehaviour
 			This should take item2 from above and give/apply to the player
 			Need more work on Player first
 		*/
+		item2.initializeItem();
 
 		this.Close();
 	}
@@ -127,6 +129,7 @@ public class ChestMessage : MonoBehaviour
 			This should take item3 from above and give/apply to the player
 			Need more work on Player first
 		*/
+		item3.initializeItem();
 
 		this.Close();
 	}

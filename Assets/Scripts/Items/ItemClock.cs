@@ -17,13 +17,13 @@ public class ItemClock : MonoBehaviour
         nowTime = DateTime.Now;
         Debug.Log("NowTime: " + nowTime.ToString());
         checkTime = nowTime.AddMinutes(1);
-        Debug.Log("CheckTIme: " + checkTime.ToString());
+        // Debug.Log("CheckTIme: " + checkTime.ToString());
 
 
         items = new List<Item>();
 
         //Testing Purposes
-        buildTestList();
+        // buildTestList();
     }
 
     // Update is called once per frame
@@ -97,7 +97,8 @@ public class ItemClock : MonoBehaviour
 
 
     public void addItem(Item i) {
-        // items.Add(i);
+        items.Add(i);
+        Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list");
     }
 
 

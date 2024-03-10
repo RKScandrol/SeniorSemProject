@@ -49,10 +49,17 @@ using UnityEngine;
 
     public override void initializeItem() {
         setActivationTime(DateTime.Now.AddMinutes(timeIncrement));
+        Debug.Log("Shock " + itemID + " initialized");
+
+        GameObject gameClock = GameObject.Find("Clock");
+        ItemClock itemClock = gameClock.GetComponent<ItemClock>();
+
+        itemClock.addItem(this);
     }
 
     public override void activateItem() {
         incrementActivationTime();
+        Debug.Log("Shock Activated");
     }
 
 
