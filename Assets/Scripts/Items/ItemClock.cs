@@ -8,7 +8,9 @@ public class ItemClock : MonoBehaviour
 
     private DateTime nowTime;
     private DateTime checkTime;
-    List<Shock> items;                                  //Will Have to be changed
+    List<Item> items;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +20,10 @@ public class ItemClock : MonoBehaviour
         Debug.Log("CheckTIme: " + checkTime.ToString());
 
 
-        items = new List<Shock>();
+        items = new List<Item>();
 
         //Testing Purposes
-        Shock s1 = new Shock(999, "Shock", "Shocking", 5, 1);
-        s1.setActivationTime(nowTime);
-        items.Add(s1);
-
-        Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2);
-        s2.setActivationTime(nowTime);
-        items.Add(s2);
+        buildTestList();
     }
 
     // Update is called once per frame
@@ -37,10 +33,23 @@ public class ItemClock : MonoBehaviour
         itemsTimeCompare();
     }
 
+
+    //For Testing Purposes
     private void timeCompareTest() {
 
-        DateTime d1 = new DateTime(nowTime.Year, nowTime.Month, nowTime.Day, nowTime.Hour, nowTime.Minute, nowTime.Second);
-        DateTime d2 = new DateTime(checkTime.Year, checkTime.Month, checkTime.Day, checkTime.Hour, checkTime.Minute, checkTime.Second);
+        DateTime d1 = new DateTime(nowTime.Year, 
+                                    nowTime.Month, 
+                                    nowTime.Day, 
+                                    nowTime.Hour, 
+                                    nowTime.Minute, 
+                                    nowTime.Second);
+
+        DateTime d2 = new DateTime(checkTime.Year, 
+                                    checkTime.Month, 
+                                    checkTime.Day, 
+                                    checkTime.Hour, 
+                                    checkTime.Minute, 
+                                    checkTime.Second);
         // Debug.Log("d1:" + d1.ToString());
         // Debug.Log("d2: " + d2.ToString());
 
@@ -59,15 +68,26 @@ public class ItemClock : MonoBehaviour
 
     private void itemsTimeCompare() {
 
-        foreach (Shock i in items) {
-            DateTime aTime = i.getActivationTime();
+        foreach (Item i in items) {
+            DateTime activationTime = i.getActivationTime();
 
-            DateTime d1 = new DateTime(nowTime.Year, nowTime.Month, nowTime.Day, nowTime.Hour, nowTime.Minute, nowTime.Second);
-            DateTime d2 = new DateTime(aTime.Year, aTime.Month, aTime.Day, aTime.Hour, aTime.Minute, aTime.Second);
+            DateTime d1 = new DateTime(nowTime.Year, 
+                                        nowTime.Month, 
+                                        nowTime.Day, 
+                                        nowTime.Hour, 
+                                        nowTime.Minute, 
+                                        nowTime.Second);
+
+            DateTime d2 = new DateTime(activationTime.Year, 
+                                        activationTime.Month, 
+                                        activationTime.Day, 
+                                        activationTime.Hour, 
+                                        activationTime.Minute, 
+                                        activationTime.Second);
 
             if (d2.CompareTo(d1) == 0) {
                 Debug.Log("Activating Shock ID: " + i.getItemID());
-                i.incrementActivationTime();
+                i.activateItem();
             }
         }
 
@@ -78,5 +98,17 @@ public class ItemClock : MonoBehaviour
 
     public void addItem(Item i) {
         // items.Add(i);
+    }
+
+
+    //For Testing Purposes
+    private void buildTestList() {
+        Shock s1 = new Shock(999, "Shock", "Shocking", 5, 1);
+        items.Add(s1);
+        s1.initializeItem();
+
+        Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2);
+        items.Add(s2);
+        s2.initializeItem();
     }
 }

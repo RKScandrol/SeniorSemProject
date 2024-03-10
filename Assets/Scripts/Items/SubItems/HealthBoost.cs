@@ -28,5 +28,17 @@ using UnityEngine;
     public double getPercentBoost() {
         return percentBoost;
     }
+    public override DateTime getActivationTime() {
+        return new DateTime(1, 1, 1, 1, 1, 1);
+    }
+
+
+    public override void initializeItem() {
+
+    }
+
+    public override void activateItem() {
+
+    }
 
 }

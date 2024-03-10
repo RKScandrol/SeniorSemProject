@@ -10,7 +10,7 @@ public enum ItemType {
     Consumable
 }
 
-[Serializable]public class Item {
+[Serializable]public abstract class Item {
     
     [SerializeField]protected int itemID;
     [SerializeField]protected string name;
@@ -99,5 +99,12 @@ public enum ItemType {
             return false;
         }
     }
+
+
+    public abstract void initializeItem();
+    public abstract void activateItem();
+    public abstract DateTime getActivationTime();
+
+
 
 }

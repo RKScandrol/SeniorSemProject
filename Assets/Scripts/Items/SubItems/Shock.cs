@@ -6,19 +6,23 @@ using UnityEngine;
 [Serializable]public class Shock : Item
 {
 
-    int timeIncrement;  //In Minutes
+    double timeIncrement;  //In Minutes
     DateTime activationTime;
 
 
-    public Shock(int itemID, string name, string description, int weight, int minWeight, int maxWeight) :
+    public Shock(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
+    double timeIncrement, DateTime activationTime) :
     base(itemID, name, description, weight) {
         
         // this.itemType = ItemType.Passive;
+        this.timeIncrement = timeIncrement;
+        this.activationTime = activationTime;
     
 
     }
 
-    public Shock(int itemID, string name, string description, int weight, int timeIncrement) :
+    public Shock(int itemID, string name, string description, int weight, 
+    double timeIncrement) :
     base(itemID, name, description, weight) {
 
         // this.itemType = ItemType.Passive;
@@ -27,11 +31,11 @@ using UnityEngine;
 
     }
 
-    public int getTimeIncrement() {
+    public double getTimeIncrement() {
         return timeIncrement;
     }
 
-    public DateTime getActivationTime() {
+    public override DateTime getActivationTime() {
         return activationTime;
     }
     public void setActivationTime(DateTime activationTime) {
@@ -39,6 +43,15 @@ using UnityEngine;
     }
     public void incrementActivationTime() {
         activationTime = activationTime.AddMinutes(timeIncrement);
+    }
+
+
+    public override void initializeItem() {
+        setActivationTime(DateTime.Now.AddMinutes(timeIncrement));
+    }
+
+    public override void activateItem() {
+        incrementActivationTime();
     }
 
 
