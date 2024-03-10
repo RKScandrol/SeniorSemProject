@@ -9,6 +9,7 @@ using UnityEngine;
     [SerializeField]private double percentBoost;
 
 
+
     public DefenseBoost(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
     double percentBoost) :
     base(itemID, name, description, weight) {
@@ -27,6 +28,10 @@ using UnityEngine;
 
     }
 
+
+    public override string getIconPath() {
+        return "Assets/Graphics/ItemIcons/DefenseBoostIcon.png";
+    }
 
     public override string getDescription() {
         return description + "\nDefense Boost: " + (percentBoost*100).ToString("##.#") + "%";

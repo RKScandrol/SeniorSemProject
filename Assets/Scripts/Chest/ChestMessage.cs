@@ -82,9 +82,9 @@ public class ChestMessage : MonoBehaviour
 
 
 			
-			imgItem1.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/HealthPotionIcon.png");
-			imgItem2.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/ShockIcon.png");
-			imgItem3.texture = IMG2Sprite.LoadTexture("Assets/Graphics/ItemIcons/DefenseBoostIcon.png");
+			imgItem1.texture = IMG2Sprite.LoadTexture(item1.getIconPath());
+			imgItem2.texture = IMG2Sprite.LoadTexture(item2.getIconPath());
+			imgItem3.texture = IMG2Sprite.LoadTexture(item3.getIconPath());
             
 			// Time.timeScale = 0f;
 		} 

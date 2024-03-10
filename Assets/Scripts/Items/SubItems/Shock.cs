@@ -11,6 +11,7 @@ using UnityEngine;
     int damage;
 
 
+
     public Shock(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
     double timeIncrement, DateTime activationTime, int damage) :
     base(itemID, name, description, weight) {
@@ -30,6 +31,11 @@ using UnityEngine;
         this.timeIncrement = timeIncrement;
         this.damage = damage;
 
+    }
+
+
+    public override string getIconPath() {
+        return "Assets/Graphics/ItemIcons/ShockIcon.png";
     }
 
     public override string getDescription() {

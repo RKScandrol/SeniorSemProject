@@ -10,7 +10,8 @@ using UnityEngine;
     // private int restored;        //for a flat amount
    
     
-    public HealthPotion(int itemID, string name, string description, int weight, int minWeight, int maxWeight, double percentRestore) : 
+    public HealthPotion(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
+    double percentRestore) : 
     base(itemID, name, description, weight, minWeight, maxWeight) {
         
         // itemType = ItemType.Consumable;
@@ -18,13 +19,19 @@ using UnityEngine;
         
     }
     
-    public HealthPotion(int itemID, string name, string description, int weight, double percentRestore) : 
+    public HealthPotion(int itemID, string name, string description, int weight, 
+    double percentRestore) : 
     base(itemID, name, description, weight) {
         
         // itemType = ItemType.Consumable;
         this.percentRestore = percentRestore;
+
     }
 
+
+    public override string getIconPath() {
+        return "Assets/Graphics/ItemIcons/HealthPotionIcon.png";
+    }
 
     public override string getDescription() {
         return description + "\nHealth Restored: " + (percentRestore*100).ToString("##.#") + "%";

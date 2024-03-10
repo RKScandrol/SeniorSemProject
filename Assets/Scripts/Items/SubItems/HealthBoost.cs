@@ -7,6 +7,7 @@ using UnityEngine;
 {
 
     [SerializeField]private double percentBoost;
+
     
     public HealthBoost(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
     double percentBoost) :
@@ -26,6 +27,10 @@ using UnityEngine;
 
     }
 
+
+    public override string getIconPath() {
+        return "Assets/Graphics/ItemIcons/HealthBoostIcon.png";
+    }
 
     public override string getDescription() {
         return description + "\nHealth Boost: " + (percentBoost*100).ToString("##.#") + "%";

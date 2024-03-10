@@ -9,7 +9,8 @@ using UnityEngine;
     [SerializeField]private double percentBoost;
 
 
-    public AttackBoost(int itemID, string name, string description, int weight, int minWeight, int maxWeight, double percentBoost) :
+    public AttackBoost(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
+    double percentBoost) :
     base(itemID, name, description, weight) {
         
         // this.itemType = ItemType.Buff;
@@ -17,7 +18,8 @@ using UnityEngine;
 
     }
 
-    public AttackBoost(int itemID, string name, string description, int weight, double percentBoost) :
+    public AttackBoost(int itemID, string name, string description, int weight, 
+    double percentBoost) :
     base(itemID, name, description, weight) {
 
         // this.itemType = ItemType.Buff;
@@ -25,6 +27,10 @@ using UnityEngine;
 
     }
 
+
+    public override string getIconPath() {
+        return "Assets/Graphics/ItemIcons/AttackBoostIcon.png";
+    }
 
     public override string getDescription() {
         return description + "\nAttack Boost: " + (percentBoost*100).ToString("##.#") + "%";
