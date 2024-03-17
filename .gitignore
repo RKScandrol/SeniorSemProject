@@ -76,3 +76,7 @@ crashlytics-build.properties
 
 # Git History
 .history/
+
+# Astar Pathfinding folders
+Assets/AstarPathfindingProject.meta
+Assets/AstarPathfindingProject/
