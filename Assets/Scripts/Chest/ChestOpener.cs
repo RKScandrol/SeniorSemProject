@@ -14,44 +14,48 @@ public class ChestOpener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isOpen = false;
         gameController = GameObject.Find("GameController");
-		popupMessage = gameController.GetComponent<ChestMessage> ();
+        popupMessage = gameController.GetComponent<ChestMessage>();
+        isOpen = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isOpen) {
-
-        }
-        if (!isOpen) {
-            
-        }
+        
     }
 
-    void OnMouseUp() {
-        if (!isOpen){
+    // void OnMouseUp() {
+    //     if (!isOpen){
+
+    //         animator.Play("ChestOpenAnimation");
+
+    //         popupMessage.Open();
+    //         this.isOpen = true;
+    //     }
+    // }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Player" && !isOpen) {
+
+            // Debug.Log(isOpen);
+            this.isOpen = true;
+            // Debug.Log(isOpen);
 
             animator.Play("ChestOpenAnimation");
 
             popupMessage.Open();
-            this.isOpen = true;
+            
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
-
-            Debug.Log("Trigger");
-
-            if (!isOpen) {
-                animator.Play("ChestOpenAnimation");
-
-                popupMessage.Open();
-                this.isOpen = true;
-            }
-        }
-    }
+    // private void OnTriggerExit2D(Collider2D other) {
+    //     if (other.tag == "Player" && isOpen) {
+            
+    //         // Debug.Log(isOpen);
+    //         popupMessage.Close();
+            
+    //     }
+    // }
 
 }

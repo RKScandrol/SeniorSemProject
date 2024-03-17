@@ -13,8 +13,8 @@ public class LootTable {
     public LootTable () {
         this.totalWeight = 0;
 
-        string jsonStr = JsonHelper.getJsonString();
-        items = JsonHelper.FromJson<Item>(jsonStr);
+        // string jsonStr = JsonHelper.getJsonString();
+        items = JsonHelper.getLootTable();
 
         this.createTable();
     }
