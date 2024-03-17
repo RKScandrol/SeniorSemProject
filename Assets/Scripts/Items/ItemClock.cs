@@ -97,19 +97,32 @@ public class ItemClock : MonoBehaviour
 
 
     public void addItem(Item i) {
-        items.Add(i);
-        Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list");
+
+        bool newItem = true;
+
+        foreach (Item item in items) {
+            Type t = item.GetType();
+            if (i.GetType() == item.GetType()) {
+                newItem = false;
+                item.intensify();
+                break;
+            }
+        }
+
+        if (newItem) {
+            items.Add(i);
+            Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list\n" + 
+                        "Item Type: " + i.GetType());
+        }
     }
 
 
     //For Testing Purposes
     private void buildTestList() {
         Shock s1 = new Shock(999, "Shock", "Shocking", 5, 1, 20);
-        items.Add(s1);
         s1.initializeItem();
 
         Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2, 40);
-        items.Add(s2);
         s2.initializeItem();
     }
 }

@@ -103,6 +103,7 @@ public enum ItemType {      //Neccessary?
     public abstract void activateItem();            //Abstract Function
     public abstract DateTime getActivationTime();   //Abstract Function
     public abstract string getIconPath();           //Abstract Function
+    public abstract void intensify();
 
 
 

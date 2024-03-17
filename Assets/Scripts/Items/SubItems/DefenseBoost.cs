@@ -40,17 +40,24 @@ using UnityEngine;
     public double getPercentBoost() {
         return percentBoost;
     }
-    public override DateTime getActivationTime() {
-        return new DateTime(1, 1, 1, 1, 1, 1);
-    }
+    
 
 
     public override void initializeItem() {
         Debug.Log("Defense Boost " + itemID + " initialized");
     }
 
+    //Should not be used
     public override void activateItem() {
 
+    }
+    //Should not be used
+    public override void intensify() {
+        
+    }
+    //Should not be used
+    public override DateTime getActivationTime() {
+        return new DateTime(1, 1, 1, 1, 1, 1);
     }
 
 }

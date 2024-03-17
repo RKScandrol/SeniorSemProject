@@ -43,7 +43,7 @@ public class ChestMessage : MonoBehaviour
 		if (ui.activeSelf) {
 
 			/*
-				Previously the RawImages were wimply made white
+				Previously the RawImages were simply made white
 			*/
 			// RawImage rawImage = ui.gameObject.GetComponentInChildren<RawImage>();
 			// rawImage.color = Color.white;

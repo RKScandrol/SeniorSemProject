@@ -40,17 +40,24 @@ using UnityEngine;
     public double getPercentRestore() {
         return percentRestore;
     }
-    public override DateTime getActivationTime() {
-        return new DateTime(1, 1, 1, 1, 1, 1);
-    }
+    
 
 
     public override void initializeItem() {
         Debug.Log("Health Potion " + itemID + " initialized");
     }
 
+    //Should not be used
     public override void activateItem() {
 
+    }
+    //Should not be used
+    public override void intensify() {
+        
+    }
+    //Should not be used
+    public override DateTime getActivationTime() {
+        return new DateTime(1, 1, 1, 1, 1, 1);
     }
 
 }
