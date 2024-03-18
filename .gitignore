@@ -77,6 +77,9 @@ crashlytics-build.properties
 # Git History
 .history/
 
+# Crash .blob extentions in Unity
+*.blob
+
 # Astar Pathfinding folders
 Assets/AstarPathfindingProject.meta
 Assets/AstarPathfindingProject/
