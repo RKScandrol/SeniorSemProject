@@ -5850,6 +5850,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: guy
       objectReference: {fileID: 0}
+    - target: {fileID: 8426809442863606006, guid: bf5ea4ed985882249bebdd46cce2c608, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 1403107844}
+    - target: {fileID: 8426809442863606006, guid: bf5ea4ed985882249bebdd46cce2c608, type: 3}
+      propertyPath: attackRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426809442863606006, guid: bf5ea4ed985882249bebdd46cce2c608, type: 3}
+      propertyPath: knockbackForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426809442863606006, guid: bf5ea4ed985882249bebdd46cce2c608, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9377,6 +9393,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: hot_dolla
       objectReference: {fileID: 0}
+    - target: {fileID: 107280279851060749, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412162178820484633, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2718534642720393124, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
       propertyPath: target
       value: 
@@ -9421,6 +9445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9191207703795580124, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9437,6 +9465,18 @@ PrefabInstance:
     - target: {fileID: 1757731138819862722, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: m_Name
       value: flyball
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757731138819862722, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201363047695646152, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246989828798072635, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4737522099777263595, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: target
@@ -9499,6 +9539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mouth
       objectReference: {fileID: 0}
+    - target: {fileID: 1346785054547198970, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2072087490696941150, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.473503
@@ -9539,10 +9583,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4126400420048998373, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7730970202701912389, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1403107844}
+    - target: {fileID: 8656607553636757605, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
