@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange;
     public float knockbackForce;
     Rigidbody2D player;
+    public int attackDamage;
     public LayerMask enemyLayer;
     
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class PlayerCombat : MonoBehaviour
         {
             Vector2 direction = (enemy.transform.position - attackPoint.transform.position).normalized;
             enemy.attachedRigidbody.AddForce(direction * knockbackForce);
+            enemy.gameObject.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
         }
     }
 }
