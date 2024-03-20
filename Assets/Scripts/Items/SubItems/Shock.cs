@@ -6,9 +6,9 @@ using UnityEngine;
 [Serializable]public class Shock : Item
 {
 
-    double timeIncrement;  //In Minutes
-    DateTime activationTime;
-    int damage;
+    [SerializeField]private double timeIncrement;  //In Minutes
+    private DateTime activationTime;
+    [SerializeField]private int damage;
 
 
 
