@@ -31,4 +31,8 @@ public class PlayerCombat : MonoBehaviour
             enemy.gameObject.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
         }
     }
+
+    void OnDrawGizmosSelected() {
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
 }
