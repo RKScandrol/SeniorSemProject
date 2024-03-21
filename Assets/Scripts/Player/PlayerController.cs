@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     //Trying to (mostly) handle animations in code, let's see how it goes!
     public Animator animator;
 
+    //Point of reference for attack
+    public Transform attackPoint;
+
     
     // Start is called before the first frame update
     void Start()
@@ -43,20 +46,24 @@ public class Player : MonoBehaviour
 
         rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 5, vertical * moveSpeed * Time.fixedDeltaTime * 5);
         
-        //Plays walk animation based on direction
+        //Plays walk animation and updates attack point based on direction
         if (rb.velocity.y > 0)
         {
+            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y + 0.3f);
             animator.Play("guy_walk_U");
         }
         else if (rb.velocity.y < 0 && rb.velocity.x == 0) {
+            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y - 0.3f);
             animator.Play("guy_walk_D");
         }
         else if (rb.velocity.x < 0)
         {
+            attackPoint.position = new Vector2(rb.transform.position.x - 0.5f, rb.position.y);
             animator.Play("guy_walk_L");
         }
         else if (rb.velocity.x > 0)
         {
+            attackPoint.position = new Vector2(rb.transform.position.x + 0.5f, rb.position.y);
             animator.Play("guy_walk_R");
         }
     }
