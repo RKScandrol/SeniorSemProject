@@ -12,6 +12,7 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage;
     public LayerMask enemyLayer;
     private bool isAttacking = false;
+    public float attackDuration;
     
     // Update is called once per frame
     void Update()
@@ -38,7 +39,7 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator freezeMovement() {
         isAttacking = true;
         player.constraints = RigidbodyConstraints2D.FreezeAll;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(attackDuration);
         isAttacking = false;
         player.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
