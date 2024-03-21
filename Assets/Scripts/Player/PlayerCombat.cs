@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Transform attackPoint;
-    [SerializeField]
     public float attackRange;
     public float knockbackForce;
     public Rigidbody2D player;
