@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2808745644236101195}
   m_Layer: 0
   m_Name: mouth
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 400
   nextWaypointDistance: 3
+  updateInterval: 0.5
 --- !u!114 &2808745644236101195
 MonoBehaviour:
   m_ObjectHideFlags: 0
