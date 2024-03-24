@@ -15,12 +15,18 @@ public class EnemyAttributes : MonoBehaviour
     [SerializeField]
     private int baseHealth, baseAttack, baseDefense;
 
+
+    private XRayStats xray;
+
     // Start is called before the first frame update
     void Start()
     {
         health = baseHealth;
         attack = baseAttack;
         defense = baseDefense;
+
+        xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
+        xray.initializeXRayStats();
         
         Debug.Log(this.debugStats());   //For TestingPurposes
     }
@@ -78,12 +84,18 @@ public class EnemyAttributes : MonoBehaviour
     public void restoreBaseStats() {
         attack = baseAttack;
         defense = baseDefense;
+
+        xray.setText();
     }
     public void restoreBaseAttack() {
         attack = baseAttack;
+
+        xray.setText();
     }
     public void restoreBaseDefense() {
         defense = baseDefense;
+
+        xray.setText();
     }
 
     /*
@@ -134,10 +146,12 @@ public class EnemyAttributes : MonoBehaviour
 
         if (attack - decrease <= 0) {
             attack = 1;
+            xray.setText();
             return attack;
         }
         else {
             attack -= decrease;
+            xray.setText();
             return attack;
         }
     }
@@ -151,6 +165,7 @@ public class EnemyAttributes : MonoBehaviour
         int increase = (int)Math.Floor(percent * (double)attack);
 
         attack += increase;
+        xray.setText();
         return attack;
     }
 
@@ -164,10 +179,12 @@ public class EnemyAttributes : MonoBehaviour
 
         if (defense - decrease <= 0) {
             defense = 1;
+            xray.setText();
             return defense;
         }
         else {
             defense -= decrease;
+            xray.setText();
             return defense;
         }
     }
@@ -181,6 +198,7 @@ public class EnemyAttributes : MonoBehaviour
         int increase = (int)Math.Floor(percent * (double)defense);
 
         defense += increase;
+        xray.setText();
         return defense;
     }
 

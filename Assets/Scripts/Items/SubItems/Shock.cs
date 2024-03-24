@@ -6,9 +6,9 @@ using UnityEngine;
 [Serializable]public class Shock : Item
 {
 
-    double timeIncrement;  //In Minutes
-    DateTime activationTime;
-    int damage;
+    [SerializeField]private double timeIncrement;  //In Minutes
+    private DateTime activationTime;
+    [SerializeField]private int damage;
 
 
 
@@ -104,9 +104,13 @@ using UnityEngine;
 
         //Closest Enemy
         GameObject closestEnemy = enemies[closestEnemyIdx];
-        //Play Shock animation for Enemy, NOTICE: Shock animation only exists for goblin at the moment
-        Animator animator = closestEnemy.GetComponent<Animator>();
-        animator.Play("shocked");
+        //Play Shock animation for Enemy
+        SpriteRenderer spriteRenderer = closestEnemy.transform.Find("Shock").GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = true;
+        Animator animator = closestEnemy.transform.Find("Shock").GetComponent<Animator>();
+        animator.Play("ShockAnimation");
+        
+        
         //Deal damage to the Enemy
         EnemyAttributes enemyAttributes = closestEnemy.GetComponent<EnemyAttributes>();
         enemyAttributes.takeDamage(damage);

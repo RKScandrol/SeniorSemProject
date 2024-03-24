@@ -9,6 +9,7 @@ public class ItemClock : MonoBehaviour
     private DateTime nowTime;
     private DateTime checkTime;
     List<Item> items;
+    List<Item> itemToRemove;
 
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class ItemClock : MonoBehaviour
 
 
         items = new List<Item>();
+        itemToRemove = new List<Item>();
 
         //Testing Purposes
         buildTestList();
@@ -31,6 +33,7 @@ public class ItemClock : MonoBehaviour
     {
         nowTime = DateTime.Now;
         itemsTimeCompare();
+        removeItems();
     }
 
 
@@ -114,6 +117,18 @@ public class ItemClock : MonoBehaviour
             Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list\n" + 
                         "Item Type: " + i.GetType());
         }
+    }
+
+    public void addItemToRemove(Item i) {
+        itemToRemove.Add(i);
+    }
+
+    private void removeItems() {
+
+        foreach (Item remove in itemToRemove) {
+            items.Remove(remove);
+        }
+
     }
 
 

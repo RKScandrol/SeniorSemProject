@@ -102,6 +102,14 @@ public class JsonHelper
                     items = FromJson<Shock>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "TimeWeaknesses.json":
+                    items = FromJson<TimeWeakness>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "XRay.json":
+                    items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 default:
                     Debug.Log("No Items added for Path: " + path);
                     break;

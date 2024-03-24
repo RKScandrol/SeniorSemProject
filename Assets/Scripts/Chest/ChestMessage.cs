@@ -71,7 +71,7 @@ public class ChestMessage : MonoBehaviour
 				item3 = lt.pickItem();		//Get 3rd random Item from LootTable
 			} while (item3.compareItems(item1) || item3.compareItems(item2));	//If item3 has the same ID as either item1 or 2, loop back to pick new Item
 			
-			item1 = new Shock(999, "Shock", "Shocking", 1, 1, 1);	//For testing purposes
+			// item1 = new Shock(999, "Shock", "Shocking", 1, 1, 1);	//For testing purposes
 			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();
