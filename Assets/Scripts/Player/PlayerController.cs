@@ -38,11 +38,11 @@ public class Player : MonoBehaviour
        //Plays walk animation and updates attack point based on direction
         if (rb.velocity.y > 0.1)
         {
-            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y + 0.3f);
+            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y + 0.5f);
             animator.Play("player_walk_U");
         }
         else if (rb.velocity.y < -0.1 && rb.velocity.x == 0) {
-            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y - 0.3f);
+            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y - 0.5f);
             animator.Play("player_walk_D");
         }
         else if (rb.velocity.x < -0.1)

@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class EnemyAttributes : MonoBehaviour
 {
-    private int health;
-    private int attack;
-    private int defense;
+    public int health;
+    public int attack;
+    public int defense;
     
     [SerializeField]
     GameObject enemy;
