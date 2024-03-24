@@ -86,7 +86,7 @@ public class ChestMessage : MonoBehaviour
 			imgItem2.texture = IMG2Sprite.LoadTexture(item2.getIconPath());
 			imgItem3.texture = IMG2Sprite.LoadTexture(item3.getIconPath());
             
-			// Time.timeScale = 0f;
+			Time.timeScale = 0f;
 		} 
 	}
 
@@ -139,9 +139,9 @@ public class ChestMessage : MonoBehaviour
 
 		if (ui.activeSelf) {
 			ui.SetActive (!ui.activeSelf);
-			// if (!ui.activeSelf) {
-			// 	Time.timeScale = 1f;
-			// } 
+			if (!ui.activeSelf) {
+				Time.timeScale = 1f;
+			} 
 
 			GameObject ch = GameObject.Find("Chest");
 			Destroy(ch);
