@@ -143,7 +143,7 @@ public class ChestMessage : MonoBehaviour
 			// 	Time.timeScale = 1f;
 			// } 
 
-			GameObject ch = GameObject.Find("chest");
+			GameObject ch = GameObject.Find("Chest");
 			Destroy(ch);
 		}
 	}
