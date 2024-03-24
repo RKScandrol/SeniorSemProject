@@ -4,3 +4,4 @@
 /Scripts/JsonItems/HealthBoosts.json
 /Scripts/JsonItems/Shocks.json
 /Scripts/JsonItems/TimeWeaknesses.json
+/Scripts/JsonItems/XRay.json

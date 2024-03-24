@@ -104,7 +104,7 @@ using UnityEngine;
 
         //Closest Enemy
         GameObject closestEnemy = enemies[closestEnemyIdx];
-        //Play Shock animation for Enemy, NOTICE: Shock animation only exists for goblin at the moment
+        //Play Shock animation for Enemy
         SpriteRenderer spriteRenderer = closestEnemy.transform.Find("Shock").GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
         Animator animator = closestEnemy.transform.Find("Shock").GetComponent<Animator>();
