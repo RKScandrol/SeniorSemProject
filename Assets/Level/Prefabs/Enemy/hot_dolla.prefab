@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4087367888167090672}
   - component: {fileID: 5498582595225111428}
   - component: {fileID: 2718534642720393124}
+  - component: {fileID: 6765220884925533753}
   m_Layer: 0
   m_Name: hot_dolla
   m_TagString: Untagged
@@ -151,6 +152,22 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 400
   nextWaypointDistance: 3
+--- !u!114 &6765220884925533753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107280279851060749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c159e14ccb6f24c861090d8797e5c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 107280279851060749}
+  baseHealth: 100
+  baseAttack: 10
+  baseDefense: 10
 --- !u!1 &1412162178820484633
 GameObject:
   m_ObjectHideFlags: 0
