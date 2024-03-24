@@ -1,18 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAttributes : MonoBehaviour
 {
-
-
     private int health;
-    private int baseHealth;
     private int attack;
-    private int baseAttack;
     private int defense;
-    private int baseDefense;
+    
+    [SerializeField]
+    GameObject enemy;
+    [SerializeField]
+    private int baseHealth, baseAttack, baseDefense;
 
 
     private XRayStats xray;
@@ -20,15 +21,9 @@ public class EnemyAttributes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        baseHealth = 100;
-        health = 100;
-
-        baseAttack = 15;
-        attack = 15;
-
-        baseDefense = 10;
-        defense = 10;
-
+        health = baseHealth;
+        attack = baseAttack;
+        defense = baseDefense;
 
         xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
         xray.initializeXRayStats();
@@ -119,7 +114,7 @@ public class EnemyAttributes : MonoBehaviour
         health -= damageTaken;
 
         if (health <= 0 ) {
-            
+            Destroy(enemy);
         }
 
         return damageTaken;

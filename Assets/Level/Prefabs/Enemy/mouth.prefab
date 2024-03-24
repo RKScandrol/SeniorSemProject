@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 754021812996102838}
   - component: {fileID: 6167155784591672408}
   - component: {fileID: 7730970202701912389}
+  - component: {fileID: 2808745644236101195}
   m_Layer: 0
   m_Name: mouth
   m_TagString: Untagged
@@ -151,6 +152,22 @@ MonoBehaviour:
   target: {fileID: 0}
   moveSpeed: 400
   nextWaypointDistance: 3
+--- !u!114 &2808745644236101195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346785054547198970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c159e14ccb6f24c861090d8797e5c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1346785054547198970}
+  baseHealth: 100
+  baseAttack: 10
+  baseDefense: 10
 --- !u!1 &4126400420048998373
 GameObject:
   m_ObjectHideFlags: 0
