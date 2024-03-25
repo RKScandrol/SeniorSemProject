@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5338778292154941707}
   - component: {fileID: 3670240623456946530}
-  - component: {fileID: 5371821759812527406}
+  - component: {fileID: 3843387134883087739}
   m_Layer: 0
   m_Name: ExitCollider
   m_TagString: Untagged
@@ -248,7 +248,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2917549, y: 0.23876458}
   m_EdgeRadius: 0
---- !u!114 &5371821759812527406
+--- !u!114 &3843387134883087739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

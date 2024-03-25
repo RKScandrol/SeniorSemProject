@@ -33,4 +33,6 @@ public class ChestExit : MonoBehaviour
             
         }
     }
+
+  
 }
