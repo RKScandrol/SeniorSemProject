@@ -351,6 +351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c159e14ccb6f24c861090d8797e5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  attack: 0
+  defense: 0
+  baseGoldDrop: 12
   enemy: {fileID: 1346785054547198970}
   baseHealth: 100
   baseAttack: 10

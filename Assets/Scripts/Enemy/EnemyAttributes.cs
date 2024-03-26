@@ -9,6 +9,7 @@ public class EnemyAttributes : MonoBehaviour
     public int health;
     public int attack;
     public int defense;
+    [SerializeField]private int baseGoldDrop;
     
     [SerializeField]
     GameObject enemy;
@@ -115,6 +116,7 @@ public class EnemyAttributes : MonoBehaviour
 
         if (health <= 0 ) {
             Destroy(enemy);
+            GameObject.Find("GoldUI").GetComponent<GoldUISystem>().increaseGold(baseGoldDrop);
         }
 
         return damageTaken;
