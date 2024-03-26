@@ -339,7 +339,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 24956255}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2087768472}
+        m_TargetAssemblyTypeName: PermUpgradeSystem, Assembly-CSharp
+        m_MethodName: exitMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &24956255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,8 +952,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1223,8 +1235,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1910,8 +1922,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1991,7 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a386e4bf312fb446a94d610a97e8403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 17
+  gold: 34
 --- !u!114 &679590726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3330,7 +3342,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1291822595}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2087768472}
+        m_TargetAssemblyTypeName: PermUpgradeSystem, Assembly-CSharp
+        m_MethodName: buffHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1291822595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3585,7 +3609,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1380712961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2087768472}
+        m_TargetAssemblyTypeName: PermUpgradeSystem, Assembly-CSharp
+        m_MethodName: buffDefense
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1380712961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5329,7 +5365,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1948812106}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2087768472}
+        m_TargetAssemblyTypeName: PermUpgradeSystem, Assembly-CSharp
+        m_MethodName: buffAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1948812106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5591,8 +5639,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   permUpgradeMenu: {fileID: 1719543901}
   txtHealthDesc: {fileID: 642532621}
+  btntxtHealth: {fileID: 1332511609}
   txtAttackDesc: {fileID: 234722792}
+  btntxtAttack: {fileID: 6474600}
   txtDefenseDesc: {fileID: 365706829}
+  btntxtDefense: {fileID: 1478148581}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
