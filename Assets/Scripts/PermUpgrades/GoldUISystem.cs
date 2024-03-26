@@ -35,7 +35,7 @@ public class GoldUISystem : MonoBehaviour
     public void positionGoldUI() {
 
         Vector2 newPosition = mainCameraTransform.position;
-        newPosition.x += (float)6;
+        newPosition.x += (float)7;
         newPosition.y += (float)4.5;
         goldUITransform.position = newPosition;
 
