@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     //Trying to (mostly) handle animations in code, let's see how it goes!
     public Animator animator;
 
+    //Point of reference for attack
+    public Transform attackPoint;
+
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,27 @@ public class Player : MonoBehaviour
        
        animator.SetFloat("Horizontal", horizontal);
        animator.SetFloat("Vertical", vertical);
+
+       //Plays walk animation and updates attack point based on direction
+        if (rb.velocity.y > 0.1)
+        {
+            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y + 0.5f);
+            animator.Play("player_walk_U");
+        }
+        else if (rb.velocity.y < -0.1 && rb.velocity.x == 0) {
+            attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y - 0.5f);
+            animator.Play("player_walk_D");
+        }
+        else if (rb.velocity.x < -0.1)
+        {
+            attackPoint.position = new Vector2(rb.transform.position.x - 0.5f, rb.position.y);
+            animator.Play("player_walk_L");
+        }
+        else if (rb.velocity.x > 0.1)
+        {
+            attackPoint.position = new Vector2(rb.transform.position.x + 0.5f, rb.position.y);
+            animator.Play("player_walk_R");
+        }
     }
 
     void FixedUpdate()
@@ -46,23 +70,6 @@ public class Player : MonoBehaviour
         }
 
         rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 5, vertical * moveSpeed * Time.fixedDeltaTime * 5);
-        
-        //Plays walk animation based on direction
-        if (rb.velocity.y > 0)
-        {
-            animator.Play("guy_walk_U");
-        }
-        else if (rb.velocity.y < 0 && rb.velocity.x == 0) {
-            animator.Play("guy_walk_D");
-        }
-        else if (rb.velocity.x < 0)
-        {
-            animator.Play("guy_walk_L");
-        }
-        else if (rb.velocity.x > 0)
-        {
-            animator.Play("guy_walk_R");
-        }
     }
     
 }

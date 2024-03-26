@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum ItemType {
+public enum ItemType {      //Neccessary?
     Buff,
     Passive,
     Consumable
 }
 
-[Serializable]public class Item {
+[Serializable]public abstract class Item {
     
     [SerializeField]protected int itemID;
     [SerializeField]protected string name;
@@ -51,9 +51,7 @@ public enum ItemType {
     public string getName() {
         return name;
     }
-    public string getDescription() {
-        return description;
-    }
+    public abstract string getDescription();    //Abstract Function
 
     public int getWeight() {
         return weight;
@@ -99,5 +97,14 @@ public enum ItemType {
             return false;
         }
     }
+
+
+    public abstract void initializeItem();          //Abstract Function
+    public abstract void activateItem();            //Abstract Function
+    public abstract DateTime getActivationTime();   //Abstract Function
+    public abstract string getIconPath();           //Abstract Function
+    public abstract void intensify();
+
+
 
 }

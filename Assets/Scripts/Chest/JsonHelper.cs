@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEditor.Search;
 
 public class JsonHelper
 {
@@ -33,6 +34,8 @@ public class JsonHelper
         public T[] Items;
     }
 
+
+    //No Longer Needed
     public static string getJsonString() {
         string[] paths = getJsonFiles();
 
@@ -44,6 +47,8 @@ public class JsonHelper
 
         return compineLines(lines);
     }
+
+
 
     private static string[] getJsonFiles() {
         string path = Application.dataPath + "/Scripts/JsonItems/jsonFiles.txt";
@@ -62,6 +67,58 @@ public class JsonHelper
             jsonStr += l;
         }
 		return jsonStr;
+    }
+
+    public static Item[] getLootTable() {
+
+        string[] filePaths = getJsonFiles();
+
+        Item[] items = new Item[0];
+
+        foreach (string path in filePaths) {
+
+            string jsonStr = compineLines(getLines(path));
+            string sub = path.Substring(19);
+
+            switch (sub) {
+             
+                case "HealthPotions.json":
+                    items = FromJson<HealthPotion>(jsonStr).Concat(items).ToArray();
+                    break;
+        
+                case "AttackBoosts.json":
+                    items = FromJson<AttackBoost>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "DefenseBoosts.json":
+                    items = FromJson<DefenseBoost>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "HealthBoosts.json":
+                    items = FromJson<HealthBoost>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "Shocks.json":
+                    items = FromJson<Shock>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "TimeWeaknesses.json":
+                    items = FromJson<TimeWeakness>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "XRay.json":
+                    items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                default:
+                    Debug.Log("No Items added for Path: " + path);
+                    break;
+            }
+
+        }
+
+        return items;
+
     }
 
 }
