@@ -7,15 +7,21 @@ public class ChestOpener : MonoBehaviour
     public Chest chest;
     public bool isOpen;
     ChestMessage popupMessage;
-    GameObject gameController;
+    // GameObject gameController;
     public Animator animator;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.Find("GameController");
-        popupMessage = gameController.GetComponent<ChestMessage>();
+        // gameController = GameObject.Find("GameController");
+        // popupMessage = gameController.GetComponent<ChestMessage>();
+        
+        // popupMessage = GameObject.Find("ChestMessage").GetComponent<ChestMessage>();
+
+
+        popupMessage = FindAnyObjectByType<ChestMessage>(FindObjectsInactive.Include);
+
         isOpen = false;
     }
 
