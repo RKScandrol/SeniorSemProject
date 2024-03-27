@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿ using System.Collections.Generic;
 using System.Linq;
 using LevelGenerator.Scripts.Exceptions;
 using LevelGenerator.Scripts.Helpers;
@@ -58,6 +58,10 @@ namespace LevelGenerator.Scripts
         protected List<Collider> DeadEndColliders = new List<Collider>();
         protected bool HalfLevelBuilt => registeredSections.Count > LevelSize;
 
+
+        // Added script to allow astar update scan to generate on level
+        AstarScanUpdater aupdate;
+
         protected void Start()
         {
             if (Seed != 0)
@@ -69,6 +73,9 @@ namespace LevelGenerator.Scripts
             LevelSize = MaxLevelSize;
             CreateInitialSection();
             DeactivateBounds();
+
+            aupdate = GameObject.FindGameObjectWithTag("astarscanupdate").GetComponent<AstarScanUpdater>();
+            aupdate.updateScan();
         }
 
         protected void CheckRuleIntegrity()

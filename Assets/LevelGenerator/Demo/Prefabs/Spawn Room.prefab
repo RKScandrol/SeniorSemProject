@@ -229,6 +229,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2766fdc05dd54584d840bb9a9909d899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7197122760117121116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3285999956990484534}
+  - component: {fileID: 812486169012493598}
+  m_Layer: 0
+  m_Name: astar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3285999956990484534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197122760117121116}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5343681367427277782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &812486169012493598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197122760117121116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAACYn+uaPXVAWQIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMty2jAU/RVG66ZjEgeS7lpDSBcEJqSTjTfCusYaZMmjB8/h33sl29ih0xXinHOvzn3IZ8KlqSCzSs80Z3PFgPwYEH8m3wYd+QoHulFyxU/Qaj45s4UX0aB5p5YrxIc+zKgSrObZT7kRXhwh6CTPlS6nbAOJMtYgnFNhACmtrI+WCJ0H5IA/d88+5Iin+7E/nfD0HA0ueMxAWtCdtBW2slrlZCZoWQHzljvxY9TK8RSEEstpNN56poTgpvFC7LEKtSa0Mg4rQQHjFGsLBry+AL4prPfZD17kuQHbmNL0OOEaW1RnJb9U3beSmm3tbEeF8/eM4mCpzjn/h74bBjrXqnxtrx2GgmzBs+07PWbU2F5f+/Dkq28n91Rs6VrAZwHyTc20cpIhabXzoc7A/aT7e60sKSDbdnht9QZ01f+n42u4hOIPieDl2lPf4xpYCRXaHWYPGgfzGw2HzTBNCkS9iz8GPuimv0IN8cK1sUg1VUpvb62c9lIyDT3z1TibKC0hwI3pCiQV9rjENPZ2gjdc79ob5oX6x9Jc3nDtG7gJCXCnj6Ibaqn212GZQu3nYIqFs4JL6Ex74g37lCgp6wXr96QNWzmd06wXtnGcfV0tMlpHT6OHezYePkRsGLG7+JlG43g4jukofqLxIwm7xyXWScWyNtq0B6cmu+QS96z9hgxmmlZh2Zmm+xk/larXci5ztco0gFzUGa7GQeMl+CjZlHFs0Aqs5TLMm5xTIlS2BZZeE6Wh0unBapp2WVJS8Z2yHklJEj4aKfHwdZeXGnYc9v7yNtmFXP4CUEsDBBQAAAgIAACYn+tzjs0tbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSWZKBhZmxUYq5obFBiqFBiq6JZaKBuYmhuUmimYlFoompUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACYn+uaPXVAWQIAABMFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+tzjs0tbQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
 --- !u!1 &7640095510563185835
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +381,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dun_test
       objectReference: {fileID: 0}
+    - target: {fileID: 7670699566330364699, guid: 620760621f330ca44bf5bbd311c68e82, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8086863465250857131, guid: 620760621f330ca44bf5bbd311c68e82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -336,7 +427,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8086863465250857131, guid: 620760621f330ca44bf5bbd311c68e82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3285999956990484534}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620760621f330ca44bf5bbd311c68e82, type: 3}
 --- !u!4 &5343681367427277782 stripped

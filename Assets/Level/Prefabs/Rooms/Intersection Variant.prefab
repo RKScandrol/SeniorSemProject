@@ -2824,6 +2824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Intersection Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5756768545131847732, guid: ca806d706fbb1344e8f2cb3683808c3e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6384470615768424469, guid: ca806d706fbb1344e8f2cb3683808c3e, type: 3}
       propertyPath: m_Size.y
       value: 21
