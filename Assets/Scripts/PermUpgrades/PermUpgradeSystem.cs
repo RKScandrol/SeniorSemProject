@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
@@ -18,6 +20,7 @@ public class PermUpgradeSystem : MonoBehaviour
     private int healthBuffCost;
     private int attackBuffCost;
     private int defenseBuffCost;
+    private BuyHistory buyHistory;
 
 
     // Start is called before the first frame update
@@ -25,10 +28,9 @@ public class PermUpgradeSystem : MonoBehaviour
     {
 
         goldUISystem = GameObject.Find("GoldUI").GetComponent<GoldUISystem>();
-        //Might make these dynamic based on the number bought
-        healthBuffCost = 20;
-        attackBuffCost = 10;
-        defenseBuffCost = 15;
+        readBuyHistory();
+
+        priceCalculation();
 
         setAllText();
         calculatePurchasePower();
@@ -132,6 +134,16 @@ public class PermUpgradeSystem : MonoBehaviour
 
 
 
+    public void priceCalculation() {
+        int baseVal = 10;
+
+        healthBuffCost = baseVal + (int)Math.Floor(baseVal * (buyHistory.numHealthBuffsBought * 0.5) );
+        attackBuffCost = baseVal + (int)Math.Floor(baseVal * (buyHistory.numAttackBuffsBought * 0.5) );
+        defenseBuffCost = baseVal + (int)Math.Floor(baseVal * (buyHistory.numDefenseBuffsBought * 0.5) );
+    }
+
+
+
     public void buffHealth() {
         /*
             This function should buff the Base Health stat from Player Attributes
@@ -143,6 +155,8 @@ public class PermUpgradeSystem : MonoBehaviour
             // Buff Goes here
 
             goldUISystem.decreaseGold(healthBuffCost);
+            buyHistory.incrementNumHealthBuffsBought();
+            priceCalculation();
             setHealthText();
             calculatePurchasePower();
         }
@@ -156,6 +170,8 @@ public class PermUpgradeSystem : MonoBehaviour
 
         if (gold >= attackBuffCost) {
             goldUISystem.decreaseGold(attackBuffCost);
+            buyHistory.incrementNumAttackBuffsBought();
+            priceCalculation();
             setAttackText();
             calculatePurchasePower();
         }
@@ -169,6 +185,8 @@ public class PermUpgradeSystem : MonoBehaviour
 
         if (gold >= defenseBuffCost) {
             goldUISystem.decreaseGold(defenseBuffCost);
+            buyHistory.incrementNumDefenseBuffsBought();
+            priceCalculation();
             setDefenseText();
             calculatePurchasePower();
         }
@@ -178,6 +196,30 @@ public class PermUpgradeSystem : MonoBehaviour
 
     public void exitMenu() {
         permUpgradeMenu.SetActive(false);
+
+
+
+        string jsonStr = JsonUtility.ToJson(buyHistory, true);
+        string path = Application.dataPath + "/Scripts/PermUpgrades/BuyHistory.json";
+        File.WriteAllText(path, jsonStr);
+        // Debug.Log(path + "\n" + jsonStr);
+
+    }
+
+
+    public void readBuyHistory() {
+        string path = Application.dataPath + "/Scripts/PermUpgrades/BuyHistory.json";
+        string[] lines = File.ReadAllLines(path);
+        string jsonStr = attachJsonLines(lines);
+        buyHistory = JsonUtility.FromJson<BuyHistory>(jsonStr);
+    }
+
+    private string attachJsonLines(string[] lines) {
+        string jsonStr = "";
+        foreach (string line in lines) {
+            jsonStr += line;
+        }
+        return jsonStr;
     }
 
 
