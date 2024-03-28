@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5986071592277709233}
   - component: {fileID: 2718534642720393124}
   - component: {fileID: 6765220884925533753}
+  - component: {fileID: 5665766609546253684}
   m_Layer: 0
   m_Name: hot_dolla
   m_TagString: Enemy
@@ -163,6 +164,41 @@ MonoBehaviour:
   baseHealth: 100
   baseAttack: 10
   baseDefense: 10
+--- !u!58 &5665766609546253684
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107280279851060749}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.1}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1412162178820484633
 GameObject:
   m_ObjectHideFlags: 0
