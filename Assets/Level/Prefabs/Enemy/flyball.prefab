@@ -247,10 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284e2695739aa1d448e8b5fcfa0681f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  moveSpeed: 400
+  moveSpeed: 500
   nextWaypointDistance: 3
-  updateInterval: 0.5
+  updateInterval: 0.1
 --- !u!114 &2229479294252131871
 MonoBehaviour:
   m_ObjectHideFlags: 0
