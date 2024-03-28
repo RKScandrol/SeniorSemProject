@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77687ba5f613fc446b6be3b6e30100c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 0
+  sceneBuildIndex: 2
   animator: {fileID: 6523326338534761682}
   boxCollider2D: {fileID: 6919496589563755603}
 --- !u!1 &5448164865573412417
