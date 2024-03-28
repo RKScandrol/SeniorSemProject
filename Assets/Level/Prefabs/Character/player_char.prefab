@@ -252,8 +252,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackStartup: 0.2
-  attackDuration: 0.3
+  attackStartup: 0.1
+  attackDuration: 0.2
   animator: {fileID: 2782367599009445022}
 --- !u!1 &5074150947231840063
 GameObject:
