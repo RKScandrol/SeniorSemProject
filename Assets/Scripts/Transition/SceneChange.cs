@@ -13,11 +13,13 @@ public class SceneChange : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         //Player entered trigger point, initiate transition to next scene
         if (other.tag == "Player") {
+            Time.timeScale = 0;
             animator.SetTrigger("FadeOut");
         }
     }
 
     public void OnFadeComplete() {
+        Time.timeScale = 1;
         SceneManager.LoadSceneAsync(sceneBuildIndex, LoadSceneMode.Single);
     }
     
