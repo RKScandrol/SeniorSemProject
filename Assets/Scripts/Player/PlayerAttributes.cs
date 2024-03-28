@@ -79,4 +79,14 @@ public class PlayerAttributes : MonoBehaviour
             currentHealth = val;
         }
     }
+
+    void die()
+    {
+        setCurrentHealth(0);
+    }
+
+    void takeDamage(int val)
+    {
+        modifyCurrentHealth(-val);
+    }
 }
