@@ -74,5 +74,13 @@ crashlytics-build.properties
 # VScode directory
 .vscode/
 
-#A* Pathfinding project files
+# Astar Pathfinding folders
+[Aa]ssets/AstarPathfindingProject.meta
+[Aa]ssets/AstarPathfindingProject/
 /[Aa]ssets/AstarPathfindingProject
+
+# Crash .blob extentions in Unity
+*.blob
+
+# Git History
+.history/

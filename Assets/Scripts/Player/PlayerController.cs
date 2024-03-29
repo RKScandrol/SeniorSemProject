@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,8 +9,11 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     float horizontal;
     float vertical;
-    public float moveSpeed = 20.0f;
     float moveLimiter = 0.7f;
+
+    // Player attributes
+    public float moveSpeed = 20.0f;
+
 
     //Trying to (mostly) handle animations in code, let's see how it goes!
     public Animator animator;
@@ -62,4 +66,5 @@ public class Player : MonoBehaviour
 
         rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 5, vertical * moveSpeed * Time.fixedDeltaTime * 5);
     }
+    
 }
