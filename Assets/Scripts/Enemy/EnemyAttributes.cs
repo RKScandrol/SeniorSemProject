@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -22,14 +23,16 @@ public class EnemyAttributes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = baseHealth;
-        attack = baseAttack;
-        defense = baseDefense;
+
+        readStats();
+        
 
         xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
         xray.initializeXRayStats();
         
         Debug.Log(this.debugStats());   //For TestingPurposes
+
+        
     }
 
     // Update is called once per frame
@@ -206,6 +209,41 @@ public class EnemyAttributes : MonoBehaviour
 
 
 
+    public void readStats() {
+
+        string[] lines = File.ReadAllLines(Application.dataPath + "/Scripts/Enemy/EnemyJsonFiles/StandardEnemyStats.json");
+        string jsonStr = "";
+
+        foreach (string line in lines) {
+            jsonStr += line;
+        }
+        
+        EnemyBaseStats enemyBaseStats = JsonUtility.FromJson<EnemyBaseStats>(jsonStr);
+        setStats(enemyBaseStats);
+    }
+
+    public void setStats(EnemyBaseStats enemyBaseStats) {
+
+        /*
+            NOTICE:  This function should modify base stats based on the level number
+        */
+
+        baseHealth = enemyBaseStats.baseHealth;
+        baseAttack = enemyBaseStats.baseAttack;
+        baseDefense = enemyBaseStats.baseDefense;
+
+        //Base Stat Modifiers goes here
+
+        health = baseHealth;
+        attack = baseAttack;
+        defense = baseDefense;
+
+        baseGoldDrop = enemyBaseStats.baseGold;
+
+    }
+
+
+
 
     //For Testing Purposes
     public string debugStats() {
@@ -216,4 +254,15 @@ public class EnemyAttributes : MonoBehaviour
                 + "\nBase Defense: " + baseDefense
                 + "\nDefense: " + defense;
     }
+}
+
+
+
+public struct EnemyBaseStats {
+
+    public int baseHealth;
+    public int baseAttack;
+    public int baseDefense;
+    public int baseGold;
+
 }
