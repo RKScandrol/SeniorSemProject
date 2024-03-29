@@ -24,18 +24,16 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    
 
-    // Update is called once per frame
-    void Update()
-    {
-       horizontal = Input.GetAxisRaw("Horizontal");
-       vertical = Input.GetAxisRaw("Vertical");
+    void FixedUpdate()
+    {   
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
        
-       animator.SetFloat("Horizontal", horizontal);
-       animator.SetFloat("Vertical", vertical);
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
 
-       //Plays walk animation and updates attack point based on direction
+        //Plays walk animation and updates attack point based on direction
         if (rb.velocity.y > 0.1)
         {
             attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y + 0.5f);
@@ -55,10 +53,7 @@ public class Player : MonoBehaviour
             attackPoint.position = new Vector2(rb.transform.position.x + 0.5f, rb.position.y);
             animator.Play("player_walk_R");
         }
-    }
-
-    void FixedUpdate()
-    {   
+        
         if (horizontal != 0 && vertical != 0)
         {
             horizontal *= moveLimiter;
