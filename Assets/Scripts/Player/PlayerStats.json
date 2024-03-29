@@ -1,0 +1,6 @@
+{
+    "health": 101,
+    "defense": "Health Potion",
+    "attack": "Increase Health by a Percentage",
+    "movespeed": 10
+}

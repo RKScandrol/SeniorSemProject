@@ -1,30 +1,46 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
+    public struct PlayerBaseStats{
+        public int health;
+        public int defense;
+        public int attack;
+        public int movespeed;
+    }
 public class PlayerAttributes : MonoBehaviour
 {
-    public int moveSpeed;
+
+
     public int maxHealth;
     public int currentHealth;
-    public int damage;
     public int defense;
+    public int attack;
+    public int moveSpeed;
 
     public HealthBar hb;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        String path = Application.dataPath + "/Scripts/Player/PlayerStats.json";
+
+        PlayerBaseStats stats = getPermStatus();
+
         //Set all player attributes to their base values
-        damage = getBaseStatus("damage");
-        maxHealth = getBaseStatus("maxHealth");
-        moveSpeed = getBaseStatus("moveSpeed");
-        defense = getBaseStatus("defense");
+        attack = stats.attack;
+        maxHealth = stats.health;
+        moveSpeed = stats.movespeed;
+        defense = stats.defense;
         //Set all player attributes to their proper values
-        modifyDamage(getPermStatus("damage"));
-        modifyMaxHealth(getPermStatus("maxHealth"));
-        modifyMoveSpeed(getPermStatus("moveSpeed"));
-        modifyDefense(getPermStatus("defense"));
+        //TODO: set these using the permanent counters in Scandrol_4
+        // modifyDamage(/*TODO: FIll these in*/);
+        // modifyMaxHealth();
+        // modifyMoveSpeed();
+        // modifyDefense();
         hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
     }
@@ -33,29 +49,25 @@ public class PlayerAttributes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            modifyCurrentHealth(-20);
-        }
+        //Tests, not to be live code
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     modifyCurrentHealth(-20);
+        // }
     }
 
 
 
 
-    //Gets a value from Json as a float based on a given name of that attribute.
-    int getPermStatus(string statName)
+    PlayerBaseStats getPermStatus()
     {
-        //TODO: get JSON as float;
+        String path = Application.dataPath + "/Scripts/Player/PlayerStats.json";
 
-        return 1;
+        PlayerBaseStats stats = JsonUtility.FromJson<PlayerBaseStats>(path);
+
+        return stats;
     }
-
-    int getBaseStatus(string statName)
-    {
-        //TODO: get JSON as float;
-
-        return 1;
-    }
+  
 
     //Modifies the movement speed of the character by multiplying it by some float value.
     void modifyMoveSpeed(int mod)
@@ -66,7 +78,7 @@ public class PlayerAttributes : MonoBehaviour
     //Modifies the base damage of the character by multiplying it by some float value.
     void modifyDamage(int mod)
     {
-        damage *= mod;
+        attack *= mod;
     }
 
 
@@ -110,4 +122,5 @@ public class PlayerAttributes : MonoBehaviour
     {
         modifyCurrentHealth(-val);
     }
+    
 }
