@@ -13,8 +13,10 @@ public class ChestExit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = GameObject.Find("GameController");
-        popupMessage = gameController.GetComponent<ChestMessage>();
+        // gameController = GameObject.Find("GameController");
+        // popupMessage = gameController.GetComponent<ChestMessage>();
+
+        popupMessage = FindAnyObjectByType<ChestMessage>(FindObjectsInactive.Include);
     }
 
     // Update is called once per frame

@@ -266,6 +266,7 @@ MonoBehaviour:
   health: 0
   attack: 0
   defense: 0
+  baseGoldDrop: 15
   enemy: {fileID: 1757731138819862722}
   baseHealth: 100
   baseAttack: 10

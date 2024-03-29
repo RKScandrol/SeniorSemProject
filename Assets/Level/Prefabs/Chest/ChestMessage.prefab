@@ -2070,6 +2070,7 @@ GameObject:
   - component: {fileID: 4496380323324283367}
   - component: {fileID: 8820755652381776704}
   - component: {fileID: 145899118549083183}
+  - component: {fileID: 4324115466733909611}
   m_Layer: 5
   m_Name: ChestMessage
   m_TagString: Untagged
@@ -2162,3 +2163,26 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4324115466733909611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200913068653747469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d2c749b2e3a9747b03d14c00144080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui: {fileID: 9200913068653747469}
+  c: {fileID: 0}
+  txtItem1Name: {fileID: 6431534500031870241}
+  txtItem1Des: {fileID: 6914699767573451097}
+  imgItem1: {fileID: 8493974213371482087}
+  txtItem2Name: {fileID: 3969179318453878398}
+  txtItem2Des: {fileID: 8288347663180683029}
+  imgItem2: {fileID: 574643359881263929}
+  txtItem3Name: {fileID: 5147309081430563059}
+  txtItem3Des: {fileID: 3601518051411518526}
+  imgItem3: {fileID: 1722468566432645627}

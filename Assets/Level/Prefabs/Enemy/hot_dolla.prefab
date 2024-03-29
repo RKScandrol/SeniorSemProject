@@ -160,6 +160,7 @@ MonoBehaviour:
   health: 0
   attack: 0
   defense: 0
+  baseGoldDrop: 12
   enemy: {fileID: 107280279851060749}
   baseHealth: 100
   baseAttack: 10
