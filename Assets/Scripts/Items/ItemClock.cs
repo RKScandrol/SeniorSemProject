@@ -140,5 +140,8 @@ public class ItemClock : MonoBehaviour
 
         // Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2, 40);
         // s2.initializeItem();
+
+        Freeze f1 = new Freeze(1301, "Freeze", "Freeze", 5, 1, 5);
+        f1.initializeItem();
     }
 }
