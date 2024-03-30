@@ -16,7 +16,7 @@ public class ItemClock : MonoBehaviour
     void Start()
     {
         nowTime = DateTime.Now;
-        Debug.Log("NowTime: " + nowTime.ToString());
+        // Debug.Log("NowTime: " + nowTime.ToString());
         checkTime = nowTime.AddMinutes(1);
         // Debug.Log("CheckTIme: " + checkTime.ToString());
 
@@ -57,7 +57,7 @@ public class ItemClock : MonoBehaviour
         // Debug.Log("d2: " + d2.ToString());
 
         if (d2.CompareTo(d1) == 0) {
-            Debug.Log("Times Match, adding another minute\n" + nowTime.ToString() + "\n");
+            // Debug.Log("Times Match, adding another minute\n" + nowTime.ToString() + "\n");
             checkTime = checkTime.AddMinutes(1);
         }
         else if (checkTime.CompareTo(nowTime) < 0) {
@@ -89,7 +89,7 @@ public class ItemClock : MonoBehaviour
                                         activationTime.Second);
 
             if (d2.CompareTo(d1) == 0) {
-                Debug.Log("Activating Shock ID: " + i.getItemID());
+                // Debug.Log("Activating Shock ID: " + i.getItemID());
                 i.activateItem();
             }
         }
@@ -114,8 +114,9 @@ public class ItemClock : MonoBehaviour
 
         if (newItem) {
             items.Add(i);
-            Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list\n" + 
-                        "Item Type: " + i.GetType());
+
+            // Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list\n" + 
+            //             "Item Type: " + i.GetType());
         }
     }
 
@@ -134,10 +135,10 @@ public class ItemClock : MonoBehaviour
 
     //For Testing Purposes
     private void buildTestList() {
-        Shock s1 = new Shock(999, "Shock", "Shocking", 5, 1, 20);
-        s1.initializeItem();
+        // Shock s1 = new Shock(999, "Shock", "Shocking", 5, 1, 20);
+        // s1.initializeItem();
 
-        Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2, 40);
-        s2.initializeItem();
+        // Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2, 40);
+        // s2.initializeItem();
     }
 }

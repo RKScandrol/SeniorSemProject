@@ -5,3 +5,4 @@
 /Scripts/JsonItems/Shocks.json
 /Scripts/JsonItems/TimeWeaknesses.json
 /Scripts/JsonItems/XRay.json
+/Scripts/JsonItems/OHKO.json

@@ -30,7 +30,7 @@ public class EnemyAttributes : MonoBehaviour
         xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
         xray.initializeXRayStats();
         
-        Debug.Log(this.debugStats());   //For TestingPurposes
+        // Debug.Log(this.debugStats());   //For TestingPurposes
 
         
     }
@@ -127,7 +127,7 @@ public class EnemyAttributes : MonoBehaviour
     }
 
     /*
-        Restores Enemy Health based on percent of current health
+        Restores Enemy Health based on percent of Base Health
         Returns the amount of health Restored
     */
     public double restoreHealthByPercent(double restore) {
@@ -136,7 +136,7 @@ public class EnemyAttributes : MonoBehaviour
             healthRestore = baseHealth - health;
         }
 
-        health += (int)Math.Floor(healthRestore);
+        health += (int)Math.Ceiling(healthRestore);
 
         return healthRestore;
     }

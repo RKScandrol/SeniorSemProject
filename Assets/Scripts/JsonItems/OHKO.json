@@ -1,0 +1,31 @@
+{ 
+    "Items" : [
+        {
+            "itemID": 1201,
+            "name": "OHKO",
+            "description": "Your Health and the Enemy Health gets dropped to 1, but the Enemies will Regenerate.",
+            "weight": 100,
+            "timeIncrement": 3, 
+            "regenDuration": 20,
+            "regenPercent": 0.20
+        }, 
+        {
+            "itemID": 1202,
+            "name": "OHKO",
+            "description": "Your Health and the Enemy Health gets dropped to 1, but the Enemies will Regenerate.",
+            "weight": 5,
+            "timeIncrement": 1, 
+            "regenDuration": 20,
+            "regenPercent": 0.30
+        }, 
+        {
+            "itemID": 1203,
+            "name": "OHKO",
+            "description": "Your Health and the Enemy Health gets dropped to 1, but the Enemies will Regenerate.",
+            "weight": 7,
+            "timeIncrement": 2, 
+            "regenDuration": 20,
+            "regenPercent": 0.30
+        }
+    ]
+}

@@ -110,6 +110,10 @@ public class JsonHelper
                     items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "OHKO.json":
+                    items = FromJson<OHKO>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 default:
                     Debug.Log("No Items added for Path: " + path);
                     break;
