@@ -4,7 +4,7 @@
             "itemID": 1201,
             "name": "OHKO",
             "description": "Your Health and the Enemy Health gets dropped to 1, but the Enemies will Regenerate.",
-            "weight": 100,
+            "weight": 5,
             "timeIncrement": 3, 
             "regenDuration": 20,
             "regenPercent": 0.20

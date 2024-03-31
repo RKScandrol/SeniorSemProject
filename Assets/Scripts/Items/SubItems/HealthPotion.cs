@@ -44,20 +44,26 @@ using UnityEngine;
 
 
     public override void initializeItem() {
-        Debug.Log("Health Potion " + itemID + " initialized");
+
+        PlayerAttributes playerAttributes = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>();
+        int health = playerAttributes.restoreHealthByPercent(percentRestore);
+
+        Debug.Log("Health Potion " + itemID + " initialized\nNew Health Value: " + health);
     }
+
+
 
     //Should not be used
     public override void activateItem() {
-
+        throw new NotImplementedException();
     }
     //Should not be used
     public override void intensify() {
-        
+        throw new NotImplementedException();
     }
     //Should not be used
     public override DateTime getActivationTime() {
-        return new DateTime(1, 1, 1, 1, 1, 1);
+        throw new NotImplementedException();
     }
 
 }

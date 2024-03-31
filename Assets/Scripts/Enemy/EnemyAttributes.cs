@@ -147,7 +147,7 @@ public class EnemyAttributes : MonoBehaviour
         Returns new Attack value
     */
     public int decreaseAttackByPercent(double percent) {
-        int decrease = (int)Math.Floor(percent * (double)attack);
+        int decrease = (int)Math.Ceiling(percent * (double)attack);
 
         if (attack - decrease <= 0) {
             attack = 1;
@@ -167,7 +167,7 @@ public class EnemyAttributes : MonoBehaviour
         Retruns the new Attack value
     */
     public int increaseAttackByPercent(double percent) {
-        int increase = (int)Math.Floor(percent * (double)attack);
+        int increase = (int)Math.Ceiling(percent * (double)attack);
 
         attack += increase;
         xray.setText();
@@ -180,7 +180,7 @@ public class EnemyAttributes : MonoBehaviour
         Returns the new Defense value
     */
     public int decreaseDefenseByPercent(double percent) {
-        int decrease = (int)Math.Floor(percent * (double)defense);
+        int decrease = (int)Math.Ceiling(percent * (double)defense);
 
         if (defense - decrease <= 0) {
             defense = 1;
@@ -200,7 +200,7 @@ public class EnemyAttributes : MonoBehaviour
         Retruns the new Defense value
     */
     public int increaseDefenseByPercent(double percent) {
-        int increase = (int)Math.Floor(percent * (double)defense);
+        int increase = (int)Math.Ceiling(percent * (double)defense);
 
         defense += increase;
         xray.setText();

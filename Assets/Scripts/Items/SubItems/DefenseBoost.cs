@@ -44,20 +44,26 @@ using UnityEngine;
 
 
     public override void initializeItem() {
-        Debug.Log("Defense Boost " + itemID + " initialized");
+
+        PlayerAttributes playerAttributes = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>();
+        int newDefense = playerAttributes.increaseDefenseByPercent(percentBoost);
+
+        Debug.Log("Defense Boost " + itemID + " initialized\nNew Defense Value: " + newDefense);
     }
+
+
 
     //Should not be used
     public override void activateItem() {
-
+        throw new NotImplementedException();
     }
     //Should not be used
     public override void intensify() {
-        
+        throw new NotImplementedException();
     }
     //Should not be used
     public override DateTime getActivationTime() {
-        return new DateTime(1, 1, 1, 1, 1, 1);
+        throw new NotImplementedException();
     }
 
 }
