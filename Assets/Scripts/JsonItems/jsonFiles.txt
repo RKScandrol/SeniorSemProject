@@ -6,3 +6,4 @@
 /Scripts/JsonItems/TimeWeaknesses.json
 /Scripts/JsonItems/XRay.json
 /Scripts/JsonItems/OHKO.json
+/Scripts/JsonItems/Freeze.json

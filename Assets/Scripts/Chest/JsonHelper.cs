@@ -114,6 +114,10 @@ public class JsonHelper
                     items = FromJson<OHKO>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "Freeze.json":
+                    items = FromJson<Freeze>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 default:
                     Debug.Log("No Items added for Path: " + path);
                     break;

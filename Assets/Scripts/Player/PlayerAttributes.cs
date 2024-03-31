@@ -102,9 +102,12 @@ public class PlayerAttributes : MonoBehaviour
     }
 
     //Sets the current health to a desired value (used mainly for initialization of the character.)
-    void setCurrentHealth(int val)
+    public void setCurrentHealth(int val)
     {
-        if(val>maxHealth)
+        if (val <= 0) {
+            Debug.Log("Player Health cannot be Value: " + val);
+        }
+        else if(val>maxHealth)
         {
             currentHealth = maxHealth;
         }else

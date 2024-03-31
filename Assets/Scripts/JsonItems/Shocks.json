@@ -1,7 +1,7 @@
 {
     "Items": [
         {
-            "itemID": 901,
+            "itemID": 1301,
             "name": "Shock",
             "description": "Shock Your Enemies",
             "weight": 5,
@@ -9,7 +9,7 @@
             "damage": 20
         },
         {
-            "itemID": 902,
+            "itemID": 1302,
             "name": "Shock",
             "description": "Shock Your Enemies",
             "weight": 2,

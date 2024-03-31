@@ -1,0 +1,36 @@
+{
+    "Items" : [
+        {
+            "itemID": 1101,
+            "name": "Freeze",
+            "description": "Freeze an Enemy for a short time",
+            "weight": 7,
+            "timeIncrement": 2.0,
+            "effectTime": 3
+        }, 
+        {
+            "itemID": 1102,
+            "name": "Freeze",
+            "description": "Freeze an Enemy for a short time",
+            "weight": 5,
+            "timeIncrement": 2.0,
+            "effectTime": 5
+        }, 
+        {
+            "itemID": 1103,
+            "name": "Freeze",
+            "description": "Freeze an Enemy for a short time",
+            "weight": 4,
+            "timeIncrement": 1.0,
+            "effectTime": 3
+        }, 
+        {
+            "itemID": 1104,
+            "name": "Freeze",
+            "description": "Freeze an Enemy for a short time",
+            "weight": 2,
+            "timeIncrement": 1.0,
+            "effectTime": 5
+        }
+    ]
+}

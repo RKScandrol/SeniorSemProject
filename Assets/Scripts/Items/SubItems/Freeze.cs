@@ -4,35 +4,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Freeze : Item
+[Serializable]public class Freeze : Item
 {
 
     private DateTime activationTime;
-    private int timeIncrement;          //Time between freezes, in Minutes
-    private int effectTime;             //Freeze Duration, in Seconds
+    [SerializeField]private double timeIncrement;          //Time between freezes, in Minutes
+    [SerializeField]private int effectTime;             //Freeze Duration, in Seconds
 
     private float enemyPreviousMoveSpeed;
     private GameObject frozenEnemy;
+    private int numTimesIntensified;
 
     public Freeze(int itemID, string name, string description, int weight, 
-    int timeIncrement, int effectTime) : 
+    double timeIncrement, int effectTime) : 
     base(itemID, name, description, weight)
     {
         this.timeIncrement = timeIncrement;
         this.effectTime = effectTime;
         this.enemyPreviousMoveSpeed = -1;
         this.frozenEnemy = null;
+        this.numTimesIntensified = 0;
     }
 
     public Freeze(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
-    DateTime activationTime, int timeIncrement, int effectTime) : 
+    DateTime activationTime, double timeIncrement, int effectTime) : 
     base(itemID, name, description, weight, minWeight, maxWeight)
     {
         this.activationTime = activationTime;
         this.timeIncrement = timeIncrement;
         this.effectTime = effectTime;
         this.enemyPreviousMoveSpeed = -1;
-        this.frozenEnemy = null;;
+        this.frozenEnemy = null;
+        this.numTimesIntensified = 0;
     }
 
     
@@ -119,6 +122,18 @@ public class Freeze : Item
 
     public override void intensify()
     {
-        
+        if (numTimesIntensified % 2 == 0 || timeIncrement <= 1.0) {
+            effectTime += 2;
+        }
+        else {
+            if (timeIncrement >= 1.5) {
+                timeIncrement -= 0.5;
+            }
+            else if (timeIncrement >= 1.0) {
+                timeIncrement = 1.0;
+            }
+        }
+
+        numTimesIntensified++;
     }
 }

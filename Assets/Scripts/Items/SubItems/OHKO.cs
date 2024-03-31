@@ -64,7 +64,7 @@ using UnityEngine;
         }
         //Sets the Player's Health to 1
         PlayerAttributes playerAttributes = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>();
-        //Set Player Health to 1 as well
+        playerAttributes.setCurrentHealth(1);
         //Adds Item to Clock
         ItemClock itemClock = GameObject.Find("Clock").GetComponent<ItemClock>();
         itemClock.addItem(this);
