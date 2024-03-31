@@ -98,6 +98,10 @@ public class JsonHelper
                     items = FromJson<HealthBoost>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "TripleScoop.json":
+                    items = FromJson<TripleScoop>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 case "Shocks.json":
                     items = FromJson<Shock>(jsonStr).Concat(items).ToArray();
                     break;

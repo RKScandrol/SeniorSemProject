@@ -2,8 +2,9 @@
 /Scripts/JsonItems/AttackBoosts.json
 /Scripts/JsonItems/DefenseBoosts.json
 /Scripts/JsonItems/HealthBoosts.json
+/Scripts/JsonItems/TripleScoop.json
 /Scripts/JsonItems/Shocks.json
 /Scripts/JsonItems/TimeWeaknesses.json
-/Scripts/JsonItems/XRay.json
 /Scripts/JsonItems/OHKO.json
 /Scripts/JsonItems/Freeze.json
+/Scripts/JsonItems/XRay.json

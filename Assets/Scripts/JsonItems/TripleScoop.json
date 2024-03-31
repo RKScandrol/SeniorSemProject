@@ -1,0 +1,18 @@
+{
+    "Items": [
+        {
+            "itemID": 401,
+            "name": "Triple Scoop",
+            "description": "Boost all your stats",
+            "weight": 2,
+            "percentBoost": 0.02
+        },
+        {
+            "itemID": 402,
+            "name": "Triple Scoop",
+            "description": "Boost all your stats",
+            "weight": 1,
+            "percentBoost": 0.05
+        }
+    ]
+}
