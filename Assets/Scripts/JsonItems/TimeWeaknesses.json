@@ -1,7 +1,7 @@
 {
     "Items": [
         {
-            "itemID" : 801,
+            "itemID" : 1401,
             "name" : "Timed Weakness", 
             "description" : "Weaken all your enemies for a limited time now!",
             "weight" : 5, 

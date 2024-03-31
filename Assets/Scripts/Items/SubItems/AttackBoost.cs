@@ -13,7 +13,6 @@ using UnityEngine;
     double percentBoost) :
     base(itemID, name, description, weight) {
         
-        // this.itemType = ItemType.Buff;
         this.percentBoost = percentBoost;
 
     }
@@ -22,7 +21,6 @@ using UnityEngine;
     double percentBoost) :
     base(itemID, name, description, weight) {
 
-        // this.itemType = ItemType.Buff;
         this.percentBoost = percentBoost;
 
     }
@@ -43,19 +41,30 @@ using UnityEngine;
 
 
     public override void initializeItem() {
-        Debug.Log("Attack Boost " + itemID + " initialized");
+
+        PlayerAttributes playerAttributes = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>();
+        int newAttack = playerAttributes.increaseAttackByPercent(percentBoost);
+
+        Debug.Log("Attack Boost " + itemID + " initialized\nNew Attack Value: " + newAttack);
     }
 
-    //Should not be used
-    public override void activateItem() {
 
+
+    //Should not be used
+    public override void activateItem() 
+    {
+        throw new NotImplementedException();
     }
     //Should not be used
-    public override void intensify() {
-        
+    public override void intensify() 
+    {
+        throw new NotImplementedException();
     }
     //Should not be used
-    public override DateTime getActivationTime() {
-        return new DateTime(1, 1, 1, 1, 1, 1);
+    public override DateTime getActivationTime()
+    {
+        throw new NotImplementedException();
     }
+    
+
 }

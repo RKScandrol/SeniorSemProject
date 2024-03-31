@@ -41,7 +41,7 @@ public class PlayerAttributes : MonoBehaviour
         // modifyMaxHealth();
         // modifyMoveSpeed();
         // modifyDefense();
-        hb.SetMaxHealth(maxHealth);
+        // hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
     }
 
@@ -61,9 +61,15 @@ public class PlayerAttributes : MonoBehaviour
 
     PlayerBaseStats getPermStatus()
     {
-        String path = Application.dataPath + "/Scripts/Player/PlayerStats.json";
+        string path = Application.dataPath + "/Scripts/Player/PlayerStats.json";
 
-        PlayerBaseStats stats = JsonUtility.FromJson<PlayerBaseStats>(path);
+        string[] lines = File.ReadAllLines(path);
+        string jsonStr = "";
+        foreach (string line in lines) {
+            jsonStr += line;
+        }
+
+        PlayerBaseStats stats = JsonUtility.FromJson<PlayerBaseStats>(jsonStr);
 
         return stats;
     }
@@ -98,13 +104,16 @@ public class PlayerAttributes : MonoBehaviour
     void modifyCurrentHealth(int mod)
     {
         currentHealth += mod;
-        hb.SetHealth(currentHealth);
+        // hb.SetHealth(currentHealth);
     }
 
     //Sets the current health to a desired value (used mainly for initialization of the character.)
-    void setCurrentHealth(int val)
+    public void setCurrentHealth(int val)
     {
-        if(val>maxHealth)
+        if (val <= 0) {
+            Debug.Log("Player Health cannot be Value: " + val);
+        }
+        else if(val>maxHealth)
         {
             currentHealth = maxHealth;
         }else
@@ -121,6 +130,38 @@ public class PlayerAttributes : MonoBehaviour
     void takeDamage(int val)
     {
         modifyCurrentHealth(-val);
+    }
+
+
+    public int increaseAttackByPercent(double percent) {
+        int increase = (int)Math.Ceiling((double)attack * percent);
+        attack += increase;
+        return attack;
+    }
+
+    public int increaseDefenseByPercent(double percent) {
+        int increase = (int)Math.Ceiling((double)defense * percent);
+        defense += increase;
+        return defense;
+    }
+
+    public int increaseMaxHealthByPercent(double percent) {
+        int increase = (int)Math.Ceiling((double)maxHealth * percent);
+        maxHealth += increase;
+        return maxHealth;
+    }
+
+    public int restoreHealthByPercent(double percent) {
+        int restore = (int)Math.Ceiling((double)maxHealth * percent);
+
+        if (restore + currentHealth >= maxHealth) {
+            currentHealth = maxHealth;
+        }
+        else {
+            currentHealth += restore;
+        }
+
+        return currentHealth;
     }
     
 }

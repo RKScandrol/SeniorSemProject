@@ -98,6 +98,10 @@ public class JsonHelper
                     items = FromJson<HealthBoost>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "TripleScoop.json":
+                    items = FromJson<TripleScoop>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 case "Shocks.json":
                     items = FromJson<Shock>(jsonStr).Concat(items).ToArray();
                     break;
@@ -108,6 +112,14 @@ public class JsonHelper
 
                 case "XRay.json":
                     items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "OHKO.json":
+                    items = FromJson<OHKO>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "Freeze.json":
+                    items = FromJson<Freeze>(jsonStr).Concat(items).ToArray();
                     break;
 
                 default:

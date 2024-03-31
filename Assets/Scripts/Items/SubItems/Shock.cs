@@ -67,7 +67,7 @@ using UnityEngine;
     public override void initializeItem() {
         //Sets Activation Time
         setActivationTime(DateTime.Now.AddMinutes(timeIncrement));
-        Debug.Log("Shock " + itemID + " initialized");
+        // Debug.Log("Shock " + itemID + " initialized");
         //Adds Shock to Clock
         GameObject gameClock = GameObject.Find("Clock");
         ItemClock itemClock = gameClock.GetComponent<ItemClock>();
@@ -83,7 +83,7 @@ using UnityEngine;
     public override void activateItem() {
         //Increment Time
         incrementActivationTime();
-        Debug.Log("Shock Activated");
+        // Debug.Log("Shock Activated");
 
         //List of Enemies
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -114,7 +114,7 @@ using UnityEngine;
         //Deal damage to the Enemy
         EnemyAttributes enemyAttributes = closestEnemy.GetComponent<EnemyAttributes>();
         enemyAttributes.takeDamage(damage);
-        Debug.Log(closestEnemy.name + "\n" + enemyAttributes.debugStats());
+        // Debug.Log(closestEnemy.name + "\n" + enemyAttributes.debugStats());
         
 
     }
@@ -139,9 +139,11 @@ using UnityEngine;
         }
 
         damage += 5;
-        Debug.Log("Shock " + itemID + " intensified" + 
-                    "\nTime Increment: " + timeIncrement + 
-                    "\nDamage: " + damage);
+
+
+        // Debug.Log("Shock " + itemID + " intensified" + 
+        //             "\nTime Increment: " + timeIncrement + 
+        //             "\nDamage: " + damage);
 
     }
 
