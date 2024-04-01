@@ -10,7 +10,6 @@ using UnityEditor;
 public class ChestMessage : MonoBehaviour
 {
     public GameObject ui;
-	public Chest c;
 
 	public TMP_Text txtItem1Name;
 	public TMP_Text txtItem1Des;
@@ -28,6 +27,8 @@ public class ChestMessage : MonoBehaviour
 	private Item item2;
 	private Item item3;
 
+	private GameObject chest;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -38,7 +39,10 @@ public class ChestMessage : MonoBehaviour
 
 	}
 
-	public void Open(){
+	public void Open(GameObject chest) {
+
+		this.chest = chest;
+		
 		ui.SetActive (!ui.activeSelf);
 
 		if (ui.activeSelf) {
@@ -115,7 +119,7 @@ public class ChestMessage : MonoBehaviour
 		*/
 		item1.initializeItem();
 
-		this.Close();
+		Close();
 	}
 	public void chooseItem2() {
 		
@@ -125,7 +129,7 @@ public class ChestMessage : MonoBehaviour
 		*/
 		item2.initializeItem();
 
-		this.Close();
+		Close();
 	}
 	public void chooseItem3() {
 		
@@ -135,7 +139,7 @@ public class ChestMessage : MonoBehaviour
 		*/
 		item3.initializeItem();
 
-		this.Close();
+		Close();
 	}
 
 
@@ -147,8 +151,7 @@ public class ChestMessage : MonoBehaviour
 				Time.timeScale = 1f;
 			} 
 
-			GameObject ch = GameObject.Find("Chest");
-			Destroy(ch);
+			Destroy(chest);
 		}
 	}
 }
