@@ -110,16 +110,20 @@ public class JsonHelper
                     items = FromJson<TimeWeakness>(jsonStr).Concat(items).ToArray();
                     break;
 
-                case "XRay.json":
-                    items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
-                    break;
-
                 case "OHKO.json":
                     items = FromJson<OHKO>(jsonStr).Concat(items).ToArray();
                     break;
 
                 case "Freeze.json":
                     items = FromJson<Freeze>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "SuperHuman.json": 
+                    items = FromJson<SuperHuman>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "XRay.json":
+                    items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
                     break;
 
                 default:

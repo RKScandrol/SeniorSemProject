@@ -7,4 +7,5 @@
 /Scripts/JsonItems/TimeWeaknesses.json
 /Scripts/JsonItems/OHKO.json
 /Scripts/JsonItems/Freeze.json
+/Scripts/JsonItems/SuperHuman.json
 /Scripts/JsonItems/XRay.json

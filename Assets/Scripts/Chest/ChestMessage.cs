@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.IO;
+using UnityEditor;
 
 public class ChestMessage : MonoBehaviour
 {
@@ -73,6 +74,8 @@ public class ChestMessage : MonoBehaviour
 			
 			// item1 = new Shock(999, "Shock", "Shocking", 1, 1, 1);	//For testing purposes
 			// item1 = new OHKO(1919, "OHKO", "Carefull", 100, 3, 20, 0.2);
+			// item1 = new AttackBoost(1919, "Attack Boost", "hit harder", 5, 0.25);
+			// item2 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1, 0.25);
 			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();
