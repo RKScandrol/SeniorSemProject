@@ -8,26 +8,30 @@ using UnityEngine;
 
     private DateTime activationTime;
     [SerializeField]private double effectTime;      //In Minutes
-    [SerializeField]private double percentBoost;
+    [SerializeField]private double attackPercentBoost;
+    [SerializeField]private float moveSpeedPercentBoost;
     private float previousMoveSpeed;
     private int previousAttack;
     private GameObject player_char;
 
     public SuperHuman(int itemID, string name, string description, int weight, 
-    double effectTime, double percentBoost) : 
+    double effectTime, double attackPercentBoost, float moveSpeedPercentBoost) : 
     base(itemID, name, description, weight)
     {
         this.effectTime = effectTime;
-        this.percentBoost = percentBoost;
+        this.attackPercentBoost = attackPercentBoost;
+        this.moveSpeedPercentBoost = moveSpeedPercentBoost;
     }
 
     public SuperHuman(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
-    DateTime activationTime, double effectTime, double percentBoost, float previousMoveSpeed, int previousAttack) : 
+    DateTime activationTime, double effectTime, double attackPercentBoost, 
+    float moveSpeedPercentBoost, float previousMoveSpeed, int previousAttack) : 
     base(itemID, name, description, weight, minWeight, maxWeight)
     {
         this.activationTime = activationTime;
         this.effectTime = effectTime;
-        this.percentBoost = percentBoost;
+        this.attackPercentBoost = attackPercentBoost;
+        this.moveSpeedPercentBoost = moveSpeedPercentBoost;
         this.previousMoveSpeed = previousMoveSpeed;
         this.previousAttack = previousAttack;
     }
@@ -71,11 +75,11 @@ using UnityEngine;
         //Save the Player's Attack
         previousAttack = playerAttributes.attack;
         //Boost the Player's Attack
-        playerAttributes.increaseAttackByPercent(percentBoost);
+        playerAttributes.increaseAttackByPercent(attackPercentBoost);
         //Save the Player's Move Speed
         previousMoveSpeed = playerController.moveSpeed;
-        //Boost the PLayer's Move Speed
-        playerController.moveSpeed = playerController.moveSpeed + (float)(previousMoveSpeed * percentBoost);
+        //Boost the Player's Move Speed
+        playerController.boostMoveSpeedByPercent(moveSpeedPercentBoost);
 
         //Set Activaion Time
         activationTime = DateTime.Now.AddMinutes(effectTime);
@@ -114,9 +118,9 @@ using UnityEngine;
         //Get Player Controller Script
         Player playerController = player_char.GetComponent<Player>();
         //Boost the Player's Attack
-        playerAttributes.increaseAttackByPercent(percentBoost);
+        playerAttributes.increaseAttackByPercent(attackPercentBoost);
         //Boost the PLayer's Move Speed
-        playerController.moveSpeed = playerController.moveSpeed + (float)(playerController.moveSpeed * percentBoost);
+        playerController.boostMoveSpeedByPercent(moveSpeedPercentBoost);
 
 
         Debug.Log("SuperHuman Intensified");

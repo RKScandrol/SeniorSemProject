@@ -6,7 +6,8 @@
             "description": "Run faster and hit harder",
             "weight": 600,
             "effectTime": 2,
-            "percentBoost": 0.5
+            "attackPercentBoost": 0.5,
+            "moveSpeedPercentBoost": 0.1
         }
     ]
 }
