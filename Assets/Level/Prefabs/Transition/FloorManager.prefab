@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 429333241667360840}
   m_Layer: 0
   m_Name: FloorManager
-  m_TagString: Untagged
+  m_TagString: FloorManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e815d0712e24f4a8d8792ce9dbed54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagString: FloorManager
 --- !u!114 &429333241667360840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,4 +58,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043ab8b85f42f894b9225d4cbc27535d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFloor: 0
+  currentFloor: 1
