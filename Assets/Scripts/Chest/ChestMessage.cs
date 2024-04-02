@@ -79,7 +79,8 @@ public class ChestMessage : MonoBehaviour
 			// item1 = new Shock(999, "Shock", "Shocking", 1, 1, 1);	//For testing purposes
 			// item1 = new OHKO(1919, "OHKO", "Carefull", 100, 3, 20, 0.2);
 			// item1 = new AttackBoost(1919, "Attack Boost", "hit harder", 5, 0.25);
-			// item2 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1, 0.25);
+			// item2 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1, 0.25, 0.25f);
+			// item1 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.5f);
 			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();

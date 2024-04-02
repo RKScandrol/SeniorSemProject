@@ -156,5 +156,10 @@ public class ItemClock : MonoBehaviour
 
         // SuperHuman sh1 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1);
         // sh1.initializeItem();
+
+        // HeavyWeight hw1 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.1f);
+        // hw1.initializeItem();
+        // HeavyWeight hw2 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.15f);
+        // hw2.initializeItem();
     }
 }

@@ -44,6 +44,23 @@ using UnityEngine;
         playerAttributes.increaseDefenseByPercent(percentBoost);
         playerAttributes.increaseMaxHealthByPercent(percentBoost);
 
+        //Get Item Clock
+        ItemClock itemClock = GameObject.Find("Clock").GetComponent<ItemClock>();
+        //Get any SuperHuman Item that might Exist
+        SuperHuman sh = itemClock.getItemOfType<SuperHuman>();
+        //If a SuperHuman Item does Exist
+        if (sh != default) {
+            //Boost the Player's Actual Attack stored in the Item
+            sh.boostActualAttack(percentBoost);
+        }
+        //Get any HeavyWeight Item that might Exist
+        HeavyWeight hw = itemClock.getItemOfType<HeavyWeight>();
+        //If a HeavyWeight Item does Exist
+        if (hw != default) {
+            //Boost the Player's Actual Defense stored in the Item
+            hw.boostActualDefense(percentBoost);
+        }
+
         Debug.Log("Triple Scoop " + itemID + " intialized");
     }
 

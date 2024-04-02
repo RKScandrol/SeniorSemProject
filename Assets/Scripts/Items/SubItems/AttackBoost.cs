@@ -55,7 +55,7 @@ using UnityEngine;
         SuperHuman sh = itemClock.getItemOfType<SuperHuman>();
 
         if (sh != default) {
-            sh.boostPreviousAttack(percentBoost);
+            sh.boostActualAttack(percentBoost);
         }
 
         //For Testing

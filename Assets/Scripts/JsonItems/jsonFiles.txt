@@ -8,4 +8,5 @@
 /Scripts/JsonItems/OHKO.json
 /Scripts/JsonItems/Freeze.json
 /Scripts/JsonItems/SuperHuman.json
+/Scripts/JsonItems/HeavyWeight.json
 /Scripts/JsonItems/XRay.json

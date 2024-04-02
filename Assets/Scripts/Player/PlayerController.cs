@@ -85,5 +85,31 @@ public class Player : MonoBehaviour
         }
         return moveSpeed;
     }
+
+    /*
+        Drops MoveSpeed by a Percentage
+        Returns False if the MoveSpeed was not dropped due to it already being too low
+        Returns True if the MoveSpeed was dropped
+    */
+    public bool dropMoveSpeedByPercent(float percent) {
+
+        float min = 1.0f;
+
+        if ( Math.Abs(moveSpeed - min) <= 0.01 ) {
+            return false;
+        }
+        
+        float decrease = moveSpeed * percent;
+
+        if (moveSpeed - decrease < min) {
+            moveSpeed = min;
+            return true;
+        }
+        else {
+            moveSpeed -= decrease;
+            return true;
+        }
+
+    }
     
 }

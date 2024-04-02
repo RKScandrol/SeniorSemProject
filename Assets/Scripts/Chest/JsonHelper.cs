@@ -122,6 +122,10 @@ public class JsonHelper
                     items = FromJson<SuperHuman>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "HeavyWeight.json":
+                    items = FromJson<HeavyWeight>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 case "XRay.json":
                     items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
                     break;
