@@ -41,7 +41,7 @@ public class PlayerAttributes : MonoBehaviour
         // modifyMaxHealth();
         // modifyMoveSpeed();
         // modifyDefense();
-        // hb.SetMaxHealth(maxHealth);
+        hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
     }
 
@@ -49,11 +49,11 @@ public class PlayerAttributes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Tests, not to be live code
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     modifyCurrentHealth(-20);
-        // }
+        // Tests, not to be live code
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            modifyCurrentHealth(-1);
+        }
     }
 
 
@@ -104,7 +104,7 @@ public class PlayerAttributes : MonoBehaviour
     void modifyCurrentHealth(int mod)
     {
         currentHealth += mod;
-        // hb.SetHealth(currentHealth);
+        hb.SetHealth(currentHealth);
     }
 
     //Sets the current health to a desired value (used mainly for initialization of the character.)
