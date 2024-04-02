@@ -20,6 +20,10 @@ public class SceneChange : MonoBehaviour
 
     public void OnFadeComplete() {
         Time.timeScale = 1;
+        if (GameObject.FindGameObjectWithTag("FloorManager") != null)
+        {
+            GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().nextFloor();
+        }
         SceneManager.LoadSceneAsync(sceneBuildIndex, LoadSceneMode.Single);
     }
     
