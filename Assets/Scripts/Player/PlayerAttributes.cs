@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-    public struct PlayerBaseStats{
+public struct PlayerBaseStats{
         public int health;
         public int defense;
         public int attack;
@@ -20,7 +21,11 @@ public class PlayerAttributes : MonoBehaviour
     public int attack;
     public int moveSpeed;
 
-    public HealthBar hb;
+    //public HealthBar hb;
+
+    public BoxCollider2D boxCollider;
+
+    private int bedroomSceneIndex = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +46,7 @@ public class PlayerAttributes : MonoBehaviour
         // modifyMaxHealth();
         // modifyMoveSpeed();
         // modifyDefense();
-        hb.SetMaxHealth(maxHealth);
+        //hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
     }
 
@@ -104,7 +109,7 @@ public class PlayerAttributes : MonoBehaviour
     void modifyCurrentHealth(int mod)
     {
         currentHealth += mod;
-        hb.SetHealth(currentHealth);
+        //hb.SetHealth(currentHealth);
     }
 
     //Sets the current health to a desired value (used mainly for initialization of the character.)
@@ -122,16 +127,37 @@ public class PlayerAttributes : MonoBehaviour
         }
     }
 
-    void die()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        setCurrentHealth(0);
+        if(other.tag == "Enemy")
+        {
+            takeDamage(other.gameObject.GetComponent<EnemyAttributes>().getAttack());
+        }
     }
 
-    void takeDamage(int val)
+    void takeDamage(int incomingDamage)
     {
-        modifyCurrentHealth(-val);
+        int damageTaken = incomingDamage - defense;
+        if (damageTaken <= 0)
+        {
+            damageTaken = 1;
+        }
+
+        modifyCurrentHealth(-damageTaken);
+
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(Die());
+        }
     }
 
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Destroy(GameObject.FindGameObjectWithTag("FloorManager"));
+        SceneManager.LoadSceneAsync(bedroomSceneIndex, LoadSceneMode.Single);
+    }
 
     public int increaseAttackByPercent(double percent) {
         int increase = (int)Math.Ceiling((double)attack * percent);
