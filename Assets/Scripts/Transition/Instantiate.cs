@@ -10,6 +10,6 @@ public class Instantiate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(sceneBuildIndex, LoadSceneMode.Single);
     }
 }
