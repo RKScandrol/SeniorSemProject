@@ -12,8 +12,9 @@ public class FloorManager : MonoBehaviour
         currentFloor = baseFloor;
     }
     
-    void nextFloor()
+    public void nextFloor()
     {
         currentFloor++;
+        Debug.Log(currentFloor);
     }
 }
