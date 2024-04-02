@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInstance : MonoBehaviour
+public class Persist : MonoBehaviour
 {
-    private static GameObject playerInstance;
+    private static GameObject objInstance;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
 
-        if (playerInstance == null)
+        if (objInstance == null)
         {
-            playerInstance = gameObject;
+            objInstance = gameObject;
         }
 
         else {
