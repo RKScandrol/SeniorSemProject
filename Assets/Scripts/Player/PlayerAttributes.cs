@@ -24,6 +24,7 @@ public class PlayerAttributes : MonoBehaviour
     //public HealthBar hb;
 
     public BoxCollider2D boxCollider;
+    private bool isTakingDamage = false;
 
     private int bedroomSceneIndex = 3;
 
@@ -129,35 +130,42 @@ public class PlayerAttributes : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Enemy")
+        if(other.tag == "Enemy" && !isTakingDamage)
         {
-            takeDamage(other.gameObject.GetComponent<EnemyAttributes>().getAttack());
+            Vector2 direction = (gameObject.transform.position - other.transform.position).normalized;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 10000);
+            StartCoroutine(takeDamage(other.gameObject.GetComponent<EnemyAttributes>().getAttack()));
         }
     }
 
-    void takeDamage(int incomingDamage)
+    IEnumerator takeDamage(int incomingDamage)
     {
+        isTakingDamage = true;
+        //Freezes game for short time on taking damage("hitstop" effect)
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(0.1f);
+        Time.timeScale = 1;
+
         int damageTaken = incomingDamage - defense;
         if (damageTaken <= 0)
         {
             damageTaken = 1;
         }
-
         modifyCurrentHealth(-damageTaken);
 
+        //Player dies if health below zero
         if (currentHealth <= 0)
         {
-            StartCoroutine(Die());
+            yield return new WaitForSecondsRealtime(0.5f);
+            Time.timeScale = 0;
+            GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
         }
+
+        //Brief invulnerability after taking damage
+        yield return new WaitForSecondsRealtime(0.5f);
+        isTakingDamage = false;
     }
 
-    IEnumerator Die()
-    {
-        yield return new WaitForSeconds(1.0f);
-        Destroy(GameObject.FindGameObjectWithTag("Player"));
-        Destroy(GameObject.FindGameObjectWithTag("FloorManager"));
-        SceneManager.LoadSceneAsync(bedroomSceneIndex, LoadSceneMode.Single);
-    }
 
     public int increaseAttackByPercent(double percent) {
         int increase = (int)Math.Ceiling((double)attack * percent);

@@ -630,7 +630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77687ba5f613fc446b6be3b6e30100c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 2
+  dungeonIndex: 0
+  bedroomIndex: 0
   animator: {fileID: 1116275500}
   boxCollider2D: {fileID: 0}
 --- !u!61 &283491959
@@ -1796,7 +1797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77687ba5f613fc446b6be3b6e30100c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneBuildIndex: 5
+  dungeonIndex: 5
+  bedroomIndex: 0
   animator: {fileID: 1116275500}
   boxCollider2D: {fileID: 283491959}
 --- !u!1 &1445366165
