@@ -37,22 +37,22 @@ public class Player : MonoBehaviour
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
 
-        //Plays walk animation and updates attack point based on direction
-        if (rb.velocity.y > 0.1)
+        //Plays walk animation and updates attack point based on direction of movement and input
+        if (rb.velocity.y > 1 && vertical > 0)
         {
             attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y + 0.5f);
             animator.Play("player_walk_U");
         }
-        else if (rb.velocity.y < -0.1 && rb.velocity.x == 0) {
+        else if (rb.velocity.y < -0.1 && rb.velocity.x > -1 && rb.velocity.x < 1 && vertical < 0) {
             attackPoint.position = new Vector2(rb.transform.position.x, rb.position.y - 0.5f);
             animator.Play("player_walk_D");
         }
-        else if (rb.velocity.x < -0.1)
+        else if (rb.velocity.x < -0.1 && horizontal < 0)
         {
             attackPoint.position = new Vector2(rb.transform.position.x - 0.5f, rb.position.y);
             animator.Play("player_walk_L");
         }
-        else if (rb.velocity.x > 0.1)
+        else if (rb.velocity.x > 0.1 && horizontal > 0)
         {
             attackPoint.position = new Vector2(rb.transform.position.x + 0.5f, rb.position.y);
             animator.Play("player_walk_R");
@@ -64,7 +64,8 @@ public class Player : MonoBehaviour
             vertical *= moveLimiter;
         }
 
-        rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 5, vertical * moveSpeed * Time.fixedDeltaTime * 5);
+        //rb.velocity = new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 5, vertical * moveSpeed * Time.fixedDeltaTime * 5);
+        rb.AddForce(new Vector2(horizontal * moveSpeed * Time.fixedDeltaTime * 6, vertical * moveSpeed * Time.fixedDeltaTime * 6));
     }
     
 }
