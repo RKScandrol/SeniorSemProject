@@ -118,8 +118,8 @@ GameObject:
   - component: {fileID: 5229518862029505602}
   - component: {fileID: 1923687498540455764}
   - component: {fileID: 3542258780801693765}
-  - component: {fileID: 4737522099777263595}
   - component: {fileID: 2229479294252131871}
+  - component: {fileID: 4737522099777263595}
   - component: {fileID: 8147331888111407120}
   m_Layer: 0
   m_Name: flyball
@@ -236,21 +236,6 @@ CircleCollider2D:
   m_Offset: {x: 0.03, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
---- !u!114 &4737522099777263595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757731138819862722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 284e2695739aa1d448e8b5fcfa0681f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 500
-  nextWaypointDistance: 3
-  updateInterval: 0.1
 --- !u!114 &2229479294252131871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,6 +256,21 @@ MonoBehaviour:
   baseHealth: 100
   baseAttack: 10
   baseDefense: 10
+--- !u!114 &4737522099777263595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757731138819862722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284e2695739aa1d448e8b5fcfa0681f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 500
+  nextWaypointDistance: 3
+  updateInterval: 0.1
 --- !u!58 &8147331888111407120
 CircleCollider2D:
   m_ObjectHideFlags: 0

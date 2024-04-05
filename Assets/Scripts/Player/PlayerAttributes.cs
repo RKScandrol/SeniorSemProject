@@ -138,10 +138,44 @@ public class PlayerAttributes : MonoBehaviour
         attack += increase;
         return attack;
     }
+    public int increaseAttackByPoints(int points) {
+        attack += points;
+        return attack;
+    }
 
     public int increaseDefenseByPercent(double percent) {
         int increase = (int)Math.Ceiling((double)defense * percent);
         defense += increase;
+        return defense;
+    }
+
+    /*
+        Decreases Defense stat by a given Percent
+        Returns the amount the Defense was decreased by
+    */
+    public int decreaseDefenseByPercent(double percent) {
+        int min = 1;
+        int decrease = (int)Math.Ceiling((double)defense * percent);
+        if (defense == min) {
+            return 0;
+        }
+        else if (defense - decrease < min) {
+            int ret = defense - min;
+            defense = min;
+            return ret;
+        }
+        else {
+            defense -= decrease;
+            return decrease;
+        }
+    }
+    public int decreaseDefenseByPoints(int points) {
+        if (defense - points <= 1) {
+            defense = 1;
+        } 
+        else {
+            defense -= points;
+        }
         return defense;
     }
 

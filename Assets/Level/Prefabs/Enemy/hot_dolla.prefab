@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2379512233096447695}
   - component: {fileID: 4087367888167090672}
   - component: {fileID: 5986071592277709233}
-  - component: {fileID: 2718534642720393124}
   - component: {fileID: 6765220884925533753}
+  - component: {fileID: 2718534642720393124}
   - component: {fileID: 5665766609546253684}
   m_Layer: 0
   m_Name: hot_dolla
@@ -130,21 +130,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.2}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!114 &2718534642720393124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107280279851060749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 284e2695739aa1d448e8b5fcfa0681f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 500
-  nextWaypointDistance: 3
-  updateInterval: 0.1
 --- !u!114 &6765220884925533753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +150,21 @@ MonoBehaviour:
   baseHealth: 100
   baseAttack: 10
   baseDefense: 10
+--- !u!114 &2718534642720393124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107280279851060749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284e2695739aa1d448e8b5fcfa0681f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 500
+  nextWaypointDistance: 3
+  updateInterval: 0.1
 --- !u!58 &5665766609546253684
 CircleCollider2D:
   m_ObjectHideFlags: 0
