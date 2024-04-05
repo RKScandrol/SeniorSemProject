@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-    public struct PlayerBaseStats{
+public struct PlayerBaseStats{
         public int health;
         public int defense;
         public int attack;
@@ -20,7 +21,12 @@ public class PlayerAttributes : MonoBehaviour
     public int attack;
     public int moveSpeed;
 
-    public HealthBar hb;
+    //public HealthBar hb;
+
+    public BoxCollider2D boxCollider;
+    private bool isTakingDamage = false;
+
+    private int bedroomSceneIndex = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +47,7 @@ public class PlayerAttributes : MonoBehaviour
         // modifyMaxHealth();
         // modifyMoveSpeed();
         // modifyDefense();
-        hb.SetMaxHealth(maxHealth);
+        //hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
     }
 
@@ -104,7 +110,7 @@ public class PlayerAttributes : MonoBehaviour
     void modifyCurrentHealth(int mod)
     {
         currentHealth += mod;
-        hb.SetHealth(currentHealth);
+        //hb.SetHealth(currentHealth);
     }
 
     //Sets the current health to a desired value (used mainly for initialization of the character.)
@@ -122,14 +128,42 @@ public class PlayerAttributes : MonoBehaviour
         }
     }
 
-    void die()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        setCurrentHealth(0);
+        if(other.tag == "Enemy" && !isTakingDamage)
+        {
+            Vector2 direction = (gameObject.transform.position - other.transform.position).normalized;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 500);
+            StartCoroutine(takeDamage(other.gameObject.GetComponent<EnemyAttributes>().getAttack()));
+        }
     }
 
-    void takeDamage(int val)
+    IEnumerator takeDamage(int incomingDamage)
     {
-        modifyCurrentHealth(-val);
+        isTakingDamage = true;
+        //Freezes game for short time on taking damage("hitstop" effect)
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(0.1f);
+        Time.timeScale = 1;
+
+        int damageTaken = incomingDamage - defense;
+        if (damageTaken <= 0)
+        {
+            damageTaken = 1;
+        }
+        modifyCurrentHealth(-damageTaken);
+
+        //Player dies if health below zero
+        if (currentHealth <= 0)
+        {
+            yield return new WaitForSecondsRealtime(0.5f);
+            Time.timeScale = 0;
+            GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
+        }
+
+        //Brief invulnerability after taking damage
+        yield return new WaitForSecondsRealtime(0.5f);
+        isTakingDamage = false;
     }
 
 
