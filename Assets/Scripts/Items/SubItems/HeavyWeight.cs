@@ -73,6 +73,35 @@ using UnityEngine;
 
         Debug.Log("Actual Defense Boosted");
     }
+    /*
+        Decreases Defense stat by a given Percent
+        Returns the amount the Defense was decreased by
+    */
+    public int decreaseActualDefenseByPercent(double percent) {
+        int min = 1;
+        int decrease = (int)Math.Ceiling((double)actualDefense * percent);
+        if (actualDefense == min) {
+            return 0;
+        }
+        else if (actualDefense - decrease < min) {
+            int ret = actualDefense - min;
+            actualDefense = min;
+            return ret;
+        }
+        else {
+            actualDefense -= decrease;
+            return decrease;
+        }
+    }
+    public int decreaseActualDefenseByPoints(int points) {
+        if (actualDefense - points <= 1) {
+            actualDefense = 1;
+        } 
+        else {
+            actualDefense -= points;
+        }
+        return actualDefense;
+    }
 
     public float getActualMoveSpeed() {
         return actualMoveSpeed;

@@ -4,8 +4,8 @@
             "itemID": 1501,
             "name": "SuperHuman",
             "description": "Run faster and hit harder",
-            "weight": 600,
-            "effectTime": 2,
+            "weight": 6,
+            "effectTime": 1,
             "attackPercentBoost": 0.5,
             "moveSpeedPercentBoost": 0.1
         }

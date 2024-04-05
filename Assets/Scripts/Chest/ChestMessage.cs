@@ -81,6 +81,7 @@ public class ChestMessage : MonoBehaviour
 			// item1 = new AttackBoost(1919, "Attack Boost", "hit harder", 5, 0.25);
 			// item2 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1, 0.25, 0.25f);
 			// item1 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.5f);
+			// item1 = new AttackDefenseTradeOff(7, "TradeOff", "Trade Defense for Attack", 7, 0.4);
 			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();

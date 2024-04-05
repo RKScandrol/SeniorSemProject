@@ -102,6 +102,10 @@ public class JsonHelper
                     items = FromJson<TripleScoop>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "AttackDefenseTradeOff.json":
+                    items = FromJson<AttackDefenseTradeOff>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 case "Shocks.json":
                     items = FromJson<Shock>(jsonStr).Concat(items).ToArray();
                     break;

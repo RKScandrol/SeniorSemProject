@@ -61,6 +61,9 @@ using UnityEngine;
         Debug.Log("Actual Attack boosted \n" + 
         "Percent: " + percent + "\nNew Attack: " + actualAttack);
     }
+    public void increaseActualAttackByPoints(int points) {
+        actualAttack += points;
+    }
 
     public float getActualMoveSpeed() {
         return actualMoveSpeed;
