@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    //Used to specify target scene
-    public int sceneBuildIndex;
+    //Used to specify target scenes
+    public int dungeonIndex;
+    public int bedroomIndex;
     public Animator animator;
     public BoxCollider2D boxCollider2D;
 
@@ -19,12 +20,19 @@ public class SceneChange : MonoBehaviour
     }
 
     public void OnFadeComplete() {
-        Time.timeScale = 1;
         if (GameObject.FindGameObjectWithTag("FloorManager") != null)
         {
             GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().nextFloor();
         }
-        SceneManager.LoadSceneAsync(sceneBuildIndex, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(dungeonIndex, LoadSceneMode.Single);
+        Time.timeScale = 1;
+    }
+
+    public void OnDeathComplete() {
+        SceneManager.LoadSceneAsync(bedroomIndex, LoadSceneMode.Single);
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Destroy(GameObject.FindGameObjectWithTag("FloorManager"));
+        Time.timeScale = 1;
     }
     
 }

@@ -3,8 +3,11 @@
 /Scripts/JsonItems/DefenseBoosts.json
 /Scripts/JsonItems/HealthBoosts.json
 /Scripts/JsonItems/TripleScoop.json
+/Scripts/JsonItems/AttackDefenseTradeOff.json
 /Scripts/JsonItems/Shocks.json
 /Scripts/JsonItems/TimeWeaknesses.json
 /Scripts/JsonItems/OHKO.json
 /Scripts/JsonItems/Freeze.json
+/Scripts/JsonItems/SuperHuman.json
+/Scripts/JsonItems/HeavyWeight.json
 /Scripts/JsonItems/XRay.json

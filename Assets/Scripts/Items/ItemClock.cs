@@ -104,7 +104,6 @@ public class ItemClock : MonoBehaviour
         bool newItem = true;
 
         foreach (Item item in items) {
-            Type t = item.GetType();
             if (i.GetType() == item.GetType()) {
                 newItem = false;
                 item.intensify();
@@ -132,6 +131,17 @@ public class ItemClock : MonoBehaviour
 
     }
 
+    public T getItemOfType<T>() {
+        
+        foreach (Item i in items) {
+            if (i is T) {
+                return (T)Convert.ChangeType(i, typeof(T));
+            }
+        }
+        return default;
+
+    }
+
 
     //For Testing Purposes
     private void buildTestList() {
@@ -141,7 +151,15 @@ public class ItemClock : MonoBehaviour
         // Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2, 40);
         // s2.initializeItem();
 
-        Freeze f1 = new Freeze(1301, "Freeze", "Freeze", 5, 1, 5);
-        f1.initializeItem();
+        // Freeze f1 = new Freeze(1301, "Freeze", "Freeze", 5, 1, 5);
+        // f1.initializeItem();
+
+        // SuperHuman sh1 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1);
+        // sh1.initializeItem();
+
+        // HeavyWeight hw1 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.1f);
+        // hw1.initializeItem();
+        // HeavyWeight hw2 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.15f);
+        // hw2.initializeItem();
     }
 }

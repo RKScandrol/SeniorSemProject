@@ -49,6 +49,12 @@ using UnityEngine;
         int newDefense = playerAttributes.increaseDefenseByPercent(percentBoost);
 
         Debug.Log("Defense Boost " + itemID + " initialized\nNew Defense Value: " + newDefense);
+
+        ItemClock itemClock = GameObject.Find("Clock").GetComponent<ItemClock>();
+        HeavyWeight test = itemClock.getItemOfType<HeavyWeight>();
+        if (test != default) {
+            test.boostActualDefense(percentBoost);
+        }
     }
 
 
