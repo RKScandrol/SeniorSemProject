@@ -296,6 +296,7 @@ MonoBehaviour:
   - {fileID: 7254359817695609318, guid: 68ddaa4d3c2f7f044a5c18145d5b9e95, type: 3}
   - {fileID: 2692756212630863763, guid: 5bc6af03e907237488e3b51a0fd59f36, type: 3}
   - {fileID: 811997689800877511, guid: f385e5906f5313342832154f35ab37cb, type: 3}
+  - {fileID: 811997689800877511, guid: 6a4dad177727b4d45be07ff77e27703c, type: 3}
   DeadEnds: []
   InitialSectionTags:
   - spawn
