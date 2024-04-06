@@ -291,7 +291,7 @@ MonoBehaviour:
   Seed: 0
   SectionContainer: {fileID: 0}
   MaxLevelSize: 10
-  MaxAllowedOrder: 7
+  MaxAllowedOrder: 10
   Sections:
   - {fileID: 7254359817695609318, guid: 68ddaa4d3c2f7f044a5c18145d5b9e95, type: 3}
   - {fileID: 2692756212630863763, guid: 5bc6af03e907237488e3b51a0fd59f36, type: 3}
