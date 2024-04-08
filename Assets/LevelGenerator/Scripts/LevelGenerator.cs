@@ -74,8 +74,8 @@ namespace LevelGenerator.Scripts
             CreateInitialSection();
             DeactivateBounds();
 
-            aupdate = GameObject.FindGameObjectWithTag("astarscanupdate").GetComponent<AstarScanUpdater>();
-            aupdate.updateScan();
+            //aupdate = GameObject.FindGameObjectWithTag("astarscanupdate").GetComponent<AstarScanUpdater>();
+            //aupdate.updateScan();
         }
 
         protected void CheckRuleIntegrity()
