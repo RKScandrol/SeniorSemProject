@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.IO;
+using UnityEditor;
 
 public class ChestMessage : MonoBehaviour
 {
     public GameObject ui;
-	public Chest c;
 
 	public TMP_Text txtItem1Name;
 	public TMP_Text txtItem1Des;
@@ -27,6 +27,8 @@ public class ChestMessage : MonoBehaviour
 	private Item item2;
 	private Item item3;
 
+	private GameObject chest;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -37,7 +39,10 @@ public class ChestMessage : MonoBehaviour
 
 	}
 
-	public void Open(){
+	public void Open(GameObject chest) {
+
+		this.chest = chest;
+		
 		ui.SetActive (!ui.activeSelf);
 
 		if (ui.activeSelf) {
@@ -73,6 +78,10 @@ public class ChestMessage : MonoBehaviour
 			
 			// item1 = new Shock(999, "Shock", "Shocking", 1, 1, 1);	//For testing purposes
 			// item1 = new OHKO(1919, "OHKO", "Carefull", 100, 3, 20, 0.2);
+			// item1 = new AttackBoost(1919, "Attack Boost", "hit harder", 5, 0.25);
+			// item2 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1, 0.25, 0.25f);
+			// item1 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.5f);
+			// item1 = new AttackDefenseTradeOff(7, "TradeOff", "Trade Defense for Attack", 7, 0.4);
 			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();
@@ -112,7 +121,7 @@ public class ChestMessage : MonoBehaviour
 		*/
 		item1.initializeItem();
 
-		this.Close();
+		Close();
 	}
 	public void chooseItem2() {
 		
@@ -122,7 +131,7 @@ public class ChestMessage : MonoBehaviour
 		*/
 		item2.initializeItem();
 
-		this.Close();
+		Close();
 	}
 	public void chooseItem3() {
 		
@@ -132,7 +141,7 @@ public class ChestMessage : MonoBehaviour
 		*/
 		item3.initializeItem();
 
-		this.Close();
+		Close();
 	}
 
 
@@ -144,8 +153,7 @@ public class ChestMessage : MonoBehaviour
 				Time.timeScale = 1f;
 			} 
 
-			GameObject ch = GameObject.Find("Chest");
-			Destroy(ch);
+			Destroy(chest);
 		}
 	}
 }

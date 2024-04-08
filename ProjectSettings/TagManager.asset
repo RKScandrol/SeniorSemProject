@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Shock
+  - FloorManager
+  - LevelChange
   layers:
   - Default
   - TransparentFX

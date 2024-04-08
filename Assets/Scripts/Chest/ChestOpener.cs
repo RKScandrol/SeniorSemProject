@@ -50,7 +50,9 @@ public class ChestOpener : MonoBehaviour
 
             animator.Play("ChestOpenAnimation");
 
-            popupMessage.Open();
+            GameObject chest = this.gameObject.transform.parent.gameObject;
+
+            popupMessage.Open(chest);
             
         }
     }

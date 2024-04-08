@@ -1,0 +1,13 @@
+{
+    "Items": [
+        {
+            "itemID": 1601,
+            "name": "Heavy Weight",
+            "description": "Become a slow moving tank",
+            "weight": 5,
+            "effectTime": 2,
+            "defensePercentBoost": 0.5,
+            "moveSpeedPercentBoost": 0.25
+        }
+    ]
+}

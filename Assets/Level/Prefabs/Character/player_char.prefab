@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 8426809442863606006}
   - component: {fileID: 2320020723683729593}
   - component: {fileID: 9171709513669212716}
+  - component: {fileID: 999154908383365655}
   m_Layer: 0
   m_Name: player_char
   m_TagString: Player
@@ -175,7 +176,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2.25
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -300,7 +301,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1}
+  m_Size: {x: 0.65, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &9171709513669212716
 MonoBehaviour:
@@ -314,6 +315,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e815d0712e24f4a8d8792ce9dbed54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagString: Player
+--- !u!114 &999154908383365655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4251250788067376977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347c22706178a6122a4d69476e4ac8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  defense: 0
+  attack: 0
+  moveSpeed: 0
+  boxCollider: {fileID: 2320020723683729593}
 --- !u!1 &5074150947231840063
 GameObject:
   m_ObjectHideFlags: 0
