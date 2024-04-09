@@ -122,6 +122,10 @@ public class JsonHelper
                     items = FromJson<Freeze>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "SlipNSlide.json":
+                    items = FromJson<SlipNSlide>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 case "SuperHuman.json": 
                     items = FromJson<SuperHuman>(jsonStr).Concat(items).ToArray();
                     break;
