@@ -1,0 +1,11 @@
+{
+    "Items": [
+        {
+            "itemID": 1701,
+            "name": "Slip and Slide",
+            "description": "Watch your enemies go flying",
+            "weight": 70,
+            "effectTime": 1.0
+        }
+    ]
+}

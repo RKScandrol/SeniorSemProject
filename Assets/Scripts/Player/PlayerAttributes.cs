@@ -158,7 +158,7 @@ public class PlayerAttributes : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(0.5f);
             Time.timeScale = 0;
-            GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
+            // GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
         }
 
         //Brief invulnerability after taking damage
