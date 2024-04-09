@@ -64,6 +64,18 @@ using UnityEngine;
     public void increaseActualAttackByPoints(int points) {
         actualAttack += points;
     }
+    public int decreaseActualAttackByPoints(int points) {
+        int attackPointsTaken = 0;
+        if (actualAttack - points < 0) {
+            attackPointsTaken = actualAttack - 1;
+            actualAttack = 1;
+        }
+        else {
+            attackPointsTaken = points;
+            actualAttack -= points;
+        }
+        return attackPointsTaken;
+    }
 
     public float getActualMoveSpeed() {
         return actualMoveSpeed;

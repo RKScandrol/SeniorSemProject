@@ -102,6 +102,10 @@ using UnityEngine;
         }
         return actualDefense;
     }
+    public int increaseActualDefenseByPoints(int points) {
+        actualDefense += points;
+        return actualDefense;
+    }
 
     public float getActualMoveSpeed() {
         return actualMoveSpeed;

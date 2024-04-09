@@ -176,6 +176,18 @@ public class PlayerAttributes : MonoBehaviour
         attack += points;
         return attack;
     }
+    public int decreaseAttackByPoints(int points) {
+        int attackPointsTaken = 0;
+        if (attack - points < 1) {
+            attackPointsTaken = attack - 1;
+            attack = 1;
+        }
+        else {
+            attackPointsTaken = points;
+            attack -= points;
+        }
+        return attackPointsTaken;
+    }
 
     public int increaseDefenseByPercent(double percent) {
         int increase = (int)Math.Ceiling((double)defense * percent);
@@ -203,15 +215,23 @@ public class PlayerAttributes : MonoBehaviour
             return decrease;
         }
     }
+    public int increaseDefenseByPoints(int points) {
+        defense += points;
+        return defense;
+    }
     public int decreaseDefenseByPoints(int points) {
-        if (defense - points <= 1) {
+        int defensePointsTaken = 0;
+        if (defense - points < 1) {
+            defensePointsTaken = defense - 1;
             defense = 1;
         } 
         else {
             defense -= points;
+            defensePointsTaken = points;
         }
-        return defense;
+        return defensePointsTaken;
     }
+    
 
     public int increaseMaxHealthByPercent(double percent) {
         int increase = (int)Math.Ceiling((double)maxHealth * percent);
