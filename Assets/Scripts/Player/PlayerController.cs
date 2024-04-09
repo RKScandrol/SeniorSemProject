@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
             moveSpeed = gameObject.GetComponent<PlayerAttributes>().moveSpeed;
         }
         else {
-            moveSpeed = 400.0f;
+            moveSpeed = 300.0f;
         }
     }
 

@@ -175,7 +175,7 @@ public class PlayerAttributes : MonoBehaviour
         if(other.tag == "Enemy" && !isTakingDamage)
         {
             Vector2 direction = (gameObject.transform.position - other.transform.position).normalized;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 500);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 1000);
             StartCoroutine(takeDamage(other.gameObject.GetComponent<EnemyAttributes>().getAttack()));
         }
     }
