@@ -106,6 +106,10 @@ public class JsonHelper
                     items = FromJson<AttackDefenseTradeOff>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "DefenseAttackTradeOff.json":
+                    items = FromJson<DefenseAttackTradeOff>(jsonStr).Concat(items).ToArray(); 
+                    break;
+
                 case "Shocks.json":
                     items = FromJson<Shock>(jsonStr).Concat(items).ToArray();
                     break;

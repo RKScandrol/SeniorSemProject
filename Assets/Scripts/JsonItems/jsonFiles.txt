@@ -4,6 +4,7 @@
 /Scripts/JsonItems/HealthBoosts.json
 /Scripts/JsonItems/TripleScoop.json
 /Scripts/JsonItems/AttackDefenseTradeOff.json
+/Scripts/JsonItems/DefenseAttackTradeOff.json
 /Scripts/JsonItems/Shocks.json
 /Scripts/JsonItems/TimeWeaknesses.json
 /Scripts/JsonItems/OHKO.json
