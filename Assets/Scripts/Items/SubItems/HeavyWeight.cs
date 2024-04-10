@@ -52,7 +52,10 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description;
+        return description + 
+            "\nDefense Increase: " + (defensePercentBoost*100) + 
+            "%\nMove Speed Drop: " + (moveSpeedPercentDrop*100) + 
+            "%\nEffect Time: " + effectTime + " minutes";
     }
 
     public override string getIconPath()

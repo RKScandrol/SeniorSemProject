@@ -40,7 +40,9 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description;
+        return description + 
+            "Regen Time: " + (regenDuration * timeIncrement) + 
+            " seconds\nRegen Percent: " + regenPercent*100 + "%";
     }
 
     public override string getIconPath()

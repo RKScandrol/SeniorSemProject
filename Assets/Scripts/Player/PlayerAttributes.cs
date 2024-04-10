@@ -11,12 +11,15 @@ public struct PlayerBaseStats{
         public int attack;
         public int movespeed;
     }
+
+
 public class PlayerAttributes : MonoBehaviour
 {
 
 
     public int maxHealth;
     public int currentHealth;
+    private int bubbleHealth;
     public int defense;
     public int attack;
     public int moveSpeed;
@@ -49,6 +52,7 @@ public class PlayerAttributes : MonoBehaviour
         // modifyDefense();
         //hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
+
     }
 
 
@@ -151,6 +155,27 @@ public class PlayerAttributes : MonoBehaviour
         {
             damageTaken = 1;
         }
+        // Debug.Log("Damage Taken: " + damageTaken);
+
+        //If bubbleHealth is greater than 0
+        if (bubbleHealth > 0) {
+            //If bubbleHealth is greater than or equal to damageTaken
+            if (bubbleHealth >= damageTaken) {
+                //Decrease bubbleHealth by damageTaken
+                bubbleHealth -= damageTaken;
+                //Set damageTaken to 0
+                damageTaken = 0;
+            }
+            //If damageTaken is greater than bubbleHealth
+            else {
+                //Decrease damage taken by bubbleHealth
+                damageTaken -= bubbleHealth;
+                //Set bubbleHealth to 0
+                bubbleHealth = 0;
+            }
+            // Debug.Log("Bubble Health: " + bubbleHealth);
+        }
+
         modifyCurrentHealth(-damageTaken);
 
         //Player dies if health below zero
@@ -250,6 +275,12 @@ public class PlayerAttributes : MonoBehaviour
         }
 
         return currentHealth;
+    }
+
+
+    public int addBubbleHealth(int additionalBubbleHealth) {
+        bubbleHealth += additionalBubbleHealth;
+        return bubbleHealth;
     }
     
 }

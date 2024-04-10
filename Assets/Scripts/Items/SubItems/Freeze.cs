@@ -47,7 +47,7 @@ using UnityEngine.UIElements;
 
     public override string getDescription()
     {
-        return description;
+        return description + "\nFreeze Effect Time: " + effectTime + " seconds.\nWait Time: " + timeIncrement + " minutes.";
     }
 
     public override string getIconPath()
