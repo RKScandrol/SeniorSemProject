@@ -45,7 +45,10 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description;
+        return description + 
+            "Attack Boost: " + (attackPercentBoost*100) + 
+            "%\nMove Speed Boost: " + (moveSpeedPercentBoost*100) + 
+            "%\nEffect Time: " + effectTime + " minutes";
     }
 
     public override string getIconPath()

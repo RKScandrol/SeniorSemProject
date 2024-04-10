@@ -36,7 +36,7 @@ using UnityEngine;
     }
 
     public override string getDescription() {
-        return description;
+        return description + "\nTrade up to " + pointsToTrade + " points as available.";
     }
 
 

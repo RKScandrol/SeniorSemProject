@@ -41,7 +41,7 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description;
+        return description + "\nEffect Time: " + effectTime + " minutes";
     }
 
     public override string getIconPath()
