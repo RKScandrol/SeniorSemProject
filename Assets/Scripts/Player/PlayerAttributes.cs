@@ -132,6 +132,18 @@ public class PlayerAttributes : MonoBehaviour
         }
     }
 
+    public void increaseCurrentHealthByPoints(int points) {
+        if (points <= 0) {
+            Debug.Log("Player Health cannot be increased by value: " + points);
+        }
+        else if (currentHealth + points > maxHealth) {
+            currentHealth = maxHealth;
+        }
+        else {
+            currentHealth += points;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy" && !isTakingDamage)

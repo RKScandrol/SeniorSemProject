@@ -128,6 +128,8 @@ public class EnemyAttributes : MonoBehaviour
             GameObject.Find("GoldUI").GetComponent<GoldUISystem>().increaseGold(baseGoldDrop);
         }
 
+        Debug.Log("EnemyDamageTaken: " + damageTaken + " opposingAttck: " + opposingAttack);
+
         return damageTaken;
 
     }

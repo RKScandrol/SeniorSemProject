@@ -13,4 +13,5 @@
 /Scripts/JsonItems/SlipNSlide.json
 /Scripts/JsonItems/SuperHuman.json
 /Scripts/JsonItems/HeavyWeight.json
+/Scripts/JsonItems/LifeSteal.json
 /Scripts/JsonItems/XRay.json
