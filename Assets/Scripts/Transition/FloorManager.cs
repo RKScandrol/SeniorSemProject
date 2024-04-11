@@ -16,5 +16,8 @@ public class FloorManager : MonoBehaviour
     {
         currentFloor++;
         Debug.Log(currentFloor);
+
+        FloorUISystem floorUISystem = GameObject.Find("FloorUI").GetComponent<FloorUISystem>();
+        floorUISystem.setFloorText("" + currentFloor);
     }
 }
