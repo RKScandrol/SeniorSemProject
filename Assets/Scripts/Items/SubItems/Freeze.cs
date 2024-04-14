@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -93,6 +94,9 @@ using UnityEngine.UIElements;
                 enemyPreviousMoveSpeed = enemyAI.moveSpeed;
                 enemyAI.moveSpeed = 0;
                 Debug.Log(frozenEnemy.name + " frozen");
+                //Play Freeze Animation for Enemy
+                Animator animator = frozenEnemy.transform.Find("Freeze").GetComponent<Animator>();
+                animator.Play("FreezeAnimation");
                 //Increment Activation Time by Effect Time
                 activationTime = activationTime.AddSeconds(effectTime);
             }
