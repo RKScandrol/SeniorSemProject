@@ -20,6 +20,7 @@ public class EnemyAttributes : MonoBehaviour
 
 
     private XRayStats xray;
+    public EnemyHealthbar enemyHealthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class EnemyAttributes : MonoBehaviour
 
         xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
         xray.initializeXRayStats();
+
+        enemyHealthbar.UpdateHealth(1.0f);
         
         // Debug.Log(this.debugStats());   //For TestingPurposes
 
@@ -52,6 +55,8 @@ public class EnemyAttributes : MonoBehaviour
     }
     public void setHealth(int health) {
         this.health = health;
+
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
     }
 
     public int getBaseHealth() {
@@ -59,6 +64,8 @@ public class EnemyAttributes : MonoBehaviour
     }
     public void setBaseHealth(int baseHealth) {
         this.baseHealth = baseHealth;
+
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
     }
 
     public int getAttack() {
@@ -128,6 +135,8 @@ public class EnemyAttributes : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().increaseGold(baseGoldDrop);
         }
 
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
+
         // Debug.Log("EnemyDamageTaken: " + damageTaken + " opposingAttck: " + opposingAttack);
 
         return damageTaken;
@@ -145,6 +154,8 @@ public class EnemyAttributes : MonoBehaviour
         }
 
         health += (int)Math.Ceiling(healthRestore);
+
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
 
         return healthRestore;
     }
