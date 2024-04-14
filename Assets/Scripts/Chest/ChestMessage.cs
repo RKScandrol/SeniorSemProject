@@ -81,7 +81,15 @@ public class ChestMessage : MonoBehaviour
 			// item1 = new AttackBoost(1919, "Attack Boost", "hit harder", 5, 0.25);
 			// item2 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1, 0.25, 0.25f);
 			// item1 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.5f);
-			// item1 = new AttackDefenseTradeOff(7, "TradeOff", "Trade Defense for Attack", 7, 0.4);
+			// item1 = new AttackDefenseTradeOff(7, "TradeOff", "Trade Defense for Attack", 7, 4);
+			// item2 = new DefenseAttackTradeOff(7, "TradeOff", "Trade Attack for Defense", 7, 4);
+			// item3 = new Freeze(999999, "Freeze", "Freeeze", 5, 2, 2);
+			// item1 = new OHKO(4, "OHKO", "OHKO", 4, 4, 4, 4);
+			// item2 = new BubbleHealth(4, "Bubble Health", "Bubble Health", 5, 5);
+			// item3 = new LifeSteal(4, "LifeSteal", "LifeSteal", 5, 5, 5);
+			// item1 = new TimeWeakness(4, "TimedWeakness", "TimedWeakenss", 5, 5, 5);
+			// item2 = new XRay(4, "Xray", "Xray", 6);
+			// item3 = new TripleScoop(4, "TripleScoop", "TripleScoop", 5, 6);
 			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();
