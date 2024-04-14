@@ -23,6 +23,9 @@ public class PlayerAttributes : MonoBehaviour
     public int defense;
     public int attack;
     public int moveSpeed;
+    public int gold;
+    private GoldUISystem goldUISystem;
+    private string goldJsonPath;
 
     //public HealthBar hb;
 
@@ -53,6 +56,11 @@ public class PlayerAttributes : MonoBehaviour
         //hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
 
+        
+
+        goldJsonPath = "/Scripts/Player/Gold.json";
+        readGoldFromJson();
+
     }
 
 
@@ -82,6 +90,24 @@ public class PlayerAttributes : MonoBehaviour
         PlayerBaseStats stats = JsonUtility.FromJson<PlayerBaseStats>(jsonStr);
 
         return stats;
+    }
+
+
+    public void readGoldFromJson() {
+
+        string jsonStr = File.ReadAllText(Application.dataPath + goldJsonPath);
+        int[] golds = JsonHelper.FromJson<int>(jsonStr);
+        gold = golds[0];
+
+        
+
+    }
+
+    public void writeGoldToJson() {
+        int[] golds = new int[1];
+        golds[0] = gold;
+        string jsonStr = JsonHelper.ToJson<int>(golds, true);
+        File.WriteAllText(Application.dataPath + goldJsonPath, jsonStr);
     }
   
 
@@ -195,7 +221,8 @@ public class PlayerAttributes : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(0.5f);
             Time.timeScale = 0;
-            // GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
+            writeGoldToJson();
+            GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
         }
 
         //Brief invulnerability after taking damage
@@ -293,6 +320,17 @@ public class PlayerAttributes : MonoBehaviour
     public int addBubbleHealth(int additionalBubbleHealth) {
         bubbleHealth += additionalBubbleHealth;
         return bubbleHealth;
+    }
+
+    public void increaseGold(int increase) {
+        gold += increase;
+
+        goldUISystem = GameObject.Find("GoldUI").GetComponent<GoldUISystem>();
+        goldUISystem.setText(gold);
+    }
+
+    public int getGold() {
+        return gold;
     }
     
 }
