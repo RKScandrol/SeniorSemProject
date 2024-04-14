@@ -8,6 +8,7 @@ TagManager:
   - Shock
   - FloorManager
   - LevelChange
+  - PermUpgradeUI
   layers:
   - Default
   - TransparentFX

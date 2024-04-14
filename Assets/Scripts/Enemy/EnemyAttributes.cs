@@ -28,7 +28,7 @@ public class EnemyAttributes : MonoBehaviour
         readStats();
         
         //Applies stat modifiers based on current floor
-        // floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
+        floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
         attack += floorMod + 2;
         defense += floorMod + 2;
         health += floorMod * 5;
@@ -125,10 +125,10 @@ public class EnemyAttributes : MonoBehaviour
 
         if (health <= 0 ) {
             Destroy(enemy);
-            GameObject.Find("GoldUI").GetComponent<GoldUISystem>().increaseGold(baseGoldDrop);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().increaseGold(baseGoldDrop);
         }
 
-        Debug.Log("EnemyDamageTaken: " + damageTaken + " opposingAttck: " + opposingAttack);
+        // Debug.Log("EnemyDamageTaken: " + damageTaken + " opposingAttck: " + opposingAttack);
 
         return damageTaken;
 
