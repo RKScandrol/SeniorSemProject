@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
-public class ShockAnimationExit : StateMachineBehaviour
+public class FreezeAnimationExit : StateMachineBehaviour
 {
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

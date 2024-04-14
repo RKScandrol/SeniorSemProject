@@ -147,13 +147,13 @@ public class ItemClock : MonoBehaviour
 
     //For Testing Purposes
     private void buildTestList() {
-        // Shock s1 = new Shock(999, "Shock", "Shocking", 5, 1, 20);
-        // s1.initializeItem();
+        Shock s1 = new Shock(999, "Shock", "Shocking", 5, 0.5, 20);
+        s1.initializeItem();
 
         // Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2, 40);
         // s2.initializeItem();
 
-        // Freeze f1 = new Freeze(1301, "Freeze", "Freeze", 5, 1, 5);
+        // Freeze f1 = new Freeze(1301, "Freeze", "Freeze", 5, 0.5, 5);
         // f1.initializeItem();
 
         // SuperHuman sh1 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1);
