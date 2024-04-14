@@ -53,7 +53,7 @@ using UnityEngine.UIElements;
 
     public override string getIconPath()
     {
-        return "";
+        return "Assets/Graphics/ItemIcons/FreezeIcon.png";
     }
     
 
