@@ -37,7 +37,6 @@ public class EnemyAttributes : MonoBehaviour
         xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
         xray.initializeXRayStats();
 
-        enemyHealthbar.UpdateHealth(1.0f);
         
         // Debug.Log(this.debugStats());   //For TestingPurposes
 

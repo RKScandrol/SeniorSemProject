@@ -10014,6 +10014,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2657853957976721502, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2718534642720393124, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
       propertyPath: target
       value: 
@@ -10109,6 +10113,10 @@ PrefabInstance:
     - target: {fileID: 4737522099777263595, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434242498249565303, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8982547724988768211, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10222,6 +10230,10 @@ PrefabInstance:
       propertyPath: enemyHealthbar
       value: 
       objectReference: {fileID: 423727114}
+    - target: {fileID: 3864314328032213010, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4126400420048998373, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
       propertyPath: m_Layer
       value: 7
