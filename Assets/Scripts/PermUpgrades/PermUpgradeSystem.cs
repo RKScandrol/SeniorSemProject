@@ -166,6 +166,7 @@ public class PermUpgradeSystem : MonoBehaviour
             priceCalculation();
             setHealthText();
             calculatePurchasePower();
+            goldUISystem.setText(gold);
         }
     }
 
@@ -180,6 +181,7 @@ public class PermUpgradeSystem : MonoBehaviour
             priceCalculation();
             setAttackText();
             calculatePurchasePower();
+            goldUISystem.setText(gold);
         }
     }
 
@@ -194,6 +196,7 @@ public class PermUpgradeSystem : MonoBehaviour
             priceCalculation();
             setDefenseText();
             calculatePurchasePower();
+            goldUISystem.setText(gold);
         }
     }
 
