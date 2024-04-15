@@ -88,7 +88,7 @@ public class ChestMessage : MonoBehaviour
 			// item2 = new BubbleHealth(4, "Bubble Health", "Bubble Health", 5, 5);
 			// item3 = new LifeSteal(4, "LifeSteal", "LifeSteal", 5, 5, 5);
 			// item1 = new TimeWeakness(4, "TimedWeakness", "TimedWeakenss", 5, 5, 5);
-			// item2 = new XRay(4, "Xray", "Xray", 6);
+			item2 = new XRay(4, "Xray", "Xray", 6);
 			// item3 = new TripleScoop(4, "TripleScoop", "TripleScoop", 5, 6);
 			
 			txtItem1Name.text = "" + item1.getName(); 

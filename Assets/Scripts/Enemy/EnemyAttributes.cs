@@ -19,7 +19,7 @@ public class EnemyAttributes : MonoBehaviour
     private int baseHealth, baseAttack, baseDefense;
 
 
-    private XRayStats xray;
+    public XRayStats xray;
     public EnemyHealthbar enemyHealthbar;
 
     // Start is called before the first frame update
@@ -29,12 +29,12 @@ public class EnemyAttributes : MonoBehaviour
         readStats();
         
         //Applies stat modifiers based on current floor
-        floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
+        // floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
         attack += floorMod + 2;
         defense += floorMod + 2;
         health += floorMod * 5;
 
-        xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
+        
         xray.initializeXRayStats();
 
         
