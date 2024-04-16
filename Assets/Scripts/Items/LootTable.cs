@@ -11,18 +11,16 @@ public class LootTable {
 
 
     public LootTable () {
-        this.totalWeight = 0;
-
-        // string jsonStr = JsonHelper.getJsonString();
+        totalWeight = 0;
         items = JsonHelper.getLootTable();
 
-        this.createTable();
+        createTable();
     }
     public LootTable (Item[] items) {
         this.items = items;
-        this.totalWeight = 0;
+        totalWeight = 0;
 
-        this.createTable();
+        createTable();
     }
 
 
@@ -44,23 +42,6 @@ public class LootTable {
 
             }
 
-        }
-    }
-
-    public void addItem(Item i) {
-        items[items.Length] = i;
-        this.updateTable(i);
-    }
-
-
-    private void updateTable(Item i) {
-        if (i.getWeight() < 0) {
-                    
-        }
-        else {
-            i.setMinWeight(totalWeight);
-            totalWeight += i.getWeight();
-            i.setMaxWeight(totalWeight);
         }
     }
 
@@ -88,15 +69,6 @@ public class LootTable {
             return null;
         }
 
-    }
-
-
-    //For Testing
-    public Item[] getList() {
-        return items;
-    }
-    public int getTotalWeight() {
-        return totalWeight;
     }
 
 }
