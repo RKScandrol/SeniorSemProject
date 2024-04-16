@@ -152,8 +152,8 @@ MonoBehaviour:
   baseHealth: 100
   baseAttack: 10
   baseDefense: 10
-  xray: {fileID: 0}
-  enemyHealthbar: {fileID: 0}
+  xray: {fileID: 8960794502358923668}
+  enemyHealthbar: {fileID: 5698204969233872399}
 --- !u!114 &2718534642720393124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 2652925187575472226}
   - component: {fileID: 3925929062129725325}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HealthbarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
