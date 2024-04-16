@@ -130,7 +130,13 @@ public class EnemyAttributes : MonoBehaviour
         health -= damageTaken;
 
         if (health <= 0 ) {
-            Destroy(enemy);
+            this.gameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = false;
+            CircleCollider2D[] collider2Ds = this.gameObject.GetComponents<CircleCollider2D>();
+            foreach (CircleCollider2D collider2D in collider2Ds) {
+                collider2D.enabled = false;
+            }
+            Animator animator = this.gameObject.transform.Find("EnemyDeath").GetComponent<Animator>();
+            animator.Play("EnemyDeathAnimation");
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().increaseGold(baseGoldDrop);
         }
 
