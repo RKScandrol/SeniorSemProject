@@ -210,7 +210,6 @@ public class PermUpgradeSystem : MonoBehaviour
         string jsonStr = JsonUtility.ToJson(buyHistory, true);
         string path = Application.dataPath + "/Scripts/PermUpgrades/BuyHistory.json";
         File.WriteAllText(path, jsonStr);
-        // Debug.Log(path + "\n" + jsonStr);
 
         writeGoldToJson();
 
