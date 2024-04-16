@@ -9,6 +9,7 @@ TagManager:
   - FloorManager
   - LevelChange
   - PermUpgradeUI
+  - Clock
   layers:
   - Default
   - TransparentFX

@@ -5958,17 +5958,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7373d3e3af7e8a84db8550784d8c1ec1, type: 3}
---- !u!114 &310473872 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6503538692374997505, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
-  m_PrefabInstance: {fileID: 6397660399093815358}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521ceeb13f1a96446918c90320a0f8c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &423727114 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6778360768261921857, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
@@ -6327,17 +6316,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406c3de14d1b92a418f607340837f829, type: 3}
---- !u!114 &1487626679 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5989950631749714782, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
-  m_PrefabInstance: {fileID: 6397660399093815358}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d5254799329ec45bc8beb67d20e8da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1522898365 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8960794502358923668, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
@@ -10093,6 +10071,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8506093422452734979, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
+      propertyPath: m_Name
+      value: HealthbarCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 9191207703795580124, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -10115,14 +10097,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: flyball
       objectReference: {fileID: 0}
-    - target: {fileID: 1757731138819862722, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1757731138819862722, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2170529241346348443, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: m_text
       value: 'h
@@ -10137,21 +10111,13 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2229479294252131871, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
-      propertyPath: xray
-      value: 
-      objectReference: {fileID: 310473872}
-    - target: {fileID: 2229479294252131871, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
-      propertyPath: enemyHealthbar
-      value: 
-      objectReference: {fileID: 1487626679}
     - target: {fileID: 2246989828798072635, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2614982053308677025, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: m_Name
-      value: FreezeCanvas
+      value: HealthbarCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 4737522099777263595, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: target
@@ -10230,6 +10196,14 @@ PrefabInstance:
     - target: {fileID: 1346785054547198970, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738074073797740812, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1738074073797740812, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
+      propertyPath: m_Name
+      value: HealthbarCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2072087490696941150, guid: 52022bd586e4c3d479a5276b8fb62ac3, type: 3}
       propertyPath: m_LocalPosition.x
