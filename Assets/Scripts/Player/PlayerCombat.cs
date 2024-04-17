@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
@@ -44,20 +45,27 @@ public class PlayerCombat : MonoBehaviour
         attackDamage = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().attack;
 
         //After attack startup, damage and knockback applied to enemies within range
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        List<GameObject> enemies = new List<GameObject>();
 
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D hit in hits)
+        {
+            if (!enemies.Contains(hit.gameObject)){
+                enemies.Add(hit.gameObject);
+            }
+        }
+
+        foreach (GameObject enemy in enemies)
         {
             Vector2 direction = (enemy.transform.position - attackPoint.transform.position).normalized;
-            enemy.attachedRigidbody.AddForce(direction * knockbackForce);
-            int damageDealt = enemy.gameObject.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
+            enemy.GetComponent<Rigidbody2D>().AddForce(direction * knockbackForce);
+            enemy.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
 
             //If Player has an active LifeSteal Item
             if (lifeSteal != null) {
                 //Give the DamageDealt to the Enemy to LifeSteal so that it will Heal the Player
                 lifeSteal.giveLifeToPlayer(damageDealt);
             }
-            
         }
 
         //Waits for attack duration to complete
