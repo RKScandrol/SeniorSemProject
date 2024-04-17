@@ -40,14 +40,12 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description + 
-            "Regen Time: " + (regenDuration * timeIncrement) + 
-            " seconds\nRegen Percent: " + regenPercent*100 + "%";
+        return description;
     }
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/OHKOIcon.png";
+        return "";
     }
 
 

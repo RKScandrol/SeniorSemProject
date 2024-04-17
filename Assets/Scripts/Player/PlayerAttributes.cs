@@ -11,21 +11,15 @@ public struct PlayerBaseStats{
         public int attack;
         public int movespeed;
     }
-
-
 public class PlayerAttributes : MonoBehaviour
 {
 
 
     public int maxHealth;
     public int currentHealth;
-    private int bubbleHealth;
     public int defense;
     public int attack;
     public int moveSpeed;
-    public int gold;
-    private GoldUISystem goldUISystem;
-    private string goldJsonPath;
 
     //public HealthBar hb;
 
@@ -55,12 +49,6 @@ public class PlayerAttributes : MonoBehaviour
         // modifyDefense();
         //hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
-
-        
-
-        goldJsonPath = "/Scripts/Player/Gold.json";
-        readGoldFromJson();
-
     }
 
 
@@ -90,24 +78,6 @@ public class PlayerAttributes : MonoBehaviour
         PlayerBaseStats stats = JsonUtility.FromJson<PlayerBaseStats>(jsonStr);
 
         return stats;
-    }
-
-
-    public void readGoldFromJson() {
-
-        string jsonStr = File.ReadAllText(Application.dataPath + goldJsonPath);
-        int[] golds = JsonHelper.FromJson<int>(jsonStr);
-        gold = golds[0];
-
-        
-
-    }
-
-    public void writeGoldToJson() {
-        int[] golds = new int[1];
-        golds[0] = gold;
-        string jsonStr = JsonHelper.ToJson<int>(golds, true);
-        File.WriteAllText(Application.dataPath + goldJsonPath, jsonStr);
     }
   
 
@@ -158,18 +128,6 @@ public class PlayerAttributes : MonoBehaviour
         }
     }
 
-    public void increaseCurrentHealthByPoints(int points) {
-        if (points <= 0) {
-            Debug.Log("Player Health cannot be increased by value: " + points);
-        }
-        else if (currentHealth + points > maxHealth) {
-            currentHealth = maxHealth;
-        }
-        else {
-            currentHealth += points;
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy" && !isTakingDamage)
@@ -193,27 +151,6 @@ public class PlayerAttributes : MonoBehaviour
         {
             damageTaken = 1;
         }
-        // Debug.Log("Damage Taken: " + damageTaken);
-
-        //If bubbleHealth is greater than 0
-        if (bubbleHealth > 0) {
-            //If bubbleHealth is greater than or equal to damageTaken
-            if (bubbleHealth >= damageTaken) {
-                //Decrease bubbleHealth by damageTaken
-                bubbleHealth -= damageTaken;
-                //Set damageTaken to 0
-                damageTaken = 0;
-            }
-            //If damageTaken is greater than bubbleHealth
-            else {
-                //Decrease damage taken by bubbleHealth
-                damageTaken -= bubbleHealth;
-                //Set bubbleHealth to 0
-                bubbleHealth = 0;
-            }
-            // Debug.Log("Bubble Health: " + bubbleHealth);
-        }
-
         modifyCurrentHealth(-damageTaken);
 
         //Player dies if health below zero
@@ -221,7 +158,6 @@ public class PlayerAttributes : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(0.5f);
             Time.timeScale = 0;
-            writeGoldToJson();
             GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
         }
 
@@ -239,18 +175,6 @@ public class PlayerAttributes : MonoBehaviour
     public int increaseAttackByPoints(int points) {
         attack += points;
         return attack;
-    }
-    public int decreaseAttackByPoints(int points) {
-        int attackPointsTaken = 0;
-        if (attack - points < 1) {
-            attackPointsTaken = attack - 1;
-            attack = 1;
-        }
-        else {
-            attackPointsTaken = points;
-            attack -= points;
-        }
-        return attackPointsTaken;
     }
 
     public int increaseDefenseByPercent(double percent) {
@@ -279,23 +203,15 @@ public class PlayerAttributes : MonoBehaviour
             return decrease;
         }
     }
-    public int increaseDefenseByPoints(int points) {
-        defense += points;
-        return defense;
-    }
     public int decreaseDefenseByPoints(int points) {
-        int defensePointsTaken = 0;
-        if (defense - points < 1) {
-            defensePointsTaken = defense - 1;
+        if (defense - points <= 1) {
             defense = 1;
         } 
         else {
             defense -= points;
-            defensePointsTaken = points;
         }
-        return defensePointsTaken;
+        return defense;
     }
-    
 
     public int increaseMaxHealthByPercent(double percent) {
         int increase = (int)Math.Ceiling((double)maxHealth * percent);
@@ -314,23 +230,6 @@ public class PlayerAttributes : MonoBehaviour
         }
 
         return currentHealth;
-    }
-
-
-    public int addBubbleHealth(int additionalBubbleHealth) {
-        bubbleHealth += additionalBubbleHealth;
-        return bubbleHealth;
-    }
-
-    public void increaseGold(int increase) {
-        gold += increase;
-
-        goldUISystem = GameObject.Find("GoldUI").GetComponent<GoldUISystem>();
-        goldUISystem.setText(gold);
-    }
-
-    public int getGold() {
-        return gold;
     }
     
 }

@@ -1,6 +1,6 @@
 {
     "baseHealth":100,
-    "baseAttack":10,
-    "baseDefense":10,
+    "baseAttack":15,
+    "baseDefense":15,
     "baseGold":10
 }

@@ -7,31 +7,43 @@ using UnityEngine;
 public class GoldUISystem : MonoBehaviour
 {
 
-
+    public int gold;            //This should be in Player Attributes
     public GameObject txtGoldGameObject;
     private TMP_Text txtGoldUI;
-    public bool isInit;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
-        isInit = false;
 
         txtGoldUI = txtGoldGameObject.GetComponent<TextMeshProUGUI>();
+        
+        setText();
 
-        PlayerAttributes playerAttributes = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>();
-        if (playerAttributes != null) {
-            setText(playerAttributes.getGold());
-        }
+    }
 
-        isInit = true;
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
 
-    public void setText(int gold) {
+
+    public void setText() {
         txtGoldUI.text = "Gold: " + gold;
     }
+
+    public void increaseGold(int amount) {
+        gold += amount;
+        setText();
+    }
+
+    public void decreaseGold(int amount) {
+        gold -= amount;
+        setText();
+    }
+
     
 }

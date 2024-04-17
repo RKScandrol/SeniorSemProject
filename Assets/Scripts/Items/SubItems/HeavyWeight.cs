@@ -52,15 +52,12 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description + 
-            "\nDefense Increase: " + (defensePercentBoost*100) + 
-            "%\nMove Speed Drop: " + (moveSpeedPercentDrop*100) + 
-            "%\nEffect Time: " + effectTime + " minutes";
+        return description;
     }
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/HeavyWeightIcon.png";
+        return "";
     }
 
 
@@ -103,10 +100,6 @@ using UnityEngine;
         else {
             actualDefense -= points;
         }
-        return actualDefense;
-    }
-    public int increaseActualDefenseByPoints(int points) {
-        actualDefense += points;
         return actualDefense;
     }
 

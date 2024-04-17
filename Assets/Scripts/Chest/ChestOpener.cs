@@ -5,30 +5,65 @@ using UnityEngine;
 public class ChestOpener : MonoBehaviour
 {
     public Chest chest;
+    public bool isOpen;
     ChestMessage popupMessage;
+    // GameObject gameController;
     public Animator animator;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //Get ChestMeassage Popup
+        // gameController = GameObject.Find("GameController");
+        // popupMessage = gameController.GetComponent<ChestMessage>();
+        
+        // popupMessage = GameObject.Find("ChestMessage").GetComponent<ChestMessage>();
+
+
         popupMessage = FindAnyObjectByType<ChestMessage>(FindObjectsInactive.Include);
+
+        isOpen = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         
     }
 
-    
+    // void OnMouseUp() {
+    //     if (!isOpen){
+
+    //         animator.Play("ChestOpenAnimation");
+
+    //         popupMessage.Open();
+    //         this.isOpen = true;
+    //     }
+    // }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Player") {
-            //Play ChestOpen Animation
+        if (other.tag == "Player" && !isOpen) {
+
+            // Debug.Log(isOpen);
+            this.isOpen = true;
+            // Debug.Log(isOpen);
+
             animator.Play("ChestOpenAnimation");
-            //Get Parent GameObject
+
             GameObject chest = this.gameObject.transform.parent.gameObject;
-            //Open the ChestMessage Popup, passing a reference to parent Gameobject so it can be deleted
+
             popupMessage.Open(chest);
             
         }
     }
+
+    // private void OnTriggerExit2D(Collider2D other) {
+    //     if (other.tag == "Player" && isOpen) {
+            
+    //         // Debug.Log(isOpen);
+    //         popupMessage.Close();
+            
+    //     }
+    // }
 
 }

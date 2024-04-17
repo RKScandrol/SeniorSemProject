@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+public enum ItemType {      //Neccessary?
+    Buff,
+    Passive,
+    Consumable
+}
 
 [Serializable]public abstract class Item {
     
@@ -14,6 +19,7 @@ using UnityEngine;
     protected int minWeight;
     protected int maxWeight;
     [SerializeField]protected Sprite icon;
+    // protected ItemType itemType;
 
 
     public Item(int itemID, string name, string description, int weight, int minWeight, int maxWeight) {
@@ -74,6 +80,10 @@ using UnityEngine;
             this.maxWeight = newMaxWeight;
         }
     }
+
+    // public ItemType getItemType() {
+    //     return itemType;
+    // }
 
     /* 
         Returns true if the itemID of the given item equals that of the current Item,

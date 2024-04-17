@@ -45,15 +45,12 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description + 
-            "Attack Boost: " + (attackPercentBoost*100) + 
-            "%\nMove Speed Boost: " + (moveSpeedPercentBoost*100) + 
-            "%\nEffect Time: " + effectTime + " minutes";
+        return description;
     }
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/SuperHumanIcon.png";
+        return "";
     }
 
 
@@ -66,18 +63,6 @@ using UnityEngine;
     }
     public void increaseActualAttackByPoints(int points) {
         actualAttack += points;
-    }
-    public int decreaseActualAttackByPoints(int points) {
-        int attackPointsTaken = 0;
-        if (actualAttack - points < 0) {
-            attackPointsTaken = actualAttack - 1;
-            actualAttack = 1;
-        }
-        else {
-            attackPointsTaken = points;
-            actualAttack -= points;
-        }
-        return attackPointsTaken;
     }
 
     public float getActualMoveSpeed() {

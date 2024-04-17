@@ -6,42 +6,38 @@ using UnityEngine;
 [Serializable]public class AttackDefenseTradeOff : Item
 {
 
-    /*
-        Trade some Attack points for Defense
-    */
-
     
-    [SerializeField]private int pointsToTrade;
+    [SerializeField]private double percentBoost;
 
     public AttackDefenseTradeOff(int itemID, string name, string description, int weight, int minWeight, int maxWeight, 
-    int pointsToTrade) :
+    double percentBoost) :
     base(itemID, name, description, weight) {
         
-        this.pointsToTrade = pointsToTrade;
+        this.percentBoost = percentBoost;
 
     }
 
     public AttackDefenseTradeOff(int itemID, string name, string description, int weight, 
-    int pointsToTrade) :
+    double percentBoost) :
     base(itemID, name, description, weight) {
 
-        this.pointsToTrade = pointsToTrade;
+        this.percentBoost = percentBoost;
 
     }
 
 
 
     public override string getIconPath() {
-        return "Assets/Graphics/ItemIcons/TradeOffAttackForDefenseIcon.png";
+        return "";
     }
 
     public override string getDescription() {
-        return description + "\nTrade up to " + pointsToTrade + " points as available.";
+        return description;
     }
 
 
-    public int getpointsToTrade() {
-        return pointsToTrade;
+    public double getPercentBoost() {
+        return percentBoost;
     }
 
 
@@ -58,32 +54,32 @@ using UnityEngine;
         HeavyWeight hw = itemClock.getItemOfType<HeavyWeight>();
         //Get any active SuperHuman Item
         SuperHuman sh = itemClock.getItemOfType<SuperHuman>();
-        //Number of points taken from Attack and to be applied to Defense
+        //Number of points taken from Defense and to be applied to Attack
         int pointsChange;
-        //If there is an Active SuperHuman Item
-        if (sh != default) {
-            //Decrease the actual attack by points to trade, save the number actually taken
-            pointsChange = sh.decreaseActualAttackByPoints(pointsToTrade);
-            //Decrease the attack in PlayerAttributes
-            playerAttributes.decreaseAttackByPoints(pointsChange);
-        }
-        //If there is no active SuperHuman Item
-        else {
-            //Get the number of points from the Attack attribute
-            pointsChange = playerAttributes.decreaseAttackByPoints(pointsToTrade);
-        }
-
-
-        //Increase the Defense attribute
-        playerAttributes.increaseDefenseByPoints(pointsChange);
-        //If there is an active HeavyWeight Item
+        //If there is an Active HeavyWeight Item
         if (hw != default) {
-            //Increase the Actual Defense stored in the HeavyWeight Item
-            hw.increaseActualDefenseByPoints(pointsChange);
+            //Get the number of points from the Actual Defense stored in HeavyWeight
+            pointsChange = hw.decreaseActualDefenseByPercent(percentBoost);
+            //Change the temporary Defense
+            playerAttributes.decreaseDefenseByPoints(pointsChange);
+        }
+        //If there is no active HeavyWeight Item
+        else {
+            //Get the number of points from the Defense attribute
+            pointsChange = playerAttributes.decreaseDefenseByPercent(percentBoost);
         }
 
 
-        Debug.Log("TradeOff initialized\n" + pointsChange + " points taken from Attack and applied to Defense");
+        //Increase the Attack attribute
+        playerAttributes.increaseAttackByPoints(pointsChange);
+        //If there is an active SuperHuman Item
+        if (sh != default) {
+            //Increase the Actual Attack stroed in the SuperHuman Item
+            sh.increaseActualAttackByPoints(pointsChange);
+        }
+
+
+        Debug.Log(pointsChange + " points taken from Defense and applied to Attack");
     }
 
 

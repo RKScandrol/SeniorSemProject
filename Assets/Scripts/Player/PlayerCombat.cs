@@ -15,9 +15,6 @@ public class PlayerCombat : MonoBehaviour
     public float attackStartup;
     public float attackDuration;
     public Animator animator;
-
-    private LifeSteal lifeSteal;
-
     
     void Start()
     {
@@ -40,8 +37,6 @@ public class PlayerCombat : MonoBehaviour
         player.constraints = RigidbodyConstraints2D.FreezeAll;
         animator.SetTrigger("Attacking");
         yield return new WaitForSeconds(attackStartup);
-        //Get Player Attack Attribute
-        attackDamage = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().attack;
 
         //After attack startup, damage and knockback applied to enemies within range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
@@ -50,14 +45,7 @@ public class PlayerCombat : MonoBehaviour
         {
             Vector2 direction = (enemy.transform.position - attackPoint.transform.position).normalized;
             enemy.attachedRigidbody.AddForce(direction * knockbackForce);
-            int damageDealt = enemy.gameObject.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
-
-            //If Player has an active LifeSteal Item
-            if (lifeSteal != null) {
-                //Give the DamageDealt to the Enemy to LifeSteal so that it will Heal the Player
-                lifeSteal.giveLifeToPlayer(damageDealt);
-            }
-            
+            enemy.gameObject.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
         }
 
         //Waits for attack duration to complete
@@ -72,15 +60,4 @@ public class PlayerCombat : MonoBehaviour
     void OnDrawGizmosSelected() {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
-
-
-    public void addLifeSteal(LifeSteal lf) {
-        lifeSteal = lf;
-    }
-    public void removeLifeSteal() {
-        lifeSteal = null;
-    }
-
-
 }

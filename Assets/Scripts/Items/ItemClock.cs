@@ -7,6 +7,7 @@ public class ItemClock : MonoBehaviour
 {
 
     private DateTime nowTime;
+    private DateTime checkTime;
     List<Item> items;
     List<Item> itemToRemove;
 
@@ -15,12 +16,16 @@ public class ItemClock : MonoBehaviour
     void Start()
     {
         nowTime = DateTime.Now;
-        
+        // Debug.Log("NowTime: " + nowTime.ToString());
+        checkTime = nowTime.AddMinutes(1);
+        // Debug.Log("CheckTIme: " + checkTime.ToString());
+
+
         items = new List<Item>();
         itemToRemove = new List<Item>();
 
         //Testing Purposes
-        // buildTestList();
+        buildTestList();
     }
 
     // Update is called once per frame
@@ -29,6 +34,38 @@ public class ItemClock : MonoBehaviour
         nowTime = DateTime.Now;
         itemsTimeCompare();
         removeItems();
+    }
+
+
+    //For Testing Purposes
+    private void timeCompareTest() {
+
+        DateTime d1 = new DateTime(nowTime.Year, 
+                                    nowTime.Month, 
+                                    nowTime.Day, 
+                                    nowTime.Hour, 
+                                    nowTime.Minute, 
+                                    nowTime.Second);
+
+        DateTime d2 = new DateTime(checkTime.Year, 
+                                    checkTime.Month, 
+                                    checkTime.Day, 
+                                    checkTime.Hour, 
+                                    checkTime.Minute, 
+                                    checkTime.Second);
+        // Debug.Log("d1:" + d1.ToString());
+        // Debug.Log("d2: " + d2.ToString());
+
+        if (d2.CompareTo(d1) == 0) {
+            // Debug.Log("Times Match, adding another minute\n" + nowTime.ToString() + "\n");
+            checkTime = checkTime.AddMinutes(1);
+        }
+        else if (checkTime.CompareTo(nowTime) < 0) {
+            // Debug.Log("Too Late\n" + nowTime.ToString() + "\n");
+        }
+        else {
+            // Debug.Log("Too Early\n" + nowTime.ToString() + "\n");
+        }
     }
 
 
@@ -52,6 +89,7 @@ public class ItemClock : MonoBehaviour
                                         activationTime.Second);
 
             if (d2.CompareTo(d1) == 0) {
+                // Debug.Log("Activating Shock ID: " + i.getItemID());
                 i.activateItem();
             }
         }
@@ -61,7 +99,7 @@ public class ItemClock : MonoBehaviour
 
 
 
-    public bool addItem(Item i) {
+    public void addItem(Item i) {
 
         bool newItem = true;
 
@@ -75,9 +113,10 @@ public class ItemClock : MonoBehaviour
 
         if (newItem) {
             items.Add(i);
-            return true;
+
+            // Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list\n" + 
+            //             "Item Type: " + i.GetType());
         }
-        return false;
     }
 
     public void addItemToRemove(Item i) {
@@ -106,13 +145,13 @@ public class ItemClock : MonoBehaviour
 
     //For Testing Purposes
     private void buildTestList() {
-        // Shock s1 = new Shock(999, "Shock", "Shocking", 5, 0.5, 20);
+        // Shock s1 = new Shock(999, "Shock", "Shocking", 5, 1, 20);
         // s1.initializeItem();
 
         // Shock s2 = new Shock(998, "Shock", "Shocking", 5, 2, 40);
         // s2.initializeItem();
 
-        // Freeze f1 = new Freeze(1301, "Freeze", "Freeze", 5, 0.5, 5);
+        // Freeze f1 = new Freeze(1301, "Freeze", "Freeze", 5, 1, 5);
         // f1.initializeItem();
 
         // SuperHuman sh1 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1);
@@ -122,8 +161,5 @@ public class ItemClock : MonoBehaviour
         // hw1.initializeItem();
         // HeavyWeight hw2 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.15f);
         // hw2.initializeItem();
-
-        // LifeSteal lf = new LifeSteal(18, "LifeSteal", "Heal from the suffering of others. ", 7, 0.5, 1);
-        // lf.initializeItem();
     }
 }
