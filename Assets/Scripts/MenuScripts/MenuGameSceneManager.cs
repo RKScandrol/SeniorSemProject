@@ -84,6 +84,9 @@ public class GameSceneManager : MonoBehaviour
     {
         if(settingsMenuInstance == null) {
             settingsMenuInstance = Instantiate(settingsMenuPrefab, SceneCanvas.transform);
+        } else {
+            bool isActive = settingsMenuInstance.activeSelf;
+            settingsMenuInstance.SetActive(!isActive);
         }
         
     }
