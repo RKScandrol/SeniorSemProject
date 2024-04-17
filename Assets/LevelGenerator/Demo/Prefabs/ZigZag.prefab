@@ -183,6 +183,7 @@ MonoBehaviour:
   - corridor
   - Boss
   - inter
+  - Exit
   Exits: {fileID: 2120838055968161949}
   Bounds: {fileID: 4041782724865185479}
   DeadEndChance: 0
@@ -399,6 +400,10 @@ PrefabInstance:
     - target: {fileID: 338449414779565381, guid: 58210c16c6e3cd64887d50f8b0de44cc, type: 3}
       propertyPath: m_Name
       value: ZigZagRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046914093078770156, guid: 58210c16c6e3cd64887d50f8b0de44cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5544687395565999561, guid: 58210c16c6e3cd64887d50f8b0de44cc, type: 3}
       propertyPath: m_TileSpriteArray.Array.size
@@ -679,6 +684,10 @@ PrefabInstance:
     - target: {fileID: 5544687395565999561, guid: 58210c16c6e3cd64887d50f8b0de44cc, type: 3}
       propertyPath: m_Tiles.Array.data[61].second.m_TileSpriteIndex
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010702899759546965, guid: 58210c16c6e3cd64887d50f8b0de44cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

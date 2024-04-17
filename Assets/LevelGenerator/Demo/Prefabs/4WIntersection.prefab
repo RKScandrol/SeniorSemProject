@@ -346,9 +346,10 @@ MonoBehaviour:
   - zig
   - Column
   - Boss
+  - Exit
   Exits: {fileID: 152132369196415893}
   Bounds: {fileID: 3488850800898699482}
-  DeadEndChance: 20
+  DeadEndChance: 0
 --- !u!1001 &4594140875891008635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -508,6 +509,14 @@ PrefabInstance:
     - target: {fileID: 4110344684617281684, guid: 79a84c405aee24145b232128ada40aea, type: 3}
       propertyPath: m_Name
       value: Intersection Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889330912907990730, guid: 79a84c405aee24145b232128ada40aea, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933701246228203768, guid: 79a84c405aee24145b232128ada40aea, type: 3}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7039031843641659201, guid: 79a84c405aee24145b232128ada40aea, type: 3}
       propertyPath: m_LocalPosition.x
