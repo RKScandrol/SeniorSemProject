@@ -12,10 +12,9 @@ public class Player : MonoBehaviour
     float moveLimiter = 0.7f;
 
     // Player attributes
-    public float moveSpeed = 20.0f;
+    public float moveSpeed;
 
 
-    //Trying to (mostly) handle animations in code, let's see how it goes!
     public Animator animator;
 
     //Point of reference for attack
@@ -26,6 +25,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (gameObject.GetComponent<PlayerAttributes>() != null)
+        {
+            moveSpeed = gameObject.GetComponent<PlayerAttributes>().moveSpeed;
+        }
+        else {
+            moveSpeed = 300.0f;
+        }
     }
 
 
