@@ -6,11 +6,6 @@ public static class IMG2Sprite {
  
    // This script loads a PNG or JPEG image from disk and returns it as a Sprite
    // Drop it on any GameObject/Camera in your scene (singleton implementation)
-   //
-   // Usage from any other script:
-   // MySprite = IMG2Sprite.instance.LoadNewSprite(FilePath, [PixelsPerUnit (optional)])
- 
-   
  
    public static Sprite LoadNewSprite(string FilePath, float PixelsPerUnit = 100.0f) {
    

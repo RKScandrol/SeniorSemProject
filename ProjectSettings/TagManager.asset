@@ -8,7 +8,8 @@ TagManager:
   - Shock
   - FloorManager
   - LevelChange
-  - astarscanupdate
+  - PermUpgradeUI
+  - Clock
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - Obstacle
   - Enemy
-  - Player
+  - 
   - 
   - 
   - 
