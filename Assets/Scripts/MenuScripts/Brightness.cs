@@ -10,13 +10,13 @@ using UnityEngine.UI;
 public class Brightness : MonoBehaviour {
 
 public Text valueText;
-public UnityEngine.Rendering.Universal.Light2D global2DLight;
-public Slider intensitySlider;
+//public UnityEngine.Rendering.Universal.Light2D global2DLight;
+//public Slider intensitySlider;
 
  void Start()
     {
         // Add listener to the slider's value change event
-        intensitySlider.onValueChanged.AddListener(ChangeIntensity);
+        //intensitySlider.onValueChanged.AddListener(ChangeIntensity);
     }
 
 public void OnSliderChanged(float value) {
@@ -27,6 +27,6 @@ public void OnSliderChanged(float value) {
 void ChangeIntensity(float value)
     {
         // Modify the intensity of the Global 2D Light
-        global2DLight.intensity = value;
+        //global2DLight.intensity = value;
     }
 }
