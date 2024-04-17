@@ -59,7 +59,7 @@ public class PlayerCombat : MonoBehaviour
         {
             Vector2 direction = (enemy.transform.position - attackPoint.transform.position).normalized;
             enemy.GetComponent<Rigidbody2D>().AddForce(direction * knockbackForce);
-            enemy.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
+            int damageDealt = enemy.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
 
             //If Player has an active LifeSteal Item
             if (lifeSteal != null) {
