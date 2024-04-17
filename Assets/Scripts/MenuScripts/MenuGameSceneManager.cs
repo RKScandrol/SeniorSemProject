@@ -49,19 +49,29 @@ public class GameSceneManager : MonoBehaviour
         Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Wilson_2");
     }
-
+    
     private GameObject pauseMenuInstance;
 
-    public void OpenPauseMenu()
-    {
-        Time.timeScale = 0f;
+     public void OpenPauseMenu()
+     {
         if(pauseMenuInstance == null) {
-            Instantiate(pauseMenuPrefab, SceneCanvas.transform);
+            pauseMenuInstance = Instantiate(pauseMenuPrefab, SceneCanvas.transform);
+            Time.timeScale = 0f;
         } else {
-            pauseMenuInstance.SetActive(true);
+            bool isActive = pauseMenuInstance.activeSelf;
+            pauseMenuInstance.SetActive(!isActive);
+            if(isActive) {
+                Time.timeScale = 1f;
+            }
+            else {
+                Time.timeScale = 0f;
+            }
         }
-    }
 
+
+     }
+
+    
     public void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             OpenPauseMenu();
@@ -73,11 +83,18 @@ public class GameSceneManager : MonoBehaviour
     public void OpenSettingsMenu()
     {
         if(settingsMenuInstance == null) {
-            Instantiate(settingsMenuPrefab, SceneCanvas.transform);
-        } else {
-            settingsMenuInstance.SetActive(true);
+            settingsMenuInstance = Instantiate(settingsMenuPrefab, SceneCanvas.transform);
+        }
+        
+    }
+
+    public void CloseSettingsMenu() {
+        if(settingsMenuInstance != null) {
+            bool isActive = settingsMenuInstance.activeSelf;
+            settingsMenuInstance.SetActive(!isActive);
         }
     }
+
      public void QuitButton()
     {
         // Quit Game
