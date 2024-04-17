@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class XRayStats : MonoBehaviour
 {
 
     private GameObject enemy;
-    private GameObject xray;
-    private TMP_Text txtStats;
+    public TMP_Text txtAttack;
+    public UnityEngine.UI.Image imgAttack;
+    public TMP_Text txtDefense;
+    public UnityEngine.UI.Image imgDefense;
     private EnemyAttributes enemyAttributes;
 
     // Start is called before the first frame update
@@ -27,25 +31,30 @@ public class XRayStats : MonoBehaviour
 
     public void initializeXRayStats() {
         enemy = this.gameObject.GetComponent<Transform>().parent.gameObject;
-        xray = this.gameObject;
         enemyAttributes = enemy.GetComponent<EnemyAttributes>();
-        txtStats = xray.GetComponent<TextMeshPro>();
-
+        
         setText();
-
+        hideTxtStats();
+        
     }
 
 
     public void setText() {
-        txtStats.text = "Attack: " + enemyAttributes.getAttack() + 
-                        "\nDefense: " + enemyAttributes.getDefense();
+        txtAttack.text = "" + enemyAttributes.attack;
+        txtDefense.text = "" + enemyAttributes.defense;
     }
 
     public void showTxtStats() {
-        txtStats.enabled = true;
+        txtAttack.enabled = true;
+        imgAttack.enabled = true;
+        txtDefense.enabled = true;
+        imgDefense.enabled = true;
     }
 
     public void hideTxtStats() {
-        txtStats.enabled = false;
+        txtAttack.enabled = false;
+        imgAttack.enabled = false;
+        txtDefense.enabled = false;
+        imgDefense.enabled = false;
     }
 }

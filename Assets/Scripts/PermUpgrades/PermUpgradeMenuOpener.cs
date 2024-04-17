@@ -22,14 +22,12 @@ public class PermUpgradeMenuOpener : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             permUpgradeMenu.SetActive(true);
-            // Debug.Log("Entered");
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Player") {
-            permUpgradeMenu.SetActive(false);
-            // Debug.Log("Exited");
+            permUpgradeMenu.transform.parent.GetComponent<PermUpgradeSystem>().exitMenu();
         }
     }
 }

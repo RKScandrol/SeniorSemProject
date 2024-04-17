@@ -8,6 +8,8 @@ TagManager:
   - Shock
   - FloorManager
   - LevelChange
+  - PermUpgradeUI
+  - Clock
   - astarscanupdate
   layers:
   - Default
