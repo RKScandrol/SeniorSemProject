@@ -454,9 +454,9 @@ MonoBehaviour:
   - {fileID: 2744031501753032021, guid: bc5000f0fa51f4647b3bd3c1c76f48a8, type: 3}
   - {fileID: 1600990225411259585, guid: 00298adae92cfda40ae9733e4f9caf82, type: 3}
   - {fileID: 7367535149990200219, guid: b972e8ebb00757547ac11e9c48100c6b, type: 3}
-  - {fileID: 3354940662141059825, guid: 3776ecc5b68a1cf438f82f26a7cc1e32, type: 3}
+  - {fileID: 3354940662141059825, guid: 6c3e63d851a98c54d95e2fcfc1d964d2, type: 3}
   DeadEnds:
-  - {fileID: 4789616710669814055, guid: 4227968f0458c694d8ea76cfed86ce56, type: 3}
+  - {fileID: 6867956003714455516, guid: 1352c06b785da1a409b8f9feba639229, type: 3}
   InitialSectionTags:
   - spawn
   SpecialRules:
