@@ -19,7 +19,8 @@ public class EnemyAttributes : MonoBehaviour
     private int baseHealth, baseAttack, baseDefense;
 
 
-    private XRayStats xray;
+    public XRayStats xray;
+    public EnemyHealthbar enemyHealthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +29,14 @@ public class EnemyAttributes : MonoBehaviour
         readStats();
         
         //Applies stat modifiers based on current floor
-        floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
+        // floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
         attack += floorMod + 2;
         defense += floorMod + 2;
         health += floorMod * 5;
 
-        xray = this.gameObject.GetComponent<Transform>().Find("XRay").GetComponent<XRayStats>();
+        
         xray.initializeXRayStats();
+
         
         // Debug.Log(this.debugStats());   //For TestingPurposes
 
@@ -52,6 +54,8 @@ public class EnemyAttributes : MonoBehaviour
     }
     public void setHealth(int health) {
         this.health = health;
+
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
     }
 
     public int getBaseHealth() {
@@ -59,6 +63,8 @@ public class EnemyAttributes : MonoBehaviour
     }
     public void setBaseHealth(int baseHealth) {
         this.baseHealth = baseHealth;
+
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
     }
 
     public int getAttack() {
@@ -124,9 +130,19 @@ public class EnemyAttributes : MonoBehaviour
         health -= damageTaken;
 
         if (health <= 0 ) {
-            Destroy(enemy);
-            GameObject.Find("GoldUI").GetComponent<GoldUISystem>().increaseGold(baseGoldDrop);
+            this.gameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = false;
+            CircleCollider2D[] collider2Ds = this.gameObject.GetComponents<CircleCollider2D>();
+            foreach (CircleCollider2D collider2D in collider2Ds) {
+                collider2D.enabled = false;
+            }
+            Animator animator = this.gameObject.transform.Find("EnemyDeath").GetComponent<Animator>();
+            animator.Play("EnemyDeathAnimation");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttributes>().increaseGold(baseGoldDrop);
         }
+
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
+
+        // Debug.Log("EnemyDamageTaken: " + damageTaken + " opposingAttck: " + opposingAttack);
 
         return damageTaken;
 
@@ -143,6 +159,8 @@ public class EnemyAttributes : MonoBehaviour
         }
 
         health += (int)Math.Ceiling(healthRestore);
+
+        enemyHealthbar.UpdateHealth((float)health / (float)baseHealth);
 
         return healthRestore;
     }

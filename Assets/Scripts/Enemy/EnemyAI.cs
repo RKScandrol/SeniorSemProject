@@ -7,9 +7,11 @@ public class EnemyAI : MonoBehaviour
 {
     private Transform target;
     public float moveSpeed;
-    public float nextWaypointDistance = 3.0f;
+    public float nextWaypointDistance = 0.5f;
     [SerializeField]
     private float updateInterval = 0.5f;
+
+    private float aggroRange = 50.0f;
 
     Path path;
     int currentWaypoint = 0;
@@ -17,6 +19,8 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+
+    bool isAggro = false;
     
     // Start is called before the first frame update
     void Start()
@@ -25,7 +29,7 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
 
-        InvokeRepeating("UpdatePath", 0f, updateInterval);
+        //InvokeRepeating("UpdatePath", 0f, updateInterval);
     }
 
     void UpdatePath()
@@ -48,6 +52,11 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector2.Distance(target.position, gameObject.transform.position) < aggroRange)
+        {
+            isAggro = true;
+        }
+        
         if (path == null)
         {
             return;
@@ -71,6 +80,14 @@ public class EnemyAI : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (isAggro)
+        {
+            InvokeRepeating("UpdatePath", 0f, updateInterval);
         }
     }
 }

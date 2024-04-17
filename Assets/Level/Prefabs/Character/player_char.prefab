@@ -176,7 +176,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 2.25
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -333,6 +333,8 @@ MonoBehaviour:
   defense: 0
   attack: 0
   moveSpeed: 0
+  gold: 0
+  goldUISystem: {fileID: 5297512401955187090, guid: 33f2e0e5f8db5f549af85e52607df6e1, type: 3}
   boxCollider: {fileID: 2320020723683729593}
 --- !u!1 &5074150947231840063
 GameObject:
