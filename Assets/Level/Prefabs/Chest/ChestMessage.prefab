@@ -540,7 +540,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4324115466733909611}
         m_TargetAssemblyTypeName: ChestMessage, Assembly-CSharp
         m_MethodName: chooseItem1
         m_Mode: 1
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4324115466733909611}
         m_TargetAssemblyTypeName: ChestMessage, Assembly-CSharp
         m_MethodName: chooseItem3
         m_Mode: 1
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4324115466733909611}
         m_TargetAssemblyTypeName: ChestMessage, Assembly-CSharp
         m_MethodName: chooseItem2
         m_Mode: 1
@@ -2176,7 +2176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 9200913068653747469}
-  c: {fileID: 0}
   txtItem1Name: {fileID: 6431534500031870241}
   txtItem1Des: {fileID: 6914699767573451097}
   imgItem1: {fileID: 8493974213371482087}

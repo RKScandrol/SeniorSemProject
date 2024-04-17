@@ -27,12 +27,12 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description;
+        return description + "\nPercent Boost: " + (percentBoost*100) + "%";
     }
 
     public override string getIconPath()
     {
-        return "";
+        return "Assets/Graphics/ItemIcons/TripleScoopIcon.png";
     }
 
 
