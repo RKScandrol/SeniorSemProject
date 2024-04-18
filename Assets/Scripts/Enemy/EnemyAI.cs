@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     private float updateInterval = 0.5f;
 
-    private float aggroRange = 50.0f;
+    private float aggroRange = 20.0f;
 
     Path path;
     int currentWaypoint = 0;
