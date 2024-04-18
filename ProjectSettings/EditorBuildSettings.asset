@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Development/test_persist/Instantiate.unity
     guid: 433dca84d74af0c49bd417be161229f8
+  - enabled: 1
+    path: Assets/Level/Scenes/Development/new_proceduralgen.unity
+    guid: 0875d7933179dea499efc4e9522b1b4e
   m_configObjects: {}

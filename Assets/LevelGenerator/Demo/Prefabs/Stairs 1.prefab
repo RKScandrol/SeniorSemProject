@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 6400948003711980127}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 1.5, z: 2}
+  m_LocalPosition: {x: 4.1, y: 0, z: 2}
   m_LocalScale: {x: 8.2, y: 5.39, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,6 +235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5092057382533556617}
     m_Modifications:
+    - target: {fileID: 106905844146887168, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
+      propertyPath: dungeonIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2371890776812572918, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
       propertyPath: m_Name
       value: Stairs
@@ -242,6 +246,10 @@ PrefabInstance:
     - target: {fileID: 5530422125372896295, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
       propertyPath: m_SortingOrder
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6520133280965588894, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
+      propertyPath: dungeonIndex
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6814347039346406818, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
       propertyPath: m_SortingOrder

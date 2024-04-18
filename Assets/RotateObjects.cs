@@ -33,7 +33,7 @@ public class RotateObjects : MonoBehaviour
 
                 Transform subChild = child.GetChild(j);
 
-                subChild.rotation.z += (-1*z);
+                //subChild.rotation.z += (-1*z);
 
             }
 
