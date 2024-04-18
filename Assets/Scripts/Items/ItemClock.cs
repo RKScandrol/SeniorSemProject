@@ -99,7 +99,7 @@ public class ItemClock : MonoBehaviour
 
 
 
-    public void addItem(Item i) {
+    public bool addItem(Item i) {
 
         bool newItem = true;
 
@@ -113,10 +113,12 @@ public class ItemClock : MonoBehaviour
 
         if (newItem) {
             items.Add(i);
+            return true;
 
             // Debug.Log(i.getName() + " " + i.getItemID() + " added to clock list\n" + 
             //             "Item Type: " + i.GetType());
         }
+        return false;
     }
 
     public void addItemToRemove(Item i) {

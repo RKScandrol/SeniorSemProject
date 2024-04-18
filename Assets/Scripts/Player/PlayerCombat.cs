@@ -16,6 +16,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackStartup;
     public float attackDuration;
     public Animator animator;
+    private LifeSteal lifeSteal;
     
     void Start()
     {
@@ -54,7 +55,13 @@ public class PlayerCombat : MonoBehaviour
         {
             Vector2 direction = (enemy.transform.position - attackPoint.transform.position).normalized;
             enemy.GetComponent<Rigidbody2D>().AddForce(direction * knockbackForce);
-            enemy.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
+            int damageDealt = enemy.GetComponent<EnemyAttributes>().takeDamage(attackDamage);
+
+            //If Player has an active LifeSteal Item
+            if (lifeSteal != null) {
+                //Give the DamageDealt to the Enemy to LifeSteal so that it will Heal the Player
+                lifeSteal.giveLifeToPlayer(damageDealt);
+            }
         }
 
         //Waits for attack duration to complete
@@ -68,5 +75,13 @@ public class PlayerCombat : MonoBehaviour
 
     void OnDrawGizmosSelected() {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+
+    public void addLifeSteal(LifeSteal lf) {
+        lifeSteal = lf;
+    }
+    public void removeLifeSteal() {
+        lifeSteal = null;
     }
 }

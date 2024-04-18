@@ -1898,6 +1898,17 @@ MonoBehaviour:
   bedroomIndex: 0
   animator: {fileID: 1116275500}
   boxCollider2D: {fileID: 283491959}
+--- !u!114 &1401260450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5297512401955187090, guid: 33f2e0e5f8db5f549af85e52607df6e1, type: 3}
+  m_PrefabInstance: {fileID: 270285854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a386e4bf312fb446a94d610a97e8403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1445366165
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,6 +3148,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6842811862985119058, guid: fd7a7b061f3a78e4c8948f72c98b393b, type: 3}
+      propertyPath: goldUISystem
+      value: 
+      objectReference: {fileID: 1401260450}
     - target: {fileID: 8500281498174991213, guid: fd7a7b061f3a78e4c8948f72c98b393b, type: 3}
       propertyPath: m_Name
       value: PermUpgrade

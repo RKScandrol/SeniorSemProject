@@ -1,0 +1,39 @@
+{
+    "Items": [
+        {
+            "itemID": 701,
+            "name": "Bubble Health", 
+            "description": "Get some additional, temporary health points.",
+            "weight": 10,
+            "bubbleHealth": 10
+        }, 
+        {
+            "itemID": 702,
+            "name": "Bubble Health", 
+            "description": "Get some additional, temporary health points",
+            "weight": 8,
+            "bubbleHealth": 15
+        }, 
+        {
+            "itemID": 701,
+            "name": "Bubble Health", 
+            "description": "Get some additional, temporary health points",
+            "weight": 6,
+            "bubbleHealth": 20
+        }, 
+        {
+            "itemID": 701,
+            "name": "Bubble Health", 
+            "description": "Get some additional, temporary health points",
+            "weight": 4,
+            "bubbleHealth": 25
+        },
+        {
+            "itemID": 701,
+            "name": "Bubble Health", 
+            "description": "Get some additional, temporary health points",
+            "weight": 2,
+            "bubbleHealth": 30
+        }
+    ]
+}

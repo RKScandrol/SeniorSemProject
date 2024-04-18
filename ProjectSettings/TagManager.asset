@@ -9,6 +9,7 @@ TagManager:
   - FloorManager
   - LevelChange
   - astarscanupdate
+  - Clock
   layers:
   - Default
   - TransparentFX

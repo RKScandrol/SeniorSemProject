@@ -134,6 +134,22 @@ public class JsonHelper
                     items = FromJson<XRay>(jsonStr).Concat(items).ToArray();
                     break;
 
+                case "DefenseAttackTradeOff.json":
+                    items = FromJson<DefenseAttackTradeOff>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "LifeSteal.json":
+                    items = FromJson<LifeSteal>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "BubbleHealth.json":
+                    items = FromJson<BubbleHealth>(jsonStr).Concat(items).ToArray();
+                    break;
+
+                case "SlipNSlide.json":
+                    items = FromJson<SlipNSlide>(jsonStr).Concat(items).ToArray();
+                    break;
+
                 default:
                     Debug.Log("No Items added for Path: " + path);
                     break;
