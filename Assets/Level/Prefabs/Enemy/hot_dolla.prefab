@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 306811799403774915}
   - component: {fileID: 3591468329933888474}
   m_Layer: 7
-  m_Name: hot_dolla_0
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
