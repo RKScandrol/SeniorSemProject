@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 500
-  nextWaypointDistance: 3
+  nextWaypointDistance: 1
   updateInterval: 0.1
 --- !u!58 &8147331888111407120
 CircleCollider2D:

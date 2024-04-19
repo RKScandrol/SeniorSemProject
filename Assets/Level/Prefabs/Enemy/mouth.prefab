@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284e2695739aa1d448e8b5fcfa0681f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 500
-  nextWaypointDistance: 3
+  moveSpeed: 600
+  nextWaypointDistance: 1
   updateInterval: 0.1
 --- !u!1 &1535091854130569585
 GameObject:

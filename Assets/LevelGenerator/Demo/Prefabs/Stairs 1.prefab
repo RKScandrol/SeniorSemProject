@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6520133280965588894, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
       propertyPath: dungeonIndex
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6814347039346406818, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
       propertyPath: m_SortingOrder
