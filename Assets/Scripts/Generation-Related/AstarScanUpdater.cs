@@ -14,7 +14,7 @@ public class AstarScanUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isUpdated = false)
+        if(isUpdated == false)
         {
             updateScan();
             isUpdated = true;
