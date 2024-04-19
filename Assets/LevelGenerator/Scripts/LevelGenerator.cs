@@ -59,8 +59,6 @@ namespace LevelGenerator.Scripts
         protected bool HalfLevelBuilt => registeredSections.Count > LevelSize;
 
 
-        // Added script to allow astar update scan to generate on level
-        AstarScanUpdater aupdate;
 
         protected void Start()
         {

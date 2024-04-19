@@ -65,6 +65,13 @@ public class RotateObjects : MonoBehaviour
 
         }
 
+        updateAStarPath();
+
+    }
+
+    void updateAStarPath()
+    {
+        AstarPath.active.Scan();
     }
 
 }

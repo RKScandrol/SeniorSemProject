@@ -100,93 +100,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &3260423591948462144
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 666671156872842244}
-  - component: {fileID: 6359342785760913906}
-  m_Layer: 0
-  m_Name: astar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &666671156872842244
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3260423591948462144}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -11, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5461645838256663141}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6359342785760913906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3260423591948462144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  data:
-    dataString: UEsDBBQAAAgIAACYn+ugkA57awIAACEFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK5yVlEwNhb7sOIXtIQoVs5eKLsMZYhSy59AiQFP++I9nGDntCdM+jezTyF+HS1JBbpVeasyfFgPwcEX8mP0Y9+QhHulNywz+hi3nnzJY+iIaYV2q5Qjz2aUZVYDXPf8md8MERgk7yQulqyXaQKmMNwgUVBpDSyvpsidDXiBzxZ7zwKSc8Teb+9ImnRTQ64zEHaUH3oYubxTyeT9rw8fQmms+mcdImNTlO5oJWNTBvoE+dRl0XPIVAiebaGG8kV0Jw0yoj9lQH5ymtjUNfGMA4RadBjo8vge9K61UPk1+KwoBtx6Dp6Z5rHFhTlfxWzRQravaNsg8qnO8zS4KkpubTf/Q4DnShVfXYtY2DIVvyfP9KTzk1djDlIXz/XbeTByr2dCvgvQT5rFZaOcmQtNr5VGdgct//vThLS8j3Pd5IvQJd3Q+8G3d3pd7DOZg/poJXW0/dJA2wESqMO2wCaLyYPyg47IlpSyDqVfw18EZ3w4VqiQeujUWqdSm9vK1y2oeSZZiZd+NsqrSEALeia5BU2NMay9jrG7ziBm2vmAfqn07bvOW6F3GVEuA+PoquqLU6XC7LlOrwBKZ8cVZwCb1oTzzjnFIlZbNgw5l0aRunC5oP0naOs++rRWbb6G52O2Hz+DZiccTGyYJG8ySeJ3SW3NFkSsLucYk+qVg3Qtvx4K3JvrjEPeu+KKOVpnVYdqbpYcU/KzUYOZeF2uQaQL40FS7CQWMTfJRsyTgOaAPWchnum3xlRKh8Dyy7FMqC0+XRapr1VTJS8w9lPZKRNHxCMuLhyy6vNXxwOPjmXbEzOf8DUEsDBBQAAAgIAACYn+tzjs0tbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSWZKBhZmxUYq5obFBiqFBiq6JZaKBuYmhuUmimYlFoompUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACYn+ugkA57awIAACEFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+tzjs0tbQAAAHgAAAAJACQAAAAAAAAAAAAAALgCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAcAMAAAAA
-    upgradeData: 
-    file_cachedStartup: {fileID: 0}
-    data_cachedStartup: 
-    cacheStartup: 0
-  showNavGraphs: 1
-  showUnwalkableNodes: 1
-  debugMode: 0
-  debugFloor: 0
-  debugRoof: 1
-  manualDebugFloorRoof: 0
-  showSearchTree: 0
-  unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
-  maxNearestNodeDistance: 100
-  scanOnStartup: 1
-  fullGetNearestSearch: 0
-  prioritizeGraphs: 0
-  prioritizeGraphsLimit: 1
-  colorSettings:
-    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
-    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
-    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
-    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
-    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
-    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
-    _AreaColors:
-    - {r: 0, g: 0, b: 0, a: 0}
-  tagNames: []
-  heuristic: 2
-  heuristicScale: 1
-  threadCount: 1
-  maxFrameTime: 1
-  batchGraphUpdates: 0
-  graphUpdateBatchingInterval: 0.2
-  euclideanEmbedding:
-    mode: 0
-    seed: 0
-    pivotPointRoot: {fileID: 0}
-    spreadOutCount: 1
-  showGraphs: 1
 --- !u!1 &4814859758460802843
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,10 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7417520104000944618, guid: 47fc6d00918083243819b92f6b917197, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 666671156872842244}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47fc6d00918083243819b92f6b917197, type: 3}
 --- !u!4 &5461645838256663141 stripped
