@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs
       objectReference: {fileID: 0}
+    - target: {fileID: 2923247025392467679, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5530422125372896295, guid: e016ad23bb92b2544b85bb407c2e4a6b, type: 3}
       propertyPath: m_SortingOrder
       value: -3

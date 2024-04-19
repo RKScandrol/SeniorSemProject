@@ -562,14 +562,14 @@ MonoBehaviour:
     MinAmount: 1
     MaxAmount: 1
   - Tag: zig
-    MinAmount: 2
+    MinAmount: 1
     MaxAmount: 3
   - Tag: Column
     MinAmount: 1
     MaxAmount: 3
   - Tag: Heal
     MinAmount: 1
-    MaxAmount: 2
+    MaxAmount: 3
   - Tag: Exit
     MinAmount: 1
     MaxAmount: 1

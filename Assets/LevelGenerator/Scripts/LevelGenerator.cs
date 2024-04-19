@@ -74,6 +74,8 @@ namespace LevelGenerator.Scripts
             CreateInitialSection();
             DeactivateBounds();
 
+            gameObject.GetComponent<RotateObjects>().RotateGameObjects();
+
             //aupdate = GameObject.FindGameObjectWithTag("astarscanupdate").GetComponent<AstarScanUpdater>();
             //aupdate.updateScan();
         }
