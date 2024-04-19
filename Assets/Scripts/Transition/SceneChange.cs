@@ -29,7 +29,7 @@ public class SceneChange : MonoBehaviour
     }
 
     public void OnDeathComplete() {
-        SceneManager.LoadSceneAsync(bedroomIndex, LoadSceneMode.Single);
+        SceneManager.LoadScene(bedroomIndex, LoadSceneMode.Single);
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         Destroy(GameObject.FindGameObjectWithTag("FloorManager"));
         Time.timeScale = 1;

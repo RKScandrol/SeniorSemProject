@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1581554522703770593}
-  attackRange: 0.5
+  attackRange: 0.6
   knockbackForce: 400
   player: {fileID: 9092645527532400553}
   attackDamage: 50

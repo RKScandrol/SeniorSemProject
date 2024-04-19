@@ -181,7 +181,6 @@ public class PlayerAttributes : MonoBehaviour
         //Freezes game for short time on taking damage("hitstop" effect)
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(0.1f);
-        Time.timeScale = 1;
 
         int damageTaken = incomingDamage - defense;
         if (damageTaken <= 0)
@@ -214,9 +213,11 @@ public class PlayerAttributes : MonoBehaviour
         if (currentHealth <= 0)
         {
             yield return new WaitForSecondsRealtime(0.5f);
-            Time.timeScale = 0;
             writeGoldToJson();
             GameObject.FindGameObjectWithTag("LevelChange").GetComponent<Animator>().SetTrigger("Death");
+        }
+        else {
+            Time.timeScale = 1;
         }
 
         //Brief invulnerability after taking damage
