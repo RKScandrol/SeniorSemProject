@@ -29,10 +29,10 @@ public class EnemyAttributes : MonoBehaviour
         readStats();
         
         //Applies stat modifiers based on current floor
-        // floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
+        floorMod = GameObject.FindGameObjectWithTag("FloorManager").GetComponent<FloorManager>().currentFloor;
         attack += floorMod + 2;
         defense += floorMod + 2;
-        health += floorMod * 5;
+        health += floorMod * 2;
 
         
         xray.initializeXRayStats();
