@@ -32,10 +32,26 @@ public class RotateObjects : MonoBehaviour
             for(int j = 0; j < subChildCount ; j++) {
 
                 Transform subChild = child.GetChild(j);
-
+                
                 //subChild.rotation.z += (-1*z);
+                if (subChild.gameObject.tag == "Enemy") {
+                    Quaternion q = subChild.rotation;
+                    q.z += (-1 * z);
+                    subChild.rotation = q;
+
+
+                    if (z == 1) {
+                        Quaternion test = new Quaternion(0,-1*z,0,0);
+                        subChild.rotation = test;
+                        Debug.Log(subChild.name + " - " + subChild.rotation.z);
+                    }
+                    
+                }
 
             }
+
+
+            // Debug.Log(child.name + " - " + z);
 
 
         }
