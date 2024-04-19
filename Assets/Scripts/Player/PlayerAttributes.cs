@@ -53,6 +53,7 @@ public class PlayerAttributes : MonoBehaviour
         // modifyDefense();
         //hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
+        this.gameObject.GetComponent<PlayerCombat>().setAttack(attack);
 
 
         goldJsonPath = "/Scripts/Player/Gold.json";
@@ -171,7 +172,7 @@ public class PlayerAttributes : MonoBehaviour
         {
             this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
             Vector2 direction = (gameObject.transform.position - other.transform.position).normalized;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 1000);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 2000);
             StartCoroutine(takeDamage(other.gameObject.GetComponent<EnemyAttributes>().getAttack()));
         }
     }

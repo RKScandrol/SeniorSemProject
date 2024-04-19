@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 1581554522703770593}
   attackRange: 0.6
-  knockbackForce: 400
+  knockbackForce: 500
   player: {fileID: 9092645527532400553}
   attackDamage: 50
   enemyLayer:

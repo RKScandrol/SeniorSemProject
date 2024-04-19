@@ -84,4 +84,9 @@ public class PlayerCombat : MonoBehaviour
     public void removeLifeSteal() {
         lifeSteal = null;
     }
+
+    public void setAttack(int attack)
+    {
+        attackDamage = attack;
+    }
 }

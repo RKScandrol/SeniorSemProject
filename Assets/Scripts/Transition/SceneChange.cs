@@ -32,6 +32,7 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene(bedroomIndex, LoadSceneMode.Single);
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         Destroy(GameObject.FindGameObjectWithTag("FloorManager"));
+        Destroy(GameObject.FindGameObjectWithTag("Clock"));
         Time.timeScale = 1;
     }
     
