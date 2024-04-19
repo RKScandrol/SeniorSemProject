@@ -10,6 +10,7 @@ TagManager:
   - LevelChange
   - astarscanupdate
   - Clock
+  - Chest
   layers:
   - Default
   - TransparentFX

@@ -39,18 +39,24 @@ public class RotateObjects : MonoBehaviour
                 Transform subChild = child.GetChild(j);
                 if(subChild.gameObject.tag == "Enemy")
                 {
-                    Quaternion vec = subChild.rotation;
-                    vec.z += (-1 * z);
-                    subChild.rotation = vec;
+                    //Quaternion vec = subChild.rotation;
+                    //vec.z += (-1 * z);
+                    //subChild.rotation = vec;
 
 
-                    if(z == 1)
-                    {
+                    //if(z == 1)
+                    //{
                         Quaternion rot = new Quaternion(0, -1 * z, 0, 0);
                         subChild.rotation = rot;
-                    }
+                    //}
                     
 
+                }
+                if(subChild.gameObject.tag == "Chest")
+                {
+                    Quaternion rot = new Quaternion(0, -1 * z, 0, 0);
+                    subChild.rotation = rot;
+                    
                 }
                
 
