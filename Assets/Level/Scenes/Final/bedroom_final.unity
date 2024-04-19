@@ -2756,6 +2756,7 @@ GameObject:
   - component: {fileID: 1628045772}
   - component: {fileID: 1628045771}
   - component: {fileID: 1628045770}
+  - component: {fileID: 1628045773}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2813,6 +2814,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1628045773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628045769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2778d9e5f8292e04e83239526438c2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuPrefab: {fileID: 5431391433226965547, guid: c123bae38645f9c4b842c697638a9558, type: 3}
+  settingsMenuPrefab: {fileID: 7994276494715767305, guid: 8c9fcd63ee911554d90a83cf6a85f98b, type: 3}
+  mainMenuPrefab: {fileID: 1338007684508923491, guid: 8746596a3972ccb4a9466c8ffa4dc510, type: 3}
+  canvasPrefab: {fileID: 4342765412225681512, guid: 81516d2abcc099545befa6369efbcadb, type: 3}
 --- !u!1 &1671903394
 GameObject:
   m_ObjectHideFlags: 0
