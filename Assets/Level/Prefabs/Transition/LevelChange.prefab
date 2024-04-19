@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77687ba5f613fc446b6be3b6e30100c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonIndex: 4
-  bedroomIndex: 3
+  dungeonIndex: 3
+  bedroomIndex: 1
   animator: {fileID: 6523326338534761682}
   boxCollider2D: {fileID: 0}
 --- !u!1 &1684276687784052233
