@@ -169,6 +169,7 @@ public class PlayerAttributes : MonoBehaviour
     {
         if(other.tag == "Enemy" && !isTakingDamage)
         {
+            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
             Vector2 direction = (gameObject.transform.position - other.transform.position).normalized;
             gameObject.GetComponent<Rigidbody2D>().AddForce(direction * 1000);
             StartCoroutine(takeDamage(other.gameObject.GetComponent<EnemyAttributes>().getAttack()));
@@ -222,6 +223,7 @@ public class PlayerAttributes : MonoBehaviour
 
         //Brief invulnerability after taking damage
         yield return new WaitForSecondsRealtime(0.5f);
+        this.gameObject.GetComponent<CircleCollider2D>().enabled = true;
         isTakingDamage = false;
     }
 
