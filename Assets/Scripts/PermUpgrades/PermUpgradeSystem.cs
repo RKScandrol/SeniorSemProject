@@ -5,6 +5,7 @@ using System.IO;
 using TMPro;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PermUpgradeSystem : MonoBehaviour
 {
