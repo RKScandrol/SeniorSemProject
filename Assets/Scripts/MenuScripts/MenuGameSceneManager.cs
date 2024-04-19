@@ -56,7 +56,6 @@ public class GameSceneManager : MonoBehaviour
      {
         if(pauseMenuInstance == null) {
             pauseMenuInstance = Instantiate(pauseMenuPrefab, SceneCanvas.transform);
-            pauseMenuInstance.SetActive(true);
             Time.timeScale = 0f;
         } else {
             bool isActive = pauseMenuInstance.activeSelf;
