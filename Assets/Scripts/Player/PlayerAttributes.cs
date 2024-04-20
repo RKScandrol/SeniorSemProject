@@ -39,6 +39,7 @@ public class PlayerAttributes : MonoBehaviour
         String path = Application.dataPath + "/Scripts/Player/PlayerStats.json";
 
         PlayerBaseStats stats = getPermStatus();
+        BuyHistory buyHistory = getBuyHistory();
 
         //Set all player attributes to their base values
         attack = stats.attack;
@@ -47,10 +48,9 @@ public class PlayerAttributes : MonoBehaviour
         defense = stats.defense;
         //Set all player attributes to their proper values
         //TODO: set these using the permanent counters in Scandrol_4
-        // modifyDamage(/*TODO: FIll these in*/);
-        // modifyMaxHealth();
-        // modifyMoveSpeed();
-        // modifyDefense();
+        maxHealth = PlayerStatModifier.playerHealthModifier(stats.health, buyHistory.numHealthBuffsBought);
+        attack = PlayerStatModifier.playerAttackModifier(stats.attack, buyHistory.numAttackBuffsBought);
+        defense = PlayerStatModifier.playerDefenseModifier(stats.defense, buyHistory.numDefenseBuffsBought);
         //hb.SetMaxHealth(maxHealth);
         setCurrentHealth(maxHealth);
         this.gameObject.GetComponent<PlayerCombat>().setAttack(attack);
@@ -89,13 +89,18 @@ public class PlayerAttributes : MonoBehaviour
         return stats;
     }
 
+    private BuyHistory getBuyHistory() {
+        string path = Application.dataPath + "/Scripts/PermUpgrades/BuyHistory.json";
+        string jsonStr = File.ReadAllText(path);
+        BuyHistory buyHistory = JsonUtility.FromJson<BuyHistory>(jsonStr);
+        return buyHistory;
+    }
+
     public void readGoldFromJson() {
 
         string jsonStr = File.ReadAllText(Application.dataPath + goldJsonPath);
         int[] golds = JsonHelper.FromJson<int>(jsonStr);
         gold = golds[0];
-
-        
 
     }
 

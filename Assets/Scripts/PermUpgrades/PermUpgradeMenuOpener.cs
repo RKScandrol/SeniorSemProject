@@ -28,8 +28,7 @@ public class PermUpgradeMenuOpener : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Player") {
-            permUpgradeMenu.SetActive(false);
-            // Debug.Log("Exited");
+            permUpgradeMenu.transform.parent.GetComponent<PermUpgradeSystem>().exitMenu();
         }
     }
 }

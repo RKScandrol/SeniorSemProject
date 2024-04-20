@@ -22,6 +22,7 @@ public class PermUpgradeSystem : MonoBehaviour
     private int attackBuffCost;
     private int defenseBuffCost;
     private BuyHistory buyHistory; 
+    private PlayerBaseStats playerBaseStats;
     public int gold;
     private string goldJsonPath;
 
@@ -35,6 +36,7 @@ public class PermUpgradeSystem : MonoBehaviour
         goldUISystem = GameObject.Find("GoldUI").GetComponent<GoldUISystem>();
         readBuyHistory();
 
+        readPlayerBaseStats();
 
         goldJsonPath = "/Scripts/Player/Gold.json";
         getGoldFromJson();
@@ -57,9 +59,10 @@ public class PermUpgradeSystem : MonoBehaviour
 
     public void setHealthDescription() {
         txtHealthDesc.text = "Boost your Health" 
-            + "Current Player Health: h1" 
-            + "\nIncrease Percent: x"
-            + "\nNew Player Health: h2";
+            + "\nCurrent Player Health: " 
+            + PlayerStatModifier.playerHealthModifier(playerBaseStats.health, buyHistory.numHealthBuffsBought)
+            + "\nNew Player Health: "
+            + PlayerStatModifier.playerHealthModifier(playerBaseStats.health, buyHistory.numHealthBuffsBought + 1);
     }
 
     public void setHealthBtnText() {
@@ -75,9 +78,10 @@ public class PermUpgradeSystem : MonoBehaviour
 
     public void setAttackDescription() {
         txtAttackDesc.text = "Boost your Attack"
-            + "Current Player Attack: a1" 
-            + "\nIncrease Percent: y"
-            + "\nNew Player Attack: a2";
+            + "\nCurrent Player Attack: "
+            + PlayerStatModifier.playerAttackModifier(playerBaseStats.attack, buyHistory.numAttackBuffsBought) 
+            + "\nNew Player Attack: " 
+            + PlayerStatModifier.playerAttackModifier(playerBaseStats.attack, buyHistory.numAttackBuffsBought + 1);
     }
 
     public void setAttackBtnText() {
@@ -93,9 +97,10 @@ public class PermUpgradeSystem : MonoBehaviour
 
     public void setDefenseDescription() {
         txtDefenseDesc.text = "Boost your Defense" 
-            + "Current Player Defense: d1" 
-            + "\nIncrease Defense: z"
-            + "\nNew Player Defense: d2";
+            + "\nCurrent Player Defense: " 
+            + PlayerStatModifier.playerAttackModifier(playerBaseStats.defense, buyHistory.numDefenseBuffsBought) 
+            + "\nNew Player Defense: " 
+            + + PlayerStatModifier.playerAttackModifier(playerBaseStats.defense, buyHistory.numDefenseBuffsBought + 1);
     }
 
     public void setDefenseBtnText() {
@@ -230,6 +235,12 @@ public class PermUpgradeSystem : MonoBehaviour
             jsonStr += line;
         }
         return jsonStr;
+    }
+
+    private void readPlayerBaseStats() {
+        string playerStatsPath = Application.dataPath + "/Scripts/Player/PlayerStats.json";
+        string jsonStr = File.ReadAllText(playerStatsPath);
+        playerBaseStats = JsonUtility.FromJson<PlayerBaseStats>(jsonStr);
     }
 
     private void getGoldFromJson() {
