@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 6700048872282503764}
   - component: {fileID: 1687464304911248287}
   m_Layer: 0
-  m_Name: Footsteps
+  m_Name: footstep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,11 +148,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3c5dcff80b3c96a4a9025e78f2c8431f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 9171709513669212716}
   - component: {fileID: 999154908383365655}
   - component: {fileID: 5878032295886873347}
+  - component: {fileID: 195186038895525175}
   m_Layer: 0
   m_Name: player_char
   m_TagString: Player
@@ -454,6 +455,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.45
+--- !u!114 &195186038895525175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4251250788067376977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837e91de206b7a549a7d0c2526203f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstep: {fileID: 3634020998318371323}
 --- !u!1 &5074150947231840063
 GameObject:
   m_ObjectHideFlags: 0
