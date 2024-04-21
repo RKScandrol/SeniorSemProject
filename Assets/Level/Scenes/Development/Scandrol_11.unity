@@ -235,16 +235,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4251250788067376977, guid: 4e7d8fee01f65fe44a4060213d714356, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 921074559}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e7d8fee01f65fe44a4060213d714356, type: 3}
---- !u!1 &112942200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4251250788067376977, guid: 4e7d8fee01f65fe44a4060213d714356, type: 3}
-  m_PrefabInstance: {fileID: 112942199}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &151080981
 GameObject:
   m_ObjectHideFlags: 0
@@ -6035,25 +6027,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3621001695914945694, guid: 4e7d8fee01f65fe44a4060213d714356, type: 3}
   m_PrefabInstance: {fileID: 112942199}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &921074559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112942200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347c22706178a6122a4d69476e4ac8d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
-  defense: 0
-  attack: 0
-  moveSpeed: 0
-  gold: 0
-  boxCollider: {fileID: 0}
 --- !u!1001 &1169465088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9891,6 +9864,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 107280279851060749, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1412162178820484633, guid: 0c3c302c538d5184081d41dd3d44158c, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -10064,6 +10041,10 @@ PrefabInstance:
     - target: {fileID: 1757731138819862722, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757731138819862722, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2201363047695646152, guid: 0df2f9dd82108824d99bc41d7a84e6cb, type: 3}
       propertyPath: m_Layer
