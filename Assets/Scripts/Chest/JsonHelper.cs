@@ -35,20 +35,6 @@ public class JsonHelper
     }
 
 
-    //No Longer Needed
-    public static string getJsonString() {
-        string[] paths = getJsonFiles();
-
-        string[] lines = new string[0];
-
-        foreach (string path in paths){
-            lines = getLines(path).Concat(lines).ToArray();
-        }
-
-        return compineLines(lines);
-    }
-
-
 
     private static string[] getJsonFiles() {
         string path = Application.dataPath + "/Scripts/JsonItems/jsonFiles.txt";

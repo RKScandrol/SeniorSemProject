@@ -47,18 +47,6 @@ public class ChestMessage : MonoBehaviour
 
 		if (ui.activeSelf) {
 
-			/*
-				Previously the RawImages were simply made white
-			*/
-			// RawImage rawImage = ui.gameObject.GetComponentInChildren<RawImage>();
-			// rawImage.color = Color.white;
-
-			/*
-				Previously GameController script created and populated LootTable
-			*/
-			// GameObject g = GameObject.Find("GameController");
-			// GameController gc = g.GetComponent<GameController>();
-			// LootTable lt = gc.getLootTable();
 
 			/*
 				LootTable is created and populated only after chest is opened
@@ -76,12 +64,7 @@ public class ChestMessage : MonoBehaviour
 				item3 = lt.pickItem();		//Get 3rd random Item from LootTable
 			} while (item3.compareItems(item1) || item3.compareItems(item2));	//If item3 has the same ID as either item1 or 2, loop back to pick new Item
 			
-			// item1 = new Shock(999, "Shock", "Shocking", 1, 1, 1);	//For testing purposes
-			// item1 = new OHKO(1919, "OHKO", "Carefull", 100, 3, 20, 0.2);
-			// item1 = new AttackBoost(1919, "Attack Boost", "hit harder", 5, 0.25);
-			// item2 = new SuperHuman(7, "SupeHuman", "Boost", 5, 1, 0.25, 0.25f);
-			// item1 = new HeavyWeight(1, "HeavyWeight", "HeavyWeight", 5, 2, 0.5, 0.5f);
-			// item1 = new AttackDefenseTradeOff(7, "TradeOff", "Trade Defense for Attack", 7, 0.4);
+			
 			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();
@@ -98,16 +81,6 @@ public class ChestMessage : MonoBehaviour
             
 			Time.timeScale = 0f;
 		} 
-	}
-
-	private string readJsonFile() {
-		string filename = Application.dataPath + "/Scripts/JsonItems/items.json";
-        string[] lines = File.ReadAllLines(filename);
-        string line = "";
-        foreach (string l in lines) {
-            line += l;
-        }
-		return line;
 	}
 
 

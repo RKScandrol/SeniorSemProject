@@ -53,12 +53,14 @@ using UnityEngine;
 
     public override string getDescription()
     {
-        return description;
+        return description + 
+            "\nDefense Drop: " + (defenseDropPercentage*100) + 
+            "%\nEffect Time: " + effectTime + " minutes";
     }
 
     public override string getIconPath()
     {
-        return "";
+        return "Assets/Graphics/ItemIcons/TimedWeaknessIcon.png";
     }
 
     /*
