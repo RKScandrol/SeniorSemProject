@@ -98,9 +98,9 @@ public class PermUpgradeSystem : MonoBehaviour
     public void setDefenseDescription() {
         txtDefenseDesc.text = "Boost your Defense" 
             + "\nCurrent Player Defense: " 
-            + PlayerStatModifier.playerAttackModifier(playerBaseStats.defense, buyHistory.numDefenseBuffsBought) 
+            + PlayerStatModifier.playerDefenseModifier(playerBaseStats.defense, buyHistory.numDefenseBuffsBought) 
             + "\nNew Player Defense: " 
-            + + PlayerStatModifier.playerAttackModifier(playerBaseStats.defense, buyHistory.numDefenseBuffsBought + 1);
+            + + PlayerStatModifier.playerDefenseModifier(playerBaseStats.defense, buyHistory.numDefenseBuffsBought + 1);
     }
 
     public void setDefenseBtnText() {
