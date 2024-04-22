@@ -636,6 +636,8 @@ MonoBehaviour:
   settingsMenuPrefab: {fileID: 7994276494715767305}
   mainMenuPrefab: {fileID: 1338007684508923491, guid: 8746596a3972ccb4a9466c8ffa4dc510, type: 3}
   canvasPrefab: {fileID: 4342765412225681512, guid: 81516d2abcc099545befa6369efbcadb, type: 3}
+  PauseMenu: {fileID: 0}
+  SettingsMenu: {fileID: 0}
 --- !u!1 &5636327412336969626
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,8 +924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueText: {fileID: 5634945594235477194}
-  global2DLight: {fileID: 0}
-  intensitySlider: {fileID: 919927554851802266}
 --- !u!1 &7203414259993598514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6240987600459975657
 RectTransform:
   m_ObjectHideFlags: 0
