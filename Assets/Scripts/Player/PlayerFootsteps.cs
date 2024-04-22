@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerFootsteps : MonoBehaviour
 {
     public GameObject footstep;
+    private bool isMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -15,46 +16,20 @@ public class PlayerFootsteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("w"))
+        // Check if any movement key is pressed
+        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
         {
-            footsteps();
+            if (!isMoving)
+            {
+                footsteps();
+                isMoving = true;
+            }
         }
-
-        if(Input.GetKeyDown("s"))
-        {
-            footsteps();
-        }
-
-        if(Input.GetKeyDown("a"))
-        {
-            footsteps();
-        }
-
-        if(Input.GetKeyDown("d"))
-        {
-            footsteps();
-        }
-
-        if(Input.GetKeyUp("w"))
+        else if (isMoving) // Check if all movement keys are released
         {
             StopFootsteps();
+            isMoving = false;
         }
-
-        if(Input.GetKeyUp("s"))
-        {
-            StopFootsteps();
-        }
-
-        if(Input.GetKeyUp("a"))
-        {
-            StopFootsteps();
-        }
-
-        if(Input.GetKeyUp("d"))
-        {
-            StopFootsteps();
-        }
-
     }
 
     void footsteps()
