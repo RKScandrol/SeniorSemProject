@@ -33,6 +33,7 @@ public class SceneChange : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         Destroy(GameObject.FindGameObjectWithTag("FloorManager"));
         Destroy(GameObject.FindGameObjectWithTag("Clock"));
+        Destroy(GameObject.FindGameObjectWithTag("MusicManager"));
         Time.timeScale = 1;
     }
     
