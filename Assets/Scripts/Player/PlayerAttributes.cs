@@ -31,6 +31,7 @@ public class PlayerAttributes : MonoBehaviour
     private bool isTakingDamage = false;
 
     private int bedroomSceneIndex = 3;
+    public PlayerHealthBar playerHealthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,8 @@ public class PlayerAttributes : MonoBehaviour
 
         goldJsonPath = "/Scripts/Player/Gold.json";
         readGoldFromJson();
+
+        playerHealthBar.UpdateHealth((float)currentHealth / (float)maxHealth);
     }
 
 
@@ -65,10 +68,10 @@ public class PlayerAttributes : MonoBehaviour
     void Update()
     {
         // Tests, not to be live code
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            modifyCurrentHealth(-1);
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     modifyCurrentHealth(-1);
+        // }
     }
 
 
@@ -141,7 +144,7 @@ public class PlayerAttributes : MonoBehaviour
     void modifyCurrentHealth(int mod)
     {
         currentHealth += mod;
-        //hb.SetHealth(currentHealth);
+        playerHealthBar.UpdateHealth((float)currentHealth / (float)maxHealth);
     }
 
     //Sets the current health to a desired value (used mainly for initialization of the character.)
@@ -157,6 +160,8 @@ public class PlayerAttributes : MonoBehaviour
         {
             currentHealth = val;
         }
+
+        playerHealthBar.UpdateHealth((float)currentHealth / (float)maxHealth);
     }
 
     public void increaseCurrentHealthByPoints(int points) {
@@ -169,6 +174,8 @@ public class PlayerAttributes : MonoBehaviour
         else {
             currentHealth += points;
         }
+
+        playerHealthBar.UpdateHealth((float)currentHealth / (float)maxHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -299,6 +306,9 @@ public class PlayerAttributes : MonoBehaviour
     public int increaseMaxHealthByPercent(double percent) {
         int increase = (int)Math.Ceiling((double)maxHealth * percent);
         maxHealth += increase;
+
+        playerHealthBar.UpdateHealth((float)currentHealth / (float)maxHealth);
+
         return maxHealth;
     }
 
@@ -311,6 +321,8 @@ public class PlayerAttributes : MonoBehaviour
         else {
             currentHealth += restore;
         }
+
+        playerHealthBar.UpdateHealth((float)currentHealth / (float)maxHealth);
 
         return currentHealth;
     }

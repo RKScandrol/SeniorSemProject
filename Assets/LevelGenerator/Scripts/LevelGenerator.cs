@@ -77,7 +77,6 @@ namespace LevelGenerator.Scripts
             //aupdate = GameObject.FindGameObjectWithTag("astarscanupdate").GetComponent<AstarScanUpdater>();
             //aupdate.updateScan();
 
-            gameObject.GetComponent<RotateObjects>().RotateGameObjects();
         }
 
         protected void CheckRuleIntegrity()
