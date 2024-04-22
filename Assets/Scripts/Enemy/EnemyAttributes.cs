@@ -33,7 +33,7 @@ public class EnemyAttributes : MonoBehaviour
         attack += floorMod + 2;
         defense += floorMod + 2;
         health += floorMod * 2;
-        baseGoldDrop += floorMod + 2;
+        //baseGoldDrop += floorMod + 2;
 
         
         xray.initializeXRayStats();
