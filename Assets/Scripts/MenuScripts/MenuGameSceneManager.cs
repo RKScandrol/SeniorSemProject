@@ -50,12 +50,15 @@ public class GameSceneManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("bedroom_final");
     }
     
-    private GameObject pauseMenuInstance;
+    //private GameObject pauseMenuInstance;
+    public GameObject PauseMenu;
 
      public void OpenPauseMenu()
      {
+        /*
         if(pauseMenuInstance == null) {
-            pauseMenuInstance = Instantiate(pauseMenuPrefab, SceneCanvas.transform);
+            pauseMenuInstance = Instantiate(pauseMenuPrefab, SceneCanvas.transform);            
+            pauseMenuInstance.SetActive(true);
             Time.timeScale = 0f;
         } else {
             bool isActive = pauseMenuInstance.activeSelf;
@@ -67,7 +70,18 @@ public class GameSceneManager : MonoBehaviour
                 Time.timeScale = 0f;
             }
         }
-
+        */
+        bool isActive = PauseMenu.activeSelf;
+            PauseMenu.SetActive(!isActive);
+            if(isActive) {
+                PauseMenu.SetActive(!isActive);
+                Time.timeScale = 1f;
+            }
+            else {
+                PauseMenu.SetActive(!isActive);
+                Time.timeScale = 0f;
+            }
+        
 
      }
 
@@ -78,23 +92,31 @@ public class GameSceneManager : MonoBehaviour
         }
     }
 
-    private GameObject settingsMenuInstance;
+    //private GameObject settingsMenuInstance;
+    public GameObject SettingsMenu;
 
     public void OpenSettingsMenu()
     {
-        if(settingsMenuInstance == null) {
-            settingsMenuInstance = Instantiate(settingsMenuPrefab, SceneCanvas.transform);
-        } else {
-            bool isActive = settingsMenuInstance.activeSelf;
-            settingsMenuInstance.SetActive(!isActive);
-        }
+        //if(settingsMenuInstance == null) {
+        //    settingsMenuInstance = Instantiate(settingsMenuPrefab, SceneCanvas.transform);
+        //} else {
+         //   bool isActive = settingsMenuInstance.activeSelf;
+         //   settingsMenuInstance.SetActive(!isActive);
+       // }
+
+       //bool isActive = SettingsMenu.activeSelf;
+       SettingsMenu.SetActive(true);
         
     }
 
     public void CloseSettingsMenu() {
-        if(settingsMenuInstance != null) {
+        /*if(settingsMenuInstance != null) {
             bool isActive = settingsMenuInstance.activeSelf;
             settingsMenuInstance.SetActive(!isActive);
+        }*/
+        if(SettingsMenu != null) {
+            //bool isActive = SettingsMenu.activeSelf;
+            SettingsMenu.SetActive(false);
         }
     }
 

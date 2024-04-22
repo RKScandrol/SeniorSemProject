@@ -8,7 +8,8 @@ MonoImporter:
   - settingsMenuPrefab: {fileID: 7994276494715767305, guid: 8c9fcd63ee911554d90a83cf6a85f98b, type: 3}
   - mainMenuPrefab: {fileID: 1338007684508923491, guid: 8746596a3972ccb4a9466c8ffa4dc510, type: 3}
   - canvasPrefab: {fileID: 4342765412225681512, guid: 81516d2abcc099545befa6369efbcadb, type: 3}
-  - LightPrefab: {fileID: 8610996514958639467, guid: aeebce075e880c34d8baa913adcc26e1, type: 3}
+  - PauseMenu: {fileID: 5431391433226965547, guid: c123bae38645f9c4b842c697638a9558, type: 3}
+  - SettingsMenu: {fileID: 7994276494715767305, guid: 8c9fcd63ee911554d90a83cf6a85f98b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
