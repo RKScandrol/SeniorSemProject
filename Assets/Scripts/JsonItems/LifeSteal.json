@@ -28,7 +28,7 @@
             "itemID": 1801,
             "name": "Life Steal",
             "description": "Take some life from the suffering of your enemies.",
-            "weight": 200, 
+            "weight": 2, 
             "percentSteal": 0.5,
             "effectTime": 2.0
         }

@@ -79,11 +79,11 @@ public class Player : MonoBehaviour
         Boosts MoveSpeed by a Percentage
         Does not let MoveSpeed become greater than a max value
     */
-    public float boostMoveSpeedByPercent(double percent) {
+    public float boostMoveSpeedByPercent(float percent) {
 
-        float max = 150.00f;
+        float max = 700.00f;
 
-        float increase = moveSpeed * (float)percent;
+        float increase = moveSpeed * percent;
         if (moveSpeed + increase > max) {
             moveSpeed = max;
         }

@@ -65,7 +65,6 @@ public class ChestMessage : MonoBehaviour
 			} while (item3.compareItems(item1) || item3.compareItems(item2));	//If item3 has the same ID as either item1 or 2, loop back to pick new Item
 			
 			
-			
 			txtItem1Name.text = "" + item1.getName(); 
 			txtItem1Des.text = "" + item1.getDescription();
 			txtItem2Name.text = "" + item2.getName(); 

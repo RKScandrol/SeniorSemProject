@@ -53,7 +53,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/SuperHumanIcon.png";
+        return "Assets/Graphics/ItemIcons/SuperHuman.png";
     }
 
 
