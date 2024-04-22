@@ -15,7 +15,6 @@ public class EnemyAI : MonoBehaviour
 
     Path path;
     int currentWaypoint = 0;
-    bool reachedEndOfPath = false;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -34,7 +33,7 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
+        if (seeker.IsDone() && target != null)
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
@@ -52,23 +51,17 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(target.position, gameObject.transform.position) < aggroRange)
+        if (target != null)
         {
-            isAggro = true;
+            if (Vector2.Distance(target.position, gameObject.transform.position) < aggroRange)
+            {
+                isAggro = true;
+            }
         }
         
-        if (path == null)
+        if (path == null || currentWaypoint >= path.vectorPath.Count)
         {
             return;
-        }
-
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndOfPath = true;
-            return;
-        } else
-        {
-            reachedEndOfPath = false;
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;

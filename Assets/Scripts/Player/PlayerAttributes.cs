@@ -23,12 +23,10 @@ public class PlayerAttributes : MonoBehaviour
     private GoldUISystem goldUISystem;
     private string goldJsonPath;
 
-    //public HealthBar hb;
 
     public BoxCollider2D boxCollider;
     private bool isTakingDamage = false;
 
-    private int bedroomSceneIndex = 3;
     public PlayerHealthBar playerHealthBar;
 
     // Start is called before the first frame update
