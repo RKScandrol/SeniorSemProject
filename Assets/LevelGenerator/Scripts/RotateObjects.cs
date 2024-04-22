@@ -72,6 +72,7 @@ public class RotateObjects : MonoBehaviour
     void updateAStarPath()
     {
         AstarPath.active.Scan();
+        Debug.Log("Pathfinding grid updated!");
     }
 
 }
