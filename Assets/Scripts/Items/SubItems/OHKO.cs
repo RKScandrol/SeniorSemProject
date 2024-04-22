@@ -47,7 +47,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/OHKOIcon.png";
+        return "/ItemIcons/OHKOIcon.png";
     }
 
 

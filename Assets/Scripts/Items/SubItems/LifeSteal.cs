@@ -43,7 +43,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/LifeStealIcon.png";
+        return "/ItemIcons/LifeStealIcon.png";
     }
 
 

@@ -27,7 +27,7 @@ using UnityEngine;
 
 
     public override string getIconPath() {
-        return "Assets/Graphics/ItemIcons/AttackBoostIcon.png";
+        return "/ItemIcons/AttackBoostIcon.png";
     }
 
     public override string getDescription() {

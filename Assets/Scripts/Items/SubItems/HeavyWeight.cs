@@ -60,7 +60,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/HeavyWeight.png";
+        return "/ItemIcons/HeavyWeight.png";
     }
 
 

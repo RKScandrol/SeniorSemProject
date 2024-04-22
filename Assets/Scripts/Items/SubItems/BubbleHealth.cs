@@ -32,7 +32,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/BubbleHealthIcon.png";
+        return "/ItemIcons/BubbleHealthIcon.png";
     }
 
 

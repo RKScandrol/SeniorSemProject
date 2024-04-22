@@ -39,7 +39,7 @@ using UnityEngine;
 
 
     public override string getIconPath() {
-        return "Assets/Graphics/ItemIcons/ShockIcon.png";
+        return "/ItemIcons/ShockIcon.png";
     }
 
     public override string getDescription() {

@@ -30,7 +30,7 @@ using UnityEngine;
 
 
     public override string getIconPath() {
-        return "Assets/Graphics/ItemIcons/DefenseBoostIcon.png";
+        return "/ItemIcons/DefenseBoostIcon.png";
     }
 
     public override string getDescription() {

@@ -46,7 +46,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/SlipNSlideIcon.png";
+        return "/ItemIcons/SlipNSlideIcon.png";
     }
 
 

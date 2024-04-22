@@ -69,9 +69,9 @@ public class ChestMessage : MonoBehaviour
 
 
 			
-			imgItem1.texture = IMG2Sprite.LoadTexture(item1.getIconPath());
-			imgItem2.texture = IMG2Sprite.LoadTexture(item2.getIconPath());
-			imgItem3.texture = IMG2Sprite.LoadTexture(item3.getIconPath());
+			imgItem1.texture = IMG2Sprite.LoadTexture(Application.streamingAssetsPath + item1.getIconPath());
+			imgItem2.texture = IMG2Sprite.LoadTexture(Application.streamingAssetsPath + item2.getIconPath());
+			imgItem3.texture = IMG2Sprite.LoadTexture(Application.streamingAssetsPath + item3.getIconPath());
             
 			Time.timeScale = 0f;
 		} 

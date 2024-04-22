@@ -60,7 +60,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/TimedWeaknessIcon.png";
+        return "/ItemIcons/TimedWeaknessIcon.png";
     }
 
     /*

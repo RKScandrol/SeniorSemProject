@@ -32,7 +32,7 @@ using UnityEngine;
 
 
     public override string getIconPath() {
-        return "Assets/Graphics/ItemIcons/TradeOffAttackForDefenseIcon.png";
+        return "/ItemIcons/TradeOffAttackForDefenseIcon.png";
     }
 
     public override string getDescription() {

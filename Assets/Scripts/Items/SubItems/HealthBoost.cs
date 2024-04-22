@@ -29,7 +29,7 @@ using UnityEngine;
 
 
     public override string getIconPath() {
-        return "Assets/Graphics/ItemIcons/HealthBoostIcon.png";
+        return "/ItemIcons/HealthBoostIcon.png";
     }
 
     public override string getDescription() {

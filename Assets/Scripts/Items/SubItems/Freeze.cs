@@ -49,7 +49,7 @@ using UnityEngine;
 
     public override string getIconPath()
     {
-        return "Assets/Graphics/ItemIcons/FreezeIcon.png";
+        return "/ItemIcons/FreezeIcon.png";
     }
     
 
