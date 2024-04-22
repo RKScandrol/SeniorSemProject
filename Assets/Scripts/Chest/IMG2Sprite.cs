@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using System.IO;
  
 public static class IMG2Sprite {

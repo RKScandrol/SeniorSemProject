@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public struct PlayerBaseStats{
         public int health;
@@ -37,7 +35,7 @@ public class PlayerAttributes : MonoBehaviour
     void Start()
     {
 
-        String path = Application.dataPath + "/Scripts/Player/PlayerStats.json";
+        String path = Application.streamingAssetsPath + "/Player/PlayerStats.json";
 
         PlayerBaseStats stats = getPermStatus();
         BuyHistory buyHistory = getBuyHistory();
@@ -57,7 +55,7 @@ public class PlayerAttributes : MonoBehaviour
         this.gameObject.GetComponent<PlayerCombat>().setAttack(attack);
 
 
-        goldJsonPath = "/Scripts/Player/Gold.json";
+        goldJsonPath = "/Player/Gold.json";
         readGoldFromJson();
 
         playerHealthBar.UpdateHealth((float)currentHealth / (float)maxHealth);
@@ -79,7 +77,7 @@ public class PlayerAttributes : MonoBehaviour
 
     PlayerBaseStats getPermStatus()
     {
-        string path = Application.dataPath + "/Scripts/Player/PlayerStats.json";
+        string path = Application.streamingAssetsPath + "/Player/PlayerStats.json";
 
         string[] lines = File.ReadAllLines(path);
         string jsonStr = "";
@@ -93,7 +91,7 @@ public class PlayerAttributes : MonoBehaviour
     }
 
     private BuyHistory getBuyHistory() {
-        string path = Application.dataPath + "/Scripts/PermUpgrades/BuyHistory.json";
+        string path = Application.streamingAssetsPath + "/Player/BuyHistory.json";
         string jsonStr = File.ReadAllText(path);
         BuyHistory buyHistory = JsonUtility.FromJson<BuyHistory>(jsonStr);
         return buyHistory;
@@ -101,7 +99,7 @@ public class PlayerAttributes : MonoBehaviour
 
     public void readGoldFromJson() {
 
-        string jsonStr = File.ReadAllText(Application.dataPath + goldJsonPath);
+        string jsonStr = File.ReadAllText(Application.streamingAssetsPath + goldJsonPath);
         int[] golds = JsonHelper.FromJson<int>(jsonStr);
         gold = golds[0];
 
@@ -111,7 +109,7 @@ public class PlayerAttributes : MonoBehaviour
         int[] golds = new int[1];
         golds[0] = gold;
         string jsonStr = JsonHelper.ToJson<int>(golds, true);
-        File.WriteAllText(Application.dataPath + goldJsonPath, jsonStr);
+        File.WriteAllText(Application.streamingAssetsPath + goldJsonPath, jsonStr);
     }
   
 

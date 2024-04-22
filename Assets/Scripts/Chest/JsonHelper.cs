@@ -1,10 +1,8 @@
 using System;
 using System.IO;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEditor.Search;
+
 
 public class JsonHelper
 {
@@ -37,13 +35,13 @@ public class JsonHelper
 
 
     private static string[] getJsonFiles() {
-        string path = Application.dataPath + "/Scripts/JsonItems/jsonFiles.txt";
+        string path = Application.streamingAssetsPath + "/JsonItems/jsonFiles.txt";
         string[] lines = File.ReadAllLines(path);
         return lines;
     }
 
     private static string[] getLines(string path){
-        string[] lines = File.ReadAllLines(Application.dataPath + path);
+        string[] lines = File.ReadAllLines(Application.streamingAssetsPath + path);
         return lines;
     }
 
@@ -64,7 +62,7 @@ public class JsonHelper
         foreach (string path in filePaths) {
 
             string jsonStr = compineLines(getLines(path));
-            string sub = path.Substring(19);
+            string sub = path.Substring(11);
 
             switch (sub) {
              
@@ -137,7 +135,7 @@ public class JsonHelper
                     break;
 
                 default:
-                    Debug.Log("No Items added for Path: " + path);
+                    Debug.Log("No Items added for Path: " + Application.streamingAssetsPath + path);
                     break;
             }
 

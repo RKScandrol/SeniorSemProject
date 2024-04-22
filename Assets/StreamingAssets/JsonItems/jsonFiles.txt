@@ -1,0 +1,17 @@
+/JsonItems/HealthPotions.json
+/JsonItems/AttackBoosts.json
+/JsonItems/DefenseBoosts.json
+/JsonItems/HealthBoosts.json
+/JsonItems/TripleScoop.json
+/JsonItems/AttackDefenseTradeOff.json
+/JsonItems/DefenseAttackTradeOff.json
+/JsonItems/BubbleHealth.json
+/JsonItems/Shocks.json
+/JsonItems/TimeWeaknesses.json
+/JsonItems/OHKO.json
+/JsonItems/Freeze.json
+/JsonItems/SlipNSlide.json
+/JsonItems/SuperHuman.json
+/JsonItems/HeavyWeight.json
+/JsonItems/LifeSteal.json
+/JsonItems/XRay.json

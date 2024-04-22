@@ -85,3 +85,7 @@ crashlytics-build.properties
 # Git History
 .history/
 *.bak/
+
+# Build directory
+/FinalProduct2/
+s

@@ -236,7 +236,7 @@ public class EnemyAttributes : MonoBehaviour
 
     public void readStats() {
 
-        string[] lines = File.ReadAllLines(Application.dataPath + "/Scripts/Enemy/EnemyJsonFiles/StandardEnemyStats.json");
+        string[] lines = File.ReadAllLines(Application.streamingAssetsPath + "/Enemy/StandardEnemyStats.json");
         string jsonStr = "";
 
         foreach (string line in lines) {

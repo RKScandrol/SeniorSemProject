@@ -1,11 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PermUpgradeSystem : MonoBehaviour
 {
@@ -38,7 +35,7 @@ public class PermUpgradeSystem : MonoBehaviour
 
         readPlayerBaseStats();
 
-        goldJsonPath = "/Scripts/Player/Gold.json";
+        goldJsonPath = "/Player/Gold.json";
         getGoldFromJson();
 
         priceCalculation();
@@ -214,7 +211,7 @@ public class PermUpgradeSystem : MonoBehaviour
 
 
         string jsonStr = JsonUtility.ToJson(buyHistory, true);
-        string path = Application.dataPath + "/Scripts/PermUpgrades/BuyHistory.json";
+        string path = Application.streamingAssetsPath + "/Player/BuyHistory.json";
         File.WriteAllText(path, jsonStr);
 
         writeGoldToJson();
@@ -223,7 +220,7 @@ public class PermUpgradeSystem : MonoBehaviour
 
 
     public void readBuyHistory() {
-        string path = Application.dataPath + "/Scripts/PermUpgrades/BuyHistory.json";
+        string path = Application.streamingAssetsPath + "/Player/BuyHistory.json";
         string[] lines = File.ReadAllLines(path);
         string jsonStr = attachJsonLines(lines);
         buyHistory = JsonUtility.FromJson<BuyHistory>(jsonStr);
@@ -238,13 +235,13 @@ public class PermUpgradeSystem : MonoBehaviour
     }
 
     private void readPlayerBaseStats() {
-        string playerStatsPath = Application.dataPath + "/Scripts/Player/PlayerStats.json";
+        string playerStatsPath = Application.streamingAssetsPath + "/Player/PlayerStats.json";
         string jsonStr = File.ReadAllText(playerStatsPath);
         playerBaseStats = JsonUtility.FromJson<PlayerBaseStats>(jsonStr);
     }
 
     private void getGoldFromJson() {
-        string jsonStr = File.ReadAllText(Application.dataPath + goldJsonPath);
+        string jsonStr = File.ReadAllText(Application.streamingAssetsPath + goldJsonPath);
         int[] golds = JsonHelper.FromJson<int>(jsonStr);
         gold = golds[0];
 
@@ -256,7 +253,7 @@ public class PermUpgradeSystem : MonoBehaviour
         golds[0] = gold;
 
         string jsonStr = JsonHelper.ToJson(golds, true);
-        File.WriteAllText(Application.dataPath + goldJsonPath, jsonStr);
+        File.WriteAllText(Application.streamingAssetsPath + goldJsonPath, jsonStr);
     }
 
     public int getGold() {
