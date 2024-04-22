@@ -39,6 +39,10 @@ public class GameSceneManager : MonoBehaviour
        // } else {
        //     mainMenuInstance.SetActive(true);
        // }
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Destroy(GameObject.FindGameObjectWithTag("FloorManager"));
+        Destroy(GameObject.FindGameObjectWithTag("Clock"));
+        Destroy(GameObject.FindGameObjectWithTag("MusicManager"));
         Time.timeScale = 1f;
         SceneManager.LoadScene("main_menu_final");
     }
