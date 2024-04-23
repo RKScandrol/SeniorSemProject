@@ -28,12 +28,12 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
 
-        //InvokeRepeating("UpdatePath", 0f, updateInterval);
+        InvokeRepeating("UpdatePath", 0f, updateInterval);
     }
 
     void UpdatePath()
     {
-        if (seeker.IsDone() && target != null)
+        if (seeker.IsDone() && isAggro)
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
@@ -51,15 +51,17 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (Vector2.Distance(target.position, gameObject.transform.position) < aggroRange)
         {
-            if (Vector2.Distance(target.position, gameObject.transform.position) < aggroRange)
-            {
-                isAggro = true;
-            }
+            isAggro = true;
         }
         
-        if (path == null || currentWaypoint >= path.vectorPath.Count)
+        if (path == null)
+        {
+            return;
+        }
+
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             return;
         }
@@ -73,14 +75,6 @@ public class EnemyAI : MonoBehaviour
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
-        }
-    }
-
-    void FixedUpdate()
-    {
-        if (isAggro)
-        {
-            InvokeRepeating("UpdatePath", 0f, updateInterval);
         }
     }
 }
