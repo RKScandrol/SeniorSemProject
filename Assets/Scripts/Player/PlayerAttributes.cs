@@ -28,7 +28,6 @@ public class PlayerAttributes : MonoBehaviour
     public BoxCollider2D boxCollider;
     private bool isTakingDamage = false;
 
-    private int bedroomSceneIndex = 3;
     public PlayerHealthBar playerHealthBar;
 
     // Start is called before the first frame update
