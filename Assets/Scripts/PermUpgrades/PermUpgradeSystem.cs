@@ -38,7 +38,18 @@ public class PermUpgradeSystem : MonoBehaviour
         goldJsonPath = "/Player/Gold.json";
         getGoldFromJson();
 
-        priceCalculation();
+        healthBuffCost = 10;
+        for (int i = 0; i < buyHistory.numHealthBuffsBought; i++ ) {
+            healthBuffCost *= 2;
+        }
+        attackBuffCost = 10;
+        for (int i = 0; i < buyHistory.numAttackBuffsBought; i++ ) {
+            attackBuffCost *= 2;
+        }
+        defenseBuffCost = 10;
+        for (int i = 0; i < buyHistory.numDefenseBuffsBought; i++ ) {
+            defenseBuffCost *= 2;
+        }
 
         setAllText();
         calculatePurchasePower();
@@ -146,11 +157,9 @@ public class PermUpgradeSystem : MonoBehaviour
 
 
     public void priceCalculation() {
-        int baseVal = 10;
-
-        healthBuffCost = baseVal + (int)Math.Floor(baseVal * (buyHistory.numHealthBuffsBought * 0.5) );
-        attackBuffCost = baseVal + (int)Math.Floor(baseVal * (buyHistory.numAttackBuffsBought * 0.5) );
-        defenseBuffCost = baseVal + (int)Math.Floor(baseVal * (buyHistory.numDefenseBuffsBought * 0.5) );
+        healthBuffCost *= 2;
+        attackBuffCost *= 2;
+        defenseBuffCost *= 2;
     }
 
 
