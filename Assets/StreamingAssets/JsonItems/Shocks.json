@@ -1,0 +1,20 @@
+{
+    "Items": [
+        {
+            "itemID": 1301,
+            "name": "Shock",
+            "description": "Shock Your Enemies",
+            "weight": 5,
+            "timeIncrement": 2,
+            "damage": 20
+        },
+        {
+            "itemID": 1302,
+            "name": "Shock",
+            "description": "Shock Your Enemies",
+            "weight": 2,
+            "timeIncrement": 2,
+            "damage": 50
+        }
+    ]
+}

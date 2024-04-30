@@ -1,0 +1,39 @@
+{
+    "Items": [
+        {
+            "itemID": 1,
+            "name": "Health Potion",
+            "description": "Increase Health by a Percentage",
+            "weight": 10,
+            "percentRestore": 0.10
+        },
+        {
+            "itemID": 2,
+            "name": "Health Potion",
+            "description": "Increase Health by a Percentage",
+            "weight": 8,
+            "percentRestore": 0.20
+        },
+        {
+            "itemID": 3,
+            "name": "Health Potion",
+            "description": "Increase Health by a Percentage",
+            "weight": 6,
+            "percentRestore": 0.30
+        },
+        {
+            "itemID": 4,
+            "name": "Health Potion",
+            "description": "Increase Health by a Percentage",
+            "weight": 4,
+            "percentRestore": 0.40
+        },
+        {
+            "itemID": 5,
+            "name": "Health Potion",
+            "description": "Increase Health by a Percentage",
+            "weight": 2,
+            "percentRestore": 0.50
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "Items": [
+        {
+            "itemID": 501,
+            "name": "Trade Off",
+            "description": "Trade some Attack points for Defense points",
+            "weight": 8,
+            "pointsToTrade": 10
+        }
+    ]
+}

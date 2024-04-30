@@ -70,3 +70,22 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# VScode directory
+.vscode/
+
+# Astar Pathfinding folders
+[Aa]ssets/AstarPathfindingProject.meta
+[Aa]ssets/AstarPathfindingProject/
+/[Aa]ssets/AstarPathfindingProject
+
+# Crash .blob extentions in Unity
+*.blob
+
+# Git History
+.history/
+*.bak/
+
+# Build directory
+/FinalProduct2/
+s

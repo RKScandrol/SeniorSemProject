@@ -1,0 +1,39 @@
+{
+    "Items": [
+        {
+            "itemID": 301,
+            "name": "Health Boost",
+            "description": "Drink this for Increased Life",
+            "weight": 10,
+            "percentBoost": 0.05
+        },
+        {
+            "itemID": 302,
+            "name": "Health Boost",
+            "description": "Drink this for Increased Life",
+            "weight": 8,
+            "percentBoost": 0.10
+        },
+        {
+            "itemID": 303,
+            "name": "Health Boost",
+            "description": "Drink this for Increased Life",
+            "weight": 6,
+            "percentBoost": 0.15
+        },
+        {
+            "itemID": 304,
+            "name": "Health Boost",
+            "description": "Drink this for Increased Life",
+            "weight": 4,
+            "percentBoost": 0.20
+        },
+        {
+            "itemID": 305,
+            "name": "Health Boost",
+            "description": "Drink this for Increased Life",
+            "weight": 2,
+            "percentBoost": 0.25
+        }
+    ]
+}

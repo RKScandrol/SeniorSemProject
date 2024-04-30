@@ -1,0 +1,10 @@
+{
+    "Items" : [
+        {
+            "itemID" : 2101,
+            "name" : "XRay",
+            "description" : "Reveal your enemyies stats.",
+            "weight" : 10
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "Items": [
+        {
+            "itemID":201,
+            "name": "Defense Boost",
+            "description": "Toughen Up",
+            "weight": 2,
+            "percentBoost": 0.50
+        },
+        {
+            "itemID": 202,
+            "name": "Defense Boost",
+            "description": "Toughen Up",
+            "weight": 5,
+            "percentBoost": 0.30
+        },
+        {
+            "itemID": 203,
+            "name": "Defense Boost",
+            "description": "Toughen Up",
+            "weight": 8,
+            "percentBoost": 0.20
+        }
+    ]
+}

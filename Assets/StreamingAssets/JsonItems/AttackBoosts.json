@@ -1,0 +1,32 @@
+{
+    "Items": [
+        {
+            "itemID": 101,
+            "name": "Attack Boost",
+            "description": "Learn How to Hit Harder",
+            "weight": 10,
+            "percentBoost": 0.05
+        },
+        {
+            "itemID": 102,
+            "name": "Attack Boost",
+            "description": "Learn How to Hit Harder",
+            "weight": 8,
+            "percentBoost": 0.10
+        },
+        {
+            "itemID": 103,
+            "name": "Attack Boost",
+            "description": "Learn How to Hit Harder",
+            "weight": 6,
+            "percentBoost": 0.15
+        },
+        {
+            "itemID": 104,
+            "name": "Attack Boost",
+            "description": "Learn How to Hit Harder",
+            "weight": 4,
+            "percentBoost": 0.20
+        }
+    ]
+}

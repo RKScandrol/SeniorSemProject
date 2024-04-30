@@ -1,0 +1,36 @@
+{
+    "Items":[
+        {
+            "itemID": 1801,
+            "name": "Life Steal",
+            "description": "Take some life from the suffering of your enemies.",
+            "weight": 8, 
+            "percentSteal": 0.25,
+            "effectTime": 1.0
+        },
+        {
+            "itemID": 1801,
+            "name": "Life Steal",
+            "description": "Take some life from the suffering of your enemies.",
+            "weight": 5, 
+            "percentSteal": 0.5,
+            "effectTime": 1.0
+        },
+        {
+            "itemID": 1801,
+            "name": "Life Steal",
+            "description": "Take some life from the suffering of your enemies.",
+            "weight": 5, 
+            "percentSteal": 0.25,
+            "effectTime": 2.0
+        },
+        {
+            "itemID": 1801,
+            "name": "Life Steal",
+            "description": "Take some life from the suffering of your enemies.",
+            "weight": 2, 
+            "percentSteal": 0.5,
+            "effectTime": 2.0
+        }
+    ]
+}
